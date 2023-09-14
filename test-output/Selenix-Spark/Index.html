@@ -1,0 +1,1915 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ExtentReports</title>
+        <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+	    <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7e408aed24af91e1ad76f49a74ecfa0ef1d97cfb/spark/css/spark-style.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+</style></head>    <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa bdd-report standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">ExtentReports</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">Sept 13, 2023 01:25:13 pm</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>            <div class="page-container">
+                <div class="main-content">
+<div class="test-wrapper row test-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tests</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+						
+						
+						
+						
+						
+						<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" href="#">@149444_149445_1150537_150538</a>
+						<a class="dropdown-item" href="#">@149444_149445</a>
+						<a class="dropdown-item" href="#">@150537_150538</a>
+						<a class="dropdown-item" href="#">@150541_166626</a>
+						<a class="dropdown-item" href="#">@150541_AASC_HM_Add_Service_User_Port_ref-Done</a>
+						<a class="dropdown-item" href="#">@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</a>
+						<a class="dropdown-item" href="#">@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</a>
+						<a class="dropdown-item" href="#">@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item"  status="pass" test-id="1"
+					author=""
+					tag="@149444_149445_1150537_150538"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">TC_149444:  AASC HM_View Service User - Done</p>
+							<p class="duration text-sm">0h 1m 43s+578ms</p>
+							<span class="datetime">13:25:15 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">TC_149444:  AASC HM_View Service User - Done</h5>
+									<span class='badge badge-success'>09.13.2023 13:25:15</span>
+									<span class='badge badge-danger'>09.13.2023 13:26:58</span>
+									<span class='badge badge-default'>0h 1m 43s+578ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @149444_149445_1150537_150538</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Edit Service User - Add Email address - Done</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Edit Service User - Add Email address - Done</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Ethnicity" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Asian" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_cancel_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on cancel button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click the  calender and select DOB for "April" "2023" "19"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Religion" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Hinduism" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on "Dietary Requirements" section</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "3" for the "dietaryRequirements" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on "Safeguarding Notes" section</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "3" for the "safeGuardingNotes" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="40"
+					author=""
+					tag="@150541_166626"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">TC_150541: AASC HM_Add Service User - Port ref - Done</p>
+							<p class="duration text-sm">0h 1m 39s+786ms</p>
+							<span class="datetime">13:26:59 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">TC_150541: AASC HM_Add Service User - Port ref - Done</h5>
+									<span class='badge badge-success'>09.13.2023 13:26:59</span>
+									<span class='badge badge-danger'>09.13.2023 13:28:39</span>
+									<span class='badge badge-default'>0h 1m 39s+786ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @150541_166626</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Add Service User - Port ref - Done</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Add Service User - Port ref - Done</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Last Name" as "William"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Gender" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Male" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user generate the unique number for "Port Reference"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Title" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Mrs" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "First Name" as "Riya"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click the  calender and select DOB for "April" "2023" "19"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Country of Origin" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "United States of America" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Language" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Armenian" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Religion" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Buddhism" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Telephone Number" as "0745626131"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Application Status" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Approved" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Accommodation Status" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Current" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "1" for the "foodPacks" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on "Vulnerabilities" section</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "3" for the "vulnerabilities" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on "Disabilities" section</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "3" for the "disabilities" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Add Service User validation checks - Date of birth cant be in the future</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Add Service User validation checks - Date of birth cant be in the future</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click the  calender and select DOB for "September" "2023" "12"</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="92"
+					author=""
+					tag="@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</p>
+							<p class="duration text-sm">0h 1m 11s+500ms</p>
+							<span class="datetime">13:28:40 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</h5>
+									<span class='badge badge-success'>09.13.2023 13:28:40</span>
+									<span class='badge badge-danger'>09.13.2023 13:29:51</span>
+									<span class='badge badge-default'>0h 1m 11s+500ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Flag as Absconder" from drop down List and navigate to "Flag as Absconder"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Type of Note" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Covid" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Notes" expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Document" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_to_upload_file(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on to upload file to Add Document "C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Notes" as "Demo test Notes Add Flag as Absconder"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_check_box(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then User click on check Box for "Enhanced Confidential Matter"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Cancel_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on Cancel button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Close_button(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on Close button "Successfully marked as absconded on 13/9/2023"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on Ok appointment page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Remove Absconder Flag" from drop down List and navigate to "Remove Absconder Flag"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Type of Note" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Covid" from dropdown</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Notes" as "Demo test Remove Absconder Flag"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_check_box(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then User click on check Box for "Enhanced Confidential Matter"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Close_button(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on Close button "Successfully removed absconded flag"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on Ok appointment page</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row tag-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tags</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">8</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@149444_149445_1150537_150538</p>
+							<p class="duration text-sm">3 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@149444_149445_1150537_150538</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:25:15 pm</td>
+									<td class='linked' test-id='1'>
+										TC_149444:  AASC HM_View Service User - Done
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:25:15 pm</td>
+									<td class='linked' test-id='3'>
+										AASC HM_Edit Service User - Add Email address - Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Edit Service User - Add Email address - Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:01 pm</td>
+									<td class='linked' test-id='17'>
+										AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@149444_149445</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@149444_149445</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:25:15 pm</td>
+									<td class='linked' test-id='2'>
+										AASC HM_Edit Service User - Add Email address - Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Edit Service User - Add Email address - Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:25:15 pm</td>
+									<td class='linked' test-id='3'>
+										AASC HM_Edit Service User - Add Email address - Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Edit Service User - Add Email address - Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@150537_150538</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@150537_150538</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:01 pm</td>
+									<td class='linked' test-id='16'>
+										AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:01 pm</td>
+									<td class='linked' test-id='17'>
+										AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done
+										<div class="">
+											<span class="badge badge-default">TC_149444:  AASC HM_View Service User - Done.AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@150541_166626</p>
+							<p class="duration text-sm">3 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@150541_166626</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:59 pm</td>
+									<td class='linked' test-id='40'>
+										TC_150541: AASC HM_Add Service User - Port ref - Done
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:59 pm</td>
+									<td class='linked' test-id='42'>
+										AASC HM_Add Service User - Port ref - Done
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User - Port ref - Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:16 pm</td>
+									<td class='linked' test-id='80'>
+										AASC HM_Add Service User validation checks - Date of birth cant be in the future
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User validation checks - Date of birth cant be in the future</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@150541_AASC_HM_Add_Service_User_Port_ref-Done</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@150541_AASC_HM_Add_Service_User_Port_ref-Done</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:59 pm</td>
+									<td class='linked' test-id='41'>
+										AASC HM_Add Service User - Port ref - Done
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User - Port ref - Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:26:59 pm</td>
+									<td class='linked' test-id='42'>
+										AASC HM_Add Service User - Port ref - Done
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User - Port ref - Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:16 pm</td>
+									<td class='linked' test-id='79'>
+										AASC HM_Add Service User validation checks - Date of birth cant be in the future
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User validation checks - Date of birth cant be in the future</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:16 pm</td>
+									<td class='linked' test-id='80'>
+										AASC HM_Add Service User validation checks - Date of birth cant be in the future
+										<div class="">
+											<span class="badge badge-default">TC_150541: AASC HM_Add Service User - Port ref - Done.AASC HM_Add Service User validation checks - Date of birth cant be in the future</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:40 pm</td>
+									<td class='linked' test-id='92'>
+										TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:40 pm</td>
+									<td class='linked' test-id='94'>
+										AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done
+										<div class="">
+											<span class="badge badge-default">TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done.AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:40 pm</td>
+									<td class='linked' test-id='93'>
+										AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done
+										<div class="">
+											<span class="badge badge-default">TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done.AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>13:28:40 pm</td>
+									<td class='linked' test-id='94'>
+										AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done
+										<div class="">
+											<span class="badge badge-default">TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done.AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div>                    <!-- dashboard -->
+<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='parent-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'>
+						<b>3</b> features passed
+						</small>
+					</div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> features failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='child-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>5</b> scenarios passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> scenarios failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>96</b> steps passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> steps failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">3</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100.00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">5</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100.00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Start</h6>
+							<h4 class="font-weight-light mt-4">Sept 13, 2023 01:25:13 pm</h4>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Duration</h6>
+							<h4 class="font-weight-light mt-4">0h 4m 38s+581ms</h4>
+							<span class="text-semibold font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Timeline</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id="timeline" height="120"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>@149444_149445_1150537_150538</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									66.667%
+								</td>
+							</tr>
+							<tr>
+								<td>@149444_149445</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@150537_150538</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@150541_166626</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									66.667%
+								</td>
+							</tr>
+							<tr>
+								<td>@150541_AASC_HM_Add_Service_User_Port_ref-Done</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var statusGroup = {
+	    parentCount: 3,
+		passParent: 3,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 5,
+		passChild: 5,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 96,
+		passGrandChild: 96,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+		eventsCount: 96,
+		passEvents: 96,
+		failEvents: 0,
+		fatalEvents: 0,
+		errorEvents: 0,
+		warningEvents: 0,
+		skipEvents: 0,
+		infoEvents: 0,
+		debugEvents: 0,
+		exceptionsEvents: 0
+	};
+</script>
+<script>
+	var timeline = {
+	        "TC_149444:  AASC HM_View Service User - Done":103.578,"TC_150541: AASC HM_Add Service User - Port ref - Done":99.786,"TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done":71.5
+	};
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ac7abbc71b4bb073da00153a5a3fdbcfe0c95e2a/spark/js/spark-script.js"></script>
+<script type="text/javascript">
+
+
+</script></body>
+</html>

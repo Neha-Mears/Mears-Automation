@@ -1,0 +1,897 @@
+package com.sat.Pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.TargetLocator;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import com.sat.testUtil.Testutil;
+import com.sat.testUtil.Wait;
+import com.sat.testbase.Assertions;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+
+
+
+public class MCMviewAppLoginPage {
+	private WebDriver driver;
+	
+	@FindBy(xpath = "//*[text()='click here.']")
+	private WebElement Click_here;
+
+	@FindBy(xpath = "//input[@id='Email']")
+	private WebElement UserName;
+	
+	@FindBy(xpath = "//input[@id='input_1']")
+	private WebElement HomeUserName;
+	
+	@FindBy(xpath = "//*[@id='input_2']")
+	private WebElement HomePassword;
+	@FindBy(xpath = "//*[@value='Sign In']") 
+	private WebElement Sign_In;
+
+	@FindBy(xpath = "//*[@id='Password']")
+	private WebElement Password;
+
+	@FindBy(xpath = "//*[@value='Log In']") 
+	private WebElement Login;
+	
+	@FindBy(xpath = "//*[@id='mat-input-1']") 
+	private WebElement Aggravatingtxt;
+	
+	@FindBy(xpath = "//*[@id='mat-input-3']") 
+	private WebElement Incidenttxt;
+	
+	@FindBy(xpath = "//button[@id='add-edit-risk-assessment-form__save-button']") 
+	private WebElement addriskassSavebtn;
+	
+	
+	@FindBy(xpath = "//span[normalize-space()='Save']") 
+	private WebElement Savebtn;
+	@FindBy(xpath = "//span[normalize-space()='Cancel']") 
+	private WebElement Cancelbtn;
+	
+	@FindBy(xpath = "//*[starts-with(@class,'mat-icon notranslate mat-icon-no-color ng-star-inserted')]") 
+	private WebElement EditIconbtn;
+	
+	@FindBy(xpath = "//*[@aria-label='Open calendar']") 
+	private WebElement gettingDate;
+	
+	@FindBy(xpath = "//*[@aria-label='Next month']") 
+	private WebElement calenderNextDate;
+	
+	@FindBy(xpath = "//*[@class='notification__body--success']") 
+	private List<WebElement> usertoastmsg;
+	
+	@FindBy(xpath = "//*[@class='notification__body--success']") 
+	private List<WebElement> toastercontainer;
+	
+	@FindBy(xpath = "//*[@id='mat-expansion-panel-header-2']//*[text()=' Risk Details ']") 
+	private WebElement RiskDetail;
+	
+	@FindBy(xpath = "//*[@class='risks-list__column']") 
+	private WebElement Demotest;
+	
+	@FindBy(xpath = "((//*[@class='mat-table cdk-table mat-sort mears-table'])[1]//*[@data-mat-icon-name='more_vert'])[1]") 
+	private WebElement threedotsserviceuser;
+	
+	//@FindBy(xpath = "//*[starts-with(@class,'cdk-overlay-pane')]//*[starts-with(@class,'drop-box')]") 
+	@FindBy(xpath = "//span[@class='noborder']") 
+	private WebElement uploadDocument;
+	
+	Testutil testutil = new Testutil();
+	Wait waits = new Wait();
+	Testutil util = new Testutil();
+    Assertions assertion = new Assertions(driver);
+	
+	public MCMviewAppLoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public boolean isClickable(WebElement ele) {
+		boolean flag = true;
+		try {
+			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(ele));
+			System.out.println("Element is clickable");
+		} catch (Exception e) {
+			System.out.println("Element isn't clickable");
+			flag = false;
+		}
+		return flag;
+	}
+	
+	//enter user name in the booking app or admin tool app
+	public void EnterUserName(String userId) {
+		UserName.click();
+		UserName.sendKeys(userId);
+		
+	}
+	public void HomeUserName(String userId) {
+		Click_here.click();
+		HomeUserName.click();
+		HomeUserName.sendKeys(userId);
+	}
+	public void HomePassword(String userPassword) {
+		Wait.untilPageLoadComplete(driver, 1);
+		//Wait.elementToBeClickable(driver, Password, 5);
+		HomePassword.click();
+		HomePassword.sendKeys(userPassword);
+		Wait.elementToBeClickable(driver, Sign_In, 2);
+		Wait.untilPageLoadComplete(driver, 5);
+		Wait.waitUntilElementVisible(driver, Sign_In);
+		Wait.elementToBeClickable(driver, Sign_In, 2);
+		//Signin.click();
+		testutil.actionMethodClick(driver, Sign_In);
+		// Wait.waitUntilElementVisible(driver, DontShowAgain);
+		// DontShowAgain.click();
+		// Yes.click();
+		System.out.println("logged in");
+		Wait.untilPageLoadComplete(driver);
+	}
+	// enter password in the password entry field
+	public void EnterPassword(String userPassword) {
+		Wait.untilPageLoadComplete(driver, 5);
+		Wait.elementToBeClickable(driver, Password, 5);
+		Password.click();
+		Password.sendKeys(userPassword);
+	}
+	
+	public void User_login_MCMview(String userid,String pwd)
+	{
+		//UserName.click();
+		UserName.sendKeys(userid);
+		Password.sendKeys(pwd);
+	}
+	
+	public void ClickOnLogIn()
+	{
+		Login.click();
+		System.out.println("logged in");
+		Wait.untilPageLoadComplete(driver);
+		
+
+	}
+	//switching to the frame 
+	public void switchToFrame() {
+		driver.switchTo().frame("fullscreen-app-host");
+	}
+	public void switchTab() {
+		// driver.get("http://yahoo.com");
+		JavascriptExecutor we = ((JavascriptExecutor) driver);
+		we.executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		// driver.close();
+		// driver.get("http://google.com");
+		// System.out.println("in new tab method");
+
+	}
+	
+	public void click_navapp(String navname)
+	{
+		Boolean flag = false;
+		while (!flag) {
+			List<WebElement> Service = driver.findElements(By.xpath("//a[contains(text(),'" + navname + "')]"));
+			System.out.println(Service.size());
+			//System.out.println(Service);
+			if(Service.size() != 0) {
+				for (int i = 0; i < Service.size(); i++){
+					if (isClickable(Service.get(i))) {
+						testutil.actionMethodClick(driver, Service.get(i));
+						//testutil.jsclick(driver, Service.get(i));
+						flag = true;
+						i = Service.size();
+					}
+					else {
+						System.out.println("element is not clickable so executing else");
+					}
+				}
+				}
+			}		
+	}
+	
+	public void ClickAllService(String Option, String value) {
+		Wait.untilPageLoadComplete(driver,2000);
+		//Wait.elementToBeClickable(driver, driver.findElement(By.xpath("//*[contains(text(),'" + Option + "')]")), 0);
+		Boolean flag = false;
+		while (!flag) {
+			List<WebElement> ele = driver.findElements(By.xpath("//*[contains(text(),'" + Option + "')]"));
+			System.out.println(ele.size());
+			//System.out.println(ele);
+			if(ele.size() != 0) {
+				for (int i = 0; i < ele.size(); i++){
+					if (isClickable(ele.get(i))) {
+						testutil.actionMethodClick(driver, ele.get(i));
+						//testutil.jsclick(driver, ele.get(i));
+						flag = true;
+						i = ele.size();
+					}
+					else {
+						System.out.println("element is not clickable so executing else");
+					}
+				}
+				}
+			String actualtext=value;
+			String expectedtxt = driver.findElement(By.xpath("//*[contains(text(),'" + value + "')]")).getText();
+			if(actualtext.contains(expectedtxt)) {
+				System.out.println("Text valiadtion successful. The expected text is present");
+			}
+			else {
+				System.out.println("Text valiadtion failed. The expected text is not present");
+			}
+			}		
+	}
+	public void ClickAddressname(String name) throws InterruptedException {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys(name,Keys.ENTER);
+		WebElement we = driver.findElement(By.xpath("//*[contains(text(),'"+name+"')]"));
+		Wait.elementToBeClickable(driver, we, 3);
+		testutil.jsclick(driver, we);
+	}
+	public void scrolldown() {
+		try {
+			Wait.untilPageLoadComplete(driver);
+			driver.findElement(By.xpath("//*[text()=' Service User Support ']")).click();
+			  Wait.untilPageLoadComplete(driver,200);
+		        driver.findElement(By.cssSelector("body")).sendKeys(Keys.TAB,Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN,Keys.PAGE_DOWN);
+		    }catch(Exception e) {};
+		        }
+		public void click_expansionpanel()
+		{
+			WebElement expansionbtn = driver.findElement(By.xpath("//div[contains(@class,'__header-buttons property-summary-panel__buttons ng-star-inserted')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",expansionbtn );
+			Wait.elementToBeClickable(driver, expansionbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, expansionbtn);
+		}
+		public void click_ServiceUser_expansionpanel()
+		{
+			WebElement expansionbtn = driver.findElement(By.xpath("//*[contains(@class,'expansion-panel__header-buttons service-users-panel__buttons ng-star-inserted') or contains(@class,'expansion-panel__header-buttons panel__buttons ng-tns')]"));
+			//WebElement expansionbtn = driver.findElement(By.xpath("//div[contains(@class,'expansion-panel__header-buttons service-users-panel__buttons ng-star-inserted')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",expansionbtn );
+			Wait.elementToBeClickable(driver, expansionbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, expansionbtn);
+		}
+		public void click_expansionpaneltenancy()
+		{
+			WebElement expansionbtntenancy = driver.findElement(By.xpath("(//*[starts-with(@class,'mat-icon notranslate mat-menu')])[2]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",expansionbtntenancy );
+			Wait.elementToBeClickable(driver, expansionbtntenancy, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, expansionbtntenancy);
+		}
+		public void click_threedotTenancy()
+		{
+			WebElement tenancythreedots = driver.findElement(By.xpath("(//*[starts-with(@class,'mat-icon notranslate mat-menu-trigger more_vert mat-icon-no-color')])[1]"));
+			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",tenancythreedots );
+			Wait.elementToBeClickable(driver, tenancythreedots, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, tenancythreedots);
+		}
+		public void click_Riskassesmentexpansionbtn()
+		{
+			WebElement riskexpbtn = driver.findElement(By.xpath("//*[contains(@class,'plus-icon mat-icon-no-color')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",riskexpbtn );
+			Wait.elementToBeClickable(driver, riskexpbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, riskexpbtn);
+		}
+		public void service_userexpansionbtn()
+		{
+			WebElement serviceuserbtn =driver.findElement(By.xpath("//div[contains(@class,'expansion-panel__header-buttons service-users-panel__buttons ng-star-inserted')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",serviceuserbtn );
+			Wait.elementToBeClickable(driver, serviceuserbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, serviceuserbtn);
+		}
+		public void Incidentexpansionbtn()
+		{
+			WebElement serviceuserbtn =driver.findElement(By.xpath("//div[contains(@class,'expansion-panel__header-buttons ng-star-inserted')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",serviceuserbtn );
+			Wait.elementToBeClickable(driver, serviceuserbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, serviceuserbtn);
+		}
+		
+		public void click_Riskexpansionbtn()
+		{
+			WebElement riskexpbtn = driver.findElement(By.xpath("(//*[contains(@class,'plus-icon mat-icon-no-color')])[2]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",riskexpbtn );
+			Wait.elementToBeClickable(driver, riskexpbtn, 2);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, riskexpbtn);
+			
+		}
+		public void Notesxpansionbtn()
+		{
+			//WebElement notesbtn =driver.findElement(By.xpath("//*[starts-with(@class,'mat-expansion-panel-header')]//*[contains(text(),'Notes')]"));
+			//WebElement notesbtn =driver.findElement(By.xpath("(//div[contains(@class,'expansion-panel__header-buttons ng-star-inserted')])[2]"));
+			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",notesbtn );
+			//Wait.elementToBeClickable(driver, notesbtn, 2);
+			/*
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			util.actionMethodClick(driver, notesbtn);
+			*/
+			Boolean flag = false;
+			while (!flag) {
+				List<WebElement> ele = driver.findElements(By.xpath("//div[contains(@class,'expansion-panel__header-buttons ng-star-inserted')]"));
+				System.out.println(ele.size());
+				//System.out.println(ele);
+				if(ele.size() != 0) {
+					for (int i = 0; i < ele.size(); i++){
+						if (isClickable(ele.get(i))) {
+							testutil.actionMethodClick(driver, ele.get(i));
+							//testutil.jsclick(driver, ele.get(i));
+							flag = true;
+							i = ele.size();
+						}
+						else {
+							System.out.println("element is not clickable so executing else");
+						}
+					}
+					}
+		}
+		}
+
+		public void validate_risk_ass_popuppage(DataTable datatable)
+		{
+			List<List<String>> actual = datatable.cells();
+			List<String> expectedTexts = new ArrayList<>();
+			expectedTexts.addAll(actual.get(0));
+			 System.out.println(expectedTexts);
+		 for(String exptext:expectedTexts) {
+			 
+			 WebElement element= driver.findElement(By.xpath("//*[contains(text(),'"+exptext+"')]"));
+			 String actualtext =element.getText();
+			 if (actualtext.contains(exptext))
+			 {
+				 System.out.println("Text Validation passed! The text ' "+exptext+"' is present on the page" );
+			 }
+			 else {
+				 System.out.println("Text Validation failed! The text ' "+exptext+"' is not present on the page" );
+			 }
+		 }
+		 System.out.println("Button  "+addriskassSavebtn.getText());
+			if(addriskassSavebtn.isDisplayed()) {
+				System.out.println("Save Button is present");
+				addriskassSavebtn.click();
+				testutil.actionMethodClick(driver, addriskassSavebtn);
+				System.out.println("Clicked on the save button");
+			}
+				else {
+					System.out.println("Save Button not present");
+				}
+			}
+		
+		public void Validate_risk_assessment_page(DataTable datatable)
+		{
+			List<List<String>> actual = datatable.cells();
+			List<String> expectedTexts = new ArrayList<>();
+			expectedTexts.addAll(actual.get(0));
+			 System.out.println(expectedTexts);
+			 for(String exptext:expectedTexts) {
+				 
+				 WebElement element= driver.findElement(By.xpath("//*[starts-with(@class,'risk-assessments-panel__wrapper')]//*[contains(text(),'"+exptext+"')]"));
+				 String actualtext =element.getText();
+				 if (actualtext.contains(exptext))
+				 {
+					 System.out.println("Text Validation passed! The text ' "+exptext+"' is present on the page" );
+				 }
+				
+			 }
+		
+			 WebElement chkbox =driver.findElement(By.xpath("(//*[@class='mat-checkbox mat-accent mat-checkbox-checked'])[1]"));
+			 if(chkbox.isEnabled()) {
+				 System.out.println("Active dropdown is enabled");
+			 }
+				 else {
+					 System.out.println("Active dropdown is disabled");
+				 }
+			 
+			 WebElement addele =driver.findElement(By.xpath("(//*[@class='mat-cell cdk-cell mears-table__cell cdk-column-address mat-column-address ng-star-inserted'])[1]"));
+			 String actualaddress =addele.getText();
+			 System.out.println("Text Validation passed! The text under '"+expectedTexts.get(1)+"' is '"+actualaddress+"'  " );
+			 WebElement date =driver.findElement(By.xpath("(//*[@class='mat-cell cdk-cell mears-table__cell cdk-column-createdOn mat-column-createdOn ng-star-inserted'])[1]"));
+			 String actualdate =date.getText();
+			
+				 System.out.println("Text Validation passed! The text under '"+expectedTexts.get(2)+"' is '"+actualdate+"'  " );
+			
+				 
+			
+			 WebElement email =driver.findElement(By.xpath("(//*[@class='mat-cell cdk-cell mears-table__cell cdk-column-createdBy mat-column-createdBy ng-star-inserted'])[1]"));
+			 String actualemail =email.getText();
+			
+				 System.out.println("Text Validation passed! The text under '"+expectedTexts.get(3)+"' is '"+actualemail+"'  " );
+			 
+				 
+			
+			 WebElement compon =driver.findElement(By.xpath("(//*[@class='mat-cell cdk-cell mears-table__cell cdk-column-completedOn mat-column-completedOn ng-star-inserted'])[1]"));
+			 String actualcomplon =compon.getText();
+			
+				 System.out.println("Text Validation passed! Completed On '"+expectedTexts.get(4)+"' is '"+actualcomplon+"'  " );
+			
+				 
+			 
+			 WebElement compBy =driver.findElement(By.xpath("(//*[@class='mat-cell cdk-cell mears-table__cell cdk-column-completedBy mat-column-completedBy ng-star-inserted'])[1]"));
+			 String actualcomplBy =compBy.getText();
+			 
+				 System.out.println("Text Validation passed! Completed By '"+expectedTexts.get(5)+"' is '"+actualcomplBy+"'  " );
+			
+			 }
+			 
+		public void selectAddNewRisk(String field, String value) throws InterruptedException{
+			
+			try {
+				//System.out.println("Field : " + field );
+				//System.out.println("Value : " + field );
+				WebElement txtval = driver.findElement(By.xpath("//*[contains(text(),'" + field + "')]"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",txtval );
+				System.out.println(txtval.getText());
+				WebElement txt1 = driver.findElement(By.xpath("//*[@data-placeholder='"+field+"']"));
+				txt1.sendKeys(Keys.CONTROL + "a");
+				txt1.sendKeys(Keys.DELETE);
+				txt1.click();
+				txt1.sendKeys(value);
+				}
+			  catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		 
+		public void validate_message_in_textbox(String msg1,String msg2) throws InterruptedException
+	
+		{   Thread.sleep(2000);
+			String Actual=msg1;
+			String Expected=driver.findElement(By.xpath("//*[contains(text(),'"+msg1+"')]")).getText();
+			System.out.println("Actual : " + msg1 );
+			System.out.println("Expected : " + Expected );
+			assertion.CheckAssertionTrue(Actual.contains(Expected), Expected);
+			String Actual1=msg2;
+			String Expected1=driver.findElement(By.xpath("//*[contains(text(),'"+msg2+"')]")).getText();
+			System.out.println("Actual : " + msg2 );
+			System.out.println("Expected : " + Expected1 );
+			assertion.CheckAssertionTrue(Actual1.contains(Expected1), Expected1);
+		}
+		public void clickOnSave()throws InterruptedException
+		{
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Savebtn );
+			// testutil.jsclick(driver, Savebtn);
+			
+			 try {
+				   // Savebtn.click();
+					util.actionMethodClick(driver, Savebtn);
+				}catch(Exception e) {
+					testutil.jsclick(driver, Savebtn);
+					// Savebtn.click();
+				}
+
+			 
+		}
+		public void clickOnCancel()throws InterruptedException
+		{
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Cancelbtn );
+			// testutil.jsclick(driver, Savebtn);
+			
+			 try {
+				  // Savebtn.click();
+					util.actionMethodClick(driver, Cancelbtn);
+				}catch(Exception e) {
+					//testutil.jsclick(driver, Cancelbtn);
+					Cancelbtn.click();
+				}
+			//span[normalize-space()='Close']
+			// WebElement Closebtn = driver.findElement(By.xpath("//span[normalize-space()='Close']"));
+			//	util.actionMethodClick(driver, Closebtn);
+				
+		}
+		
+		public void clickOnClose(String ExpectedStr)throws InterruptedException
+		{
+			 WebElement Closebtn = driver.findElement(By.xpath("//span[normalize-space()='Close']"));
+			 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Closebtn );
+				util.actionMethodClick(driver, Closebtn);
+				System.out.println("clicked on close button");
+				//Alert alert = driver.switchTo().alert();
+				String mainWindowHandle = driver.getWindowHandle();
+				Set<String> windowHandles = driver.getWindowHandles();
+				for(String Handle:windowHandles)
+					if(!Handle.equals(mainWindowHandle))
+				{
+				 driver.switchTo().window(Handle)	;
+				}
+			
+				 WebElement Msgbtn = driver.findElement(By.xpath("//*[starts-with(@class,'mat-dialog-content dialog-content')]//*[contains(text(),'"+ExpectedStr+"')]"));
+				String popUpMessage= Msgbtn.getText();
+				String[] parts=popUpMessage.split("Please");
+				
+				String ExpectedMessage=ExpectedStr;
+				System.out.println("Text present Actual 1 "+ parts[0].trim());
+				//System.out.println("Text present Actual 2 "+ parts[1]);	
+				System.out.println("Text present Expected"+ ExpectedMessage);	
+				
+				if (parts[0].trim().equals(ExpectedMessage))
+				{
+					System.out.println("Pop Up Message Validation successfully");	
+				}
+				else {
+					System.out.println("Pop Up Message Validation failed");
+				}
+		}
+		public void deleteContentverifySavebtnEnable(String value)throws InterruptedException
+		{
+			
+			WebElement txtdetails = driver.findElement(By.xpath("//*[@data-placeholder='"+value+"']"));
+			//txtdetails.clear();
+			txtdetails.sendKeys(Keys.CONTROL + "a");
+			txtdetails.sendKeys(Keys.DELETE);
+			System.out.println("The value got deleted for "+value);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Savebtn );
+			// testutil.jsclick(driver, Savebtn);
+			
+			if(Savebtn.isEnabled() && Savebtn.isDisplayed()) {
+				System.out.println("Save button is enable and clickable");
+			}
+			else {
+				System.out.println("Save button is not enable or clickable");
+			}
+
+			 
+		}
+		public void clickOnEditIconRisk()throws InterruptedException
+		{
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",EditIconbtn );
+			// testutil.jsclick(driver, Savebtn);
+			
+			 try {
+				 EditIconbtn.click();
+					util.actionMethodClick(driver, EditIconbtn);
+				}catch(Exception e) {
+					testutil.jsclick(driver, EditIconbtn);
+					// Savebtn.click();
+				}
+
+			 
+		}
+		public void selectSlotDate(String setMonth, String setYear, String setDate) {
+			/*
+			gettingDate.click();
+			String month = driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).getText();
+			if(!month.equals(setMonth))
+			{
+				calenderNextDate.click();
+			}
+		   WebElement date= driver.findElement(By.xpath("//div[contains(text(),'"+setDate+"')]"));
+		   date.click();
+		   */
+			gettingDate.click();
+			System.out.println("Select the year");
+			driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
+			WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setYear+"']"));
+			Wait.elementToBeClickable(driver, fromyear, 3);
+			testutil.actionMethodClick(driver, fromyear);
+			System.out.println("Select the month");
+			WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setMonth+" "+setYear+"']"));
+			Wait.elementToBeClickable(driver, frommonth, 3);
+			testutil.actionMethodClick(driver, frommonth);
+			WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setDate+" " +setMonth+" "+ setYear+"']"));
+			System.out.println("Select the date");
+			System.out.println("click on date "+fromDate.getText());
+			    int SelectedDate = Integer.parseInt(setDate);
+				Date currentdate = new Date();
+				SimpleDateFormat formatter= new SimpleDateFormat("d");
+				int currentday= Integer.parseInt(formatter.format(currentdate));
+				String datetoBook = formatter.format(currentdate);
+				System.out.println("The current date is "+currentday);
+				
+				if (SelectedDate >= currentday)
+				{
+					boolean isdatedisabled=fromDate.getAttribute("class").contains("disabled");
+					if(isdatedisabled) {
+						System.out.println("The selected date ' "+SelectedDate+"' is disabled and not clickable. ");	
+						WebElement CurrentDate=driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+currentday+" " +setMonth+" "+ setYear+"']"));
+						System.out.println("The selecting the current date");
+					//	CurrentDate.click();
+						testutil.actionMethodClick(driver, CurrentDate);
+					}
+					else {
+						//fromDate.click();
+						testutil.actionMethodClick(driver, fromDate);
+						System.out.println("The selected date ' "+SelectedDate+"' is not enable and clickable. ");	
+					}
+						
+					}
+					else {
+						System.out.println("The selected date fromDate' "+SelectedDate+"' is enable and clickable. ");	
+						fromDate.click();
+						//testutil.actionMethodClick(driver, fromDate);
+					}
+				
+			
+			}
+			
+		
+		public void velidateMsgPop(String success_msg)
+		{
+			
+			
+			 util.validatesuccessmsg(driver,usertoastmsg,toastercontainer);
+			 System.out.println("Successfully validated the toaster message-  " +success_msg);
+		}
+		
+		public Boolean isFilterFieldDisplayed()throws InterruptedException
+		{
+			try {
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",RiskDetail );
+				Boolean isFieldDisplayed=RiskDetail.isDisplayed();
+				return isFieldDisplayed;
+		}catch(Exception e) {
+			return false;
+		}
+		}
+			
+		public Map<String,Boolean> isDataFieldDisplayed(DataTable data) throws ElementNotVisibleException {
+			System.out.println("Clicking on Demotest" +Demotest.getText());
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Demotest );
+			Wait.elementToBeClickable(driver, Demotest, 2);
+			//Demotest.click();
+			testutil.actionMethodClick(driver, Demotest);
+			//util.jsclick(driver, Demotest);
+			
+			System.out.println("Clicked on Demotest");
+			List<String> gridfieldName = data.asList();
+			Map<String, Boolean> lstField = new HashMap<>();
+			first: for (int i=0 ;i<=gridfieldName.size()-1;i++)
+			{
+				switch(gridfieldName.get(i))
+				{
+				case "Details:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objDetails= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objDetails.isDisplayed() );
+					 continue first;
+				case "Aggravating Factors:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objAggravatingFactors= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objAggravatingFactors.isDisplayed() );
+					 continue first;
+				case "Mitigating Factors:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objMitigatingFactors= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objMitigatingFactors.isDisplayed() );
+					 continue first;
+				case "Incidents:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objIncidentsFactors= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objIncidentsFactors.isDisplayed() );
+					 continue first;
+				case "Person at Risk:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objPersonRiskFactors= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objPersonRiskFactors.isDisplayed() );
+					 continue first;
+				case "Review Date:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objreviewDate= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objreviewDate.isDisplayed() );
+					 continue first;
+				case "Active:":
+					 System.out.println(gridfieldName.get(i));
+					 WebElement objActive= driver.findElement(By.xpath("//span[contains(text(),'"+gridfieldName.get(i)+"')]"));
+					 lstField.put(gridfieldName.get(i),objActive.isDisplayed() );
+					 continue first;
+					default :
+						lstField.put(gridfieldName.get(i), false);
+						continue first;
+				}
+			}
+			
+		return lstField;
+}
+		public void clickServiceUserthreedots()
+		{
+			
+				Wait.elementToBeClickable(driver, threedotsserviceuser, 3);
+				//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",threedotsserviceuser );
+				//testutil.actionMethodClick(driver, threedotsserviceuser);
+				System.out.println("Successfully clicked in three dots-");
+				 try {
+					// threedotsserviceuser.click();
+					 testutil.actionMethodClick(driver, threedotsserviceuser);
+					}catch(Exception e) {
+						testutil.jsclick(driver, threedotsserviceuser);
+					}
+
+		}
+		public void clickDropDownList(String dropname) throws InterruptedException
+		{
+			WebElement dropdownserviceuser = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+dropname+"') or contains(@placeholder,'"+dropname+"')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownserviceuser );
+			dropdownserviceuser.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			// materialField.clear();
+			Wait.elementToBeClickable(driver, dropdownserviceuser, 2);
+			testutil.actionMethodClick(driver, dropdownserviceuser);
+		}
+		public void clickappointmentscreen() throws InterruptedException
+		{
+			WebElement dropdowappointmenteuser = driver.findElement(By.xpath("//*[starts-with(@class,'mat-select ng-tns')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdowappointmenteuser );
+			dropdowappointmenteuser.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+			// materialField.clear();
+			Wait.elementToBeClickable(driver, dropdowappointmenteuser, 2);
+			testutil.actionMethodClick(driver, dropdowappointmenteuser);
+		}
+		public void clickonOptionDropDown(String options) throws InterruptedException
+		{
+			
+			Wait.untilPageLoadComplete(driver,200);
+			//WebElement dropvalue=driver.findElement(By.xpath("//*[starts-with(@class,'mat-option mat-focus')]//*[contains(text(),'"+options+"')]"));
+			//testutil.actionMethodClick(driver, dropvalue);
+			Boolean flag = false;
+			while (!flag) {
+				List<WebElement> dropvalues = driver.findElements(By.xpath("//*[starts-with(@class,'mat')]//*[contains(text(),'"+options+"')]"));
+				for (int i = 0; i < dropvalues.size(); i++) {
+
+					if (isClickable(dropvalues.get(i))) {
+						System.out.println("click on save");
+						// ele.get(i).click();
+						// testutil.jsclick(driver,ele.get(i));
+						util.actionMethodClick(driver, dropvalues.get(i));
+						System.out.println("clicked on save");
+						flag = true;
+						i = dropvalues.size();
+			System.out.println("User select option: " +options );
+			
+		}
+				}
+			}
+				
+
+		}
+		public void clickOnCheckBox(String chkname) throws InterruptedException
+		{
+			WebElement chktxt = driver.findElement(By.xpath("//*[contains(text(),'"+ chkname +"')]"));
+			String Actualtxt= chktxt.getText();
+			System.out.println("Actual : " + Actualtxt );
+			System.out.println("Expected : " + chkname );
+			assertion.CheckAssertionTrue(Actualtxt.contains(chkname), chkname);
+			WebElement chkbox = driver.findElement(By.xpath("//*[@class='mat-checkbox-inner-container']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",chkbox );
+			if(chkbox.isDisplayed()) {
+				Wait.elementToBeClickable(driver, chkbox, 2);
+				testutil.actionMethodClick(driver, chkbox);
+				System.out.println("User select option: " +chkname );	
+			}
+			else {
+				System.out.println("Checkbox is not visible, showing error message..");
+			}
+		}
+			public void clicktoUploadFile(String downloadfile) throws InterruptedException, AWTException
+			{
+				//Wait.untilPageLoadComplete(driver,5);
+				Wait.elementToBeClickable(driver, uploadDocument, 3);
+				System.out.println(downloadfile);
+				//Switch to pop-up window
+				String mainWindowHandle = driver.getWindowHandle();
+				Set<String> windowHandles = driver.getWindowHandles();
+				for(String Handle:windowHandles)
+					if(!Handle.equals(mainWindowHandle))
+				{
+				 driver.switchTo().window(Handle)	;
+				}
+			
+		
+				String imagepath= "C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg";
+				Wait.elementToBeClickable(driver, uploadDocument, 3);
+				//uploadDocument.sendKeys(imagepath);
+				uploadDocument.click();
+				/* 
+				 * 1) Copy the path
+				 * 2) CTRL+V
+				 * 3) Enter
+				 */
+				Robot rb = new Robot();
+				rb.delay(5000);
+				//Put the path in the clipboard
+				StringSelection ss= new StringSelection("C:\\Users\\neha.sain\\OneDrive - Mears Group\\Desktop\\image.jpg");
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+				//CTRL+V
+				rb.keyPress(KeyEvent.VK_CONTROL);// Press On Ctrl Key+ press V
+				rb.keyPress(KeyEvent.VK_V);//Press on CTRL key
+				rb.keyRelease(KeyEvent.VK_CONTROL);
+				rb.keyRelease(KeyEvent.VK_V);
+				
+				// Enter 
+				rb.keyPress(KeyEvent.VK_ENTER);
+				rb.keyRelease(KeyEvent.VK_ENTER);
+				
+				Thread.sleep(4000);
+				WebElement Done = driver.findElement(By.xpath("//*[starts-with(@class,'mat-focus-indicator')]//*[contains(text(),'Done')]"));
+				Done.click();
+				
+			}
+		}
+
+
+		
+		
+		
+		 
+		
+		
+	
+	
