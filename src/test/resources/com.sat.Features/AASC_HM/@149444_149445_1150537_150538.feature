@@ -12,6 +12,7 @@ Feature: TC_149444:  AASC HM_View Service User - Done
     # Given user login to Home Mears Page
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "<username>"
@@ -27,6 +28,7 @@ Feature: TC_149444:  AASC HM_View Service User - Done
   Scenario Outline: AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "<username>"

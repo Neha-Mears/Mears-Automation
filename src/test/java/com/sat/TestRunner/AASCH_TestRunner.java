@@ -25,25 +25,25 @@ import io.cucumber.testng.CucumberOptions;
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
 	tags= {	"@149444_149445_1150537_150538 or \r\n" +
-			"@150541_166626 or \r \n" +
-			//"@150542_AASC_HM_Add_Service_User_validation_checks or \r \n" +
-			//"@166609_AASC_HM_Add_Service_User_Nass_ref_Done or \r \n" +
-			//"@166624_166622_AASC_HM_Add_Service_User_and_edit_Nass or \r \n" +
-			//"@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation or \r \n" +
-			//"@149444_166628_166610 or \r \n" +
-			//"@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done or \r \n" +
+			"@150541_166626 or \r\n" +
+			"@150542_AASC_HM_Add_Service_User_validation_checks or \r \n" +
+			"@166609_AASC_HM_Add_Service_User_Nass_ref_Done or \r \n" +
+			"@166624_166622_AASC_HM_Add_Service_User_and_edit_Nass or \r \n" +
+			"@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation or \r \n" +
+			"@149444_166628_166610 or \r \n" +
+			"@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done or \r \n" +
 			"@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done"
 			})
 	
-	public class TestRunner_AASC_HM extends AbstractTestNGCucumberTests{
-	//	@Override
+	public class AASCH_TestRunner extends AbstractTestNGCucumberTests{
+		//@Override
 	      
-	    //  @DataProvider(parallel = true) 
-	   //  public Object[][] scenarios() { 
+	   //   @DataProvider(parallel = true) 
+	    //  public Object[][] scenarios() { 
 		//	 return super.scenarios();
 		 
+//	}
 	}
-	//}
 		/*
 		@After
 		public void afterScenario(Scenario scenario) {

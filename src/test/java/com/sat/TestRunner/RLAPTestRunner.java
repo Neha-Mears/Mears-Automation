@@ -24,16 +24,14 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@TC165901_RLAP_Mears_Can_edit_an_existing_complaint_rasied_against_Other_and_set_it_to_Complete or \r\n" +
-			"@TC164833_165331_165900_RLAP_Mears_Can_edit_an_existing_incident_raised_by_SU_and_set_it_to_Complete or \r \n" +
-			"@164833_165331_165902_AASC_HM_&_RLAP_Raise_an_Incident_against_Other_&_AASC_HM_Can_edit_an_existing_incident_raised_by_SU_and_set_it_to_Complete or \r \n" +
-			"@150658_165903_AASC_HM_RLAP_Mears_Add_a_Complaint_Made_By_the_Service_User_against_a_staff_member or \r \n" +
-			"@TC_150656_165904AASC_HM_Add_an_sensitive_note or \r \n" +
-	    	"@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today or \r \n" +
-			"@TC71632_TC146366_166005 or \r \n" +
-			"@TC146193_166006_AASC_HM_and_RLAP_Mears_Can_edit_an_existing_incident_raised_against_Other_and_set_it_to_Monitoring or \r \n" +
-			"@TC146120_166007_AASC_HM_&_RLAP_Can_edit_an_existing_complaint_rasied_by_Staff_member_and_set_it_to_Escalated_to_AIRE or \r \n" + 
-			"@90608_AASC_HM_Edit_PM-Appt_Change_to_an_hour_earlier_within_same_client_classification_slot"
+	tags= {	"@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address or \r\n" +
+			"@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents or \r \n" +
+			"@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default or \r \n" +
+			"@TC167368_Add_a_Risk-Mandatory_fields_only or \r \n" +
+			"@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation or \r \n" +
+	    	"@TC_167052_167054_167059_RLAP_Mears_View_Service_User or \r \n" +
+			"@167057_RLAP_Complete_a_service_user_search-Active/surname or \r \n" +
+			"@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today"
 			})
 	
 	public class RLAPTestRunner extends AbstractTestNGCucumberTests{

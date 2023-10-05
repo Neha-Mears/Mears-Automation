@@ -10,8 +10,9 @@ Feature: TC_149444: AASC HM_Edit Service User - Add Email address - Done
   @149444_AASC_HM_Edit_Service_User_Add_Email_address_Done
   Scenario Outline: AASC HM_Edit Service User - Add Email address - Done
     # Given user login to Home Mears Page
-    And user enter valid credential "<username>" and "<password>"
+     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "<username>"
@@ -27,6 +28,7 @@ Feature: TC_149444: AASC HM_Edit Service User - Add Email address - Done
   Scenario Outline: AASC HM_Add Service User validation checks - Invalid telephone no
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"
@@ -46,6 +48,7 @@ Feature: TC_149444: AASC HM_Edit Service User - Add Email address - Done
   Scenario Outline:  AASC HM_Edit Service User - Add Tel No - Done
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"

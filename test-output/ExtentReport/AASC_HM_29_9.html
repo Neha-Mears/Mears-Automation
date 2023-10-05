@@ -1,0 +1,2819 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Sept 29, 2023 09:07:14 pm</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@149444_166628_166610</a></li>
+					<li><a href='#'>@149444_AASC_HM_Edit_Service_User_Add_Email_address_Done</a></li>
+					<li><a href='#'>@149444_149445_1150537_150538</a></li>
+					<li><a href='#'>@149444_149445</a></li>
+					<li><a href='#'>@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation</a></li>
+					<li><a href='#'>@166628_AASC_HM_Add_Service_User_validation_checks_Invalid_telephone_no</a></li>
+					<li><a href='#'>@166610_AASC_HM_Edit_Service_User_Add_Tel_No_Done</a></li>
+					<li><a href='#'>@150537_150538</a></li>
+					<li><a href='#'>@150541_166626</a></li>
+					<li><a href='#'>@150541_AASC_HM_Add_Service_User_Port_ref-Done</a></li>
+					<li><a href='#'>@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done</a></li>
+					<li><a href='#'>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</a></li>
+					<li><a href='#'>@150542_AASC_HM_Add_Service_User_validation_checks</a></li>
+					<li><a href='#'>@166609_AASC_HM_Add_Service_User_Nass_ref_Done</a></li>
+					<li><a href='#'>@166624_166622_AASC_HM_Add_Service_User_and_edit_Nass</a></li>
+					<li><a href='#'>@166624_AASC_HM_Add_Service_User_and_edit_Nass</a></li>
+					<li><a href='#'>@166622_AASC_HM_Add_Service_User_and_edit_Nass</a></li>
+					<li><a href='#'>@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</a></li>
+					<li><a href='#'>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>9</span> feature(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>15</span> scenario(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>307</span> step(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_149444: AASC HM_Edit Service User - Add Email address - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:07:16 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='2' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@149444_AASC_HM_Edit_Service_User_Add_Email_address_Done</span>
+	</div>
+	<span class='duration right label'>0h 22m 3s+751ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Edit Service User - Add Email address - Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td></td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td></td></tr></table><table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td></td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td></td></tr></table><table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td></td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td></td></tr></table><table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>May</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Edit Service User - Add Email address - Done</div>
+			<ul class='gc steps'>
+				<li test-id='5' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='6' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='7' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='8' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='9' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='10' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='11' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='12' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "View Service User" from drop down List and navigate to "Service User (stuart reteststues. Application Status: )"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='13' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='14' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+		<li test-id='54' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Edit Service User - Add Email address - Done</div>
+			<ul class='gc steps'>
+				<li test-id='56' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='57' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='58' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='59' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='60' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='61' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='62' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='63' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='64' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='65' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+		<li test-id='288' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Edit Service User - Add Email address - Done</div>
+			<ul class='gc steps'>
+				<li test-id='290' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='291' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='292' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='293' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='294' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='295' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='296' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='297' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='298' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='299' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Service User Details"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A Valid Nass Reference OR Port Reference is required</td><td>A Valid Nass Reference OR Port Reference is required</td><td>A valid Last Name is required</td><td>A valid Gender is required</td></tr></table></div>
+				</li>
+				<li test-id='300' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='301' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='302' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='303' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Country of Origin" as "Scotland"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='304' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='305' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Country of origin"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A valid Country of Origin is required</td></tr></table></div>
+				</li>
+			</ul>
+		</li>
+		<li test-id='308' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Edit Service User - Add Email address - Done</div>
+			<ul class='gc steps'>
+				<li test-id='310' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='311' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='312' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='313' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='314' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='315' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='316' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='317' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='318' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='319' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='320' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='321' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Port Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='322' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "May" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='323' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='324' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='325' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='326' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='327' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='328' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='329' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Disabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='330' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "disabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='331' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='332' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='333' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Edit Service User" from drop down List and navigate to "Edit Service User"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='334' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='335' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='17' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@166628_AASC_HM_Add_Service_User_validation_checks_Invalid_telephone_no</span>
+	</div>
+	<span class='duration right label'>0h 0m 49s+508ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User validation checks - Invalid telephone no</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>September</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='18' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User validation checks - Invalid telephone no</div>
+			<ul class='gc steps'>
+				<li test-id='20' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='21' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='22' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='23' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='24' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='25' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='26' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='27' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='28' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "September" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='29' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "+A745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='30' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='31' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Telephone Number"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Must be a valid Telephone Number</td></tr></table></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='34' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@166610_AASC_HM_Edit_Service_User_Add_Tel_No_Done</span>
+	</div>
+	<span class='duration right label'>0h 0m 58s+921ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Edit Service User - Add Tel No - Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>September</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='35' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Edit Service User - Add Tel No - Done</div>
+			<ul class='gc steps'>
+				<li test-id='37' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='38' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='39' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='40' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='41' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='42' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='43' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='44' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='45' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "September" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='46' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "+A745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='47' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='48' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Telephone Number"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Must be a valid Telephone Number</td></tr></table></div>
+				</li>
+				<li test-id='49' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0754626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='50' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_149444:  AASC HM_View Service User - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:12:41 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='68' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@150537_150538</span>
+	</div>
+	<span class='duration right label'>0h 1m 18s+860ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>April</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='69' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</div>
+			<ul class='gc steps'>
+				<li test-id='71' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='72' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='73' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='74' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='75' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='76' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='77' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='78' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='79' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='80' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Ethnicity" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='81' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Asian" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='82' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_cancel_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on cancel button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='83' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "April" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='84' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Religion" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='85' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Hinduism" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='86' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Dietary Requirements" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='87' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "dietaryRequirements" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='88' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Safeguarding Notes" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='89' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "safeGuardingNotes" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='90' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='93'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_150541: AASC HM_Add Service User - Port ref - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:14:01 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='94' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@150541_AASC_HM_Add_Service_User_Port_ref-Done</span>
+	</div>
+	<span class='duration right label'>0h 15m 55s+311ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User - Port ref - Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>April</td><td>2023</td><td>19</td><td>3</td></tr></table><table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td></td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='95' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User - Port ref - Done</div>
+			<ul class='gc steps'>
+				<li test-id='97' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='98' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='99' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='100' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='101' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='102' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='103' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='104' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='105' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='106' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='107' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Male" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='108' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Port Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='109' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Title" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='110' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Mrs" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='111' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "First Name" as "Riya"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='112' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "April" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='113' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='114' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='115' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Language" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='116' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Armenian" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='117' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Religion" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='118' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Buddhism" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='119' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='120' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='121' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Application Status" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='122' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Approved" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='123' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Accommodation Status" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='124' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Current" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='125' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "foodPacks" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='126' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='127' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='128' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Disabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='129' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "disabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='130' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+		<li test-id='339' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User - Port ref - Done</div>
+			<ul class='gc steps'>
+				<li test-id='341' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='342' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='343' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='344' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='345' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='346' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Service User Search" from drop down List and navigate to "Service User Search"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='347' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_enter_value_in_text_box(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user enter the "Wheeler" in "SurName" text box</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='348' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_Find()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Find</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='349' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_select_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user Select the service user "wheeler" from the list</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='350' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenario outline node' test-id='133' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</span>
+	</div>
+	<span class='duration right label'>0h 0m 49s+881ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User validation checks - Date of birth cant be in the future</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>September</td><td>2023</td><td>12</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='134' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User validation checks - Date of birth cant be in the future</div>
+			<ul class='gc steps'>
+				<li test-id='136' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='137' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='138' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='139' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='140' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='141' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='142' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='143' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='144' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "September" "2023" "12"</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='147'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_166626:   AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)</span>
+						<span class='test-time'>Sept 29, 2023 09:16:45 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='148' status='pass'>
+	<span class='duration right label'>0h 2m 28s+865ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>May</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='149' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)</div>
+			<ul class='gc steps'>
+				<li test-id='151' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='152' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='153' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='154' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='155' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='156' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='157' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='158' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='159' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='160' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Service User Details"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A Valid Nass Reference OR Port Reference is required</td><td>A Valid Nass Reference OR Port Reference is required</td><td>A valid Last Name is required</td><td>A valid Gender is required</td></tr></table></div>
+				</li>
+				<li test-id='161' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='162' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='163' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='164' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "May" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='165' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='166' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "NASS Reference"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A Valid Nass Reference OR Port Reference is required</td></tr></table></div>
+				</li>
+				<li test-id='167' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Port Reference"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A Valid Nass Reference OR Port Reference is required</td></tr></table></div>
+				</li>
+				<li test-id='168' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "underSixWeeksOld" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='169' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='170' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Date of Birth"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>User is older than 6 weeks</td></tr></table></div>
+				</li>
+				<li test-id='171' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "NASS Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='172' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='173' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='174' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "+A745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='175' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Telephone Number"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Must be a valid Telephone Number</td></tr></table></div>
+				</li>
+				<li test-id='176' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='177' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='178' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='179' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Telephone Number"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Must be a valid Telephone Number</td></tr></table></div>
+				</li>
+				<li test-id='180' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Date of Birth"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>User is older than 6 weeks</td></tr></table></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='183'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_166609:  AASC HM_Add Service User - Nass ref - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:19:22 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='184' status='pass'>
+	<span class='duration right label'>0h 2m 20s+839ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User - Nass ref - Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>May</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='185' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User - Nass ref - Done</div>
+			<ul class='gc steps'>
+				<li test-id='187' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='188' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='189' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='190' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='191' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='192' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='193' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='194' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='195' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='196' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_aleartmsg_Add_Incident(java.lang.String,io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user validate the Alert message for "Service User Details"</h6>
+					<div class="node-step"><table class='runtime-table table-striped table'><tr><td>A Valid Nass Reference OR Port Reference is required</td><td>A Valid Nass Reference OR Port Reference is required</td><td>A valid Last Name is required</td><td>A valid Gender is required</td></tr></table></div>
+				</li>
+				<li test-id='197' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='198' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='199' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='200' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "NASS Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='201' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Port Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='202' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Title" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='203' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Mrs" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='204' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "First Name" as "Riya"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='205' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "May" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='206' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='207' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='208' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='209' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Language" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='210' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Armenian" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='211' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Religion" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='212' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Buddhism" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='213' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='214' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Application Status" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='215' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Approved" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='216' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Accommodation Status" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='217' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Current" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='218' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='219' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='220' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Disabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='221' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "disabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='222' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='225'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_166624:  AASC HM_Add Service User and edit - Nass re</span>
+						<span class='test-time'>Sept 29, 2023 09:21:44 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='226' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@166624_AASC_HM_Add_Service_User_and_edit_Nass</span>
+	</div>
+	<span class='duration right label'>0h 4m 5s+707ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Add Service User and edit - Nass re</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>May</td><td>2023</td><td>19</td><td>3</td></tr></table><table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td><td>setmonth</td><td>setyear</td><td>setDate</td><td>number of option</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td><td>May</td><td>2023</td><td>19</td><td>3</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='227' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User and edit - Nass re</div>
+			<ul class='gc steps'>
+				<li test-id='229' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='230' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='231' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='232' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='233' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='234' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='235' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='236' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='237' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='238' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='239' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='240' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Port Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='241' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "May" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='242' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='243' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='244' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='245' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='246' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='247' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='248' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Disabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='249' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "disabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='250' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='251' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='252' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Edit Service User" from drop down List and navigate to "Edit Service User"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='253' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0747626031"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='254' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+		<li test-id='257' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Add Service User and edit - Nass re</div>
+			<ul class='gc steps'>
+				<li test-id='259' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='260' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='261' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='262' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='263' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='264' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='265' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='266' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Service User" from drop down List and navigate to "Service User Details"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='267' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Last Name" as "William"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='268' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Gender" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='269' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Female" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='270' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Port Reference"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='271' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_DOB(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the  calender and select DOB for "May" "2023" "19"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='272' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Country of Origin" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='273' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "United States of America" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='274' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Telephone Number" as "0745626131"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='275' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='276' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Vulnerabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='277' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "vulnerabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='278' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_section_under_service_user(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Disabilities" section</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='279' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "3" for the "disabilities" checkbox</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='280' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='281' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='282' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Edit Service User" from drop down List and navigate to "Edit Service User"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='283' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='284' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='287'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_166627: AASC HM_Add Service User validation checks - Country of Origin validation</span>
+						<span class='test-time'>Sept 29, 2023 09:25:49 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sept 29, 2023 09:25:49 pm</span>
+	<span class='label end-time'>Sept 29, 2023 09:25:49 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation</span>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='338'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_166600:  AASC HM_Complete a service user search - Active/surname - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:29:20 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sept 29, 2023 09:29:20 pm</span>
+	<span class='label end-time'>Sept 29, 2023 09:29:20 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done</span>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='353'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span>
+						<span class='test-time'>Sept 29, 2023 09:29:57 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario outline node' test-id='354' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</span>
+	</div>
+	<span class='duration right label'>0h 1m 33s+51ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</div>
+		<table class='runtime-table table-striped table'><tr><td>username</td><td>password</td><td>serviceName</td><td>address</td><td>availableslot</td><td>start_time</td><td>end_time</td><td>text</td><td>updatedtext</td><td>message</td><td>downloadpath</td></tr><tr><td>AASC_HMusername</td><td>AASC_HMpassword</td><td>Portal</td><td>SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN</td><td>15:00:00</td><td>12</td><td>14</td><td>New Appointment Sent to Mears Enable</td><td>Updated Appointment Sent to Mears Enable</td><td>The appointment was successfully sent to Mears Enable.</td><td>C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg</td></tr></table>
+	</div>
+	<ul class='steps'>
+		<li test-id='355' class='node scenario pass' status='pass'>
+			<div class="step-name" title=""><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</div>
+			<ul class='gc steps'>
+				<li test-id='357' class='gc given pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='358' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "AASC_HMusername" and "AASC_HMpassword"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='359' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='360' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='361' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='362' class='gc when pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='363' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='364' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Flag as Absconder" from drop down List and navigate to "Flag as Absconder"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='365' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Type of Note" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='366' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Covid" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='367' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "Notes" expansion button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='368' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Document" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='369' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_to_upload_file(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on to upload file to Add Document "C:/Users/neha.sain/OneDrive - Mears Group/Desktop/image.jpg"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='370' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Notes" as "Demo test Notes Add Flag as Absconder"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='371' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_check_box(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User click on check Box for "Enhanced Confidential Matter"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='372' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='373' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Cancel_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Cancel button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='374' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Close_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Close button "Successfully marked as absconded on 29/9/2023"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='375' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='376' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "AASC_HMusername"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='377' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Remove Absconder Flag" from drop down List and navigate to "Remove Absconder Flag"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='378' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Type of Note" the Drop Down List</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='379' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Covid" from dropdown</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='380' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Notes" as "Demo test Remove Absconder Flag"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='381' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_check_box(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then User click on check Box for "Enhanced Confidential Matter"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='382' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on save button</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='383' class='gc then pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Close_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Close button "Successfully removed absconded flag"</h6>
+					<div class="node-step"></div>
+				</li>
+				<li test-id='384' class='gc and pass' status='pass'>
+					<h6 class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</h6>
+					<div class="node-step"></div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@149444_166628_166610</span>
+						<span class='category-status right'>
+						<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:07:16 pm</td>
+										<td class='linked' test-id='1'>TC_149444: AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:07:16 pm</td>
+										<td class='linked' test-id='3'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:09:43 pm</td>
+										<td class='linked' test-id='18'>AASC HM_Add Service User validation checks - Invalid telephone no</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:10:40 pm</td>
+										<td class='linked' test-id='35'>AASC HM_Edit Service User - Add Tel No - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@149444_AASC_HM_Edit_Service_User_Add_Email_address_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:07:16 pm</td>
+										<td class='linked' test-id='2'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:07:16 pm</td>
+										<td class='linked' test-id='3'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@149444_149445_1150537_150538</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:11:40 pm</td>
+										<td class='linked' test-id='54'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:12:41 pm</td>
+										<td class='linked' test-id='53'>TC_149444:  AASC HM_View Service User - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:12:41 pm</td>
+										<td class='linked' test-id='69'>AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@149444_149445</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:11:40 pm</td>
+										<td class='linked' test-id='54'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:25:50 pm</td>
+										<td class='linked' test-id='288'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:27:24 pm</td>
+										<td class='linked' test-id='308'>AASC HM_Edit Service User - Add Email address - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:25:49 pm</td>
+										<td class='linked' test-id='287'>TC_166627: AASC HM_Add Service User validation checks - Country of Origin validation</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166628_AASC_HM_Add_Service_User_validation_checks_Invalid_telephone_no</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:09:43 pm</td>
+										<td class='linked' test-id='17'>AASC HM_Add Service User validation checks - Invalid telephone no</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:09:43 pm</td>
+										<td class='linked' test-id='18'>AASC HM_Add Service User validation checks - Invalid telephone no</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166610_AASC_HM_Edit_Service_User_Add_Tel_No_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:10:40 pm</td>
+										<td class='linked' test-id='34'>AASC HM_Edit Service User - Add Tel No - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:10:40 pm</td>
+										<td class='linked' test-id='35'>AASC HM_Edit Service User - Add Tel No - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@150537_150538</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:12:41 pm</td>
+										<td class='linked' test-id='68'>AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:12:41 pm</td>
+										<td class='linked' test-id='69'>AASC HM_Service User View and Edit a secondary (Non-Primary) Service User - Done and Religion and Safeguarding -Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@150541_166626</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:14:01 pm</td>
+										<td class='linked' test-id='93'>TC_150541: AASC HM_Add Service User - Port ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:14:01 pm</td>
+										<td class='linked' test-id='95'>AASC HM_Add Service User - Port ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:15:55 pm</td>
+										<td class='linked' test-id='134'>AASC HM_Add Service User validation checks - Date of birth cant be in the future</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@150541_AASC_HM_Add_Service_User_Port_ref-Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:14:01 pm</td>
+										<td class='linked' test-id='94'>AASC HM_Add Service User - Port ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:14:01 pm</td>
+										<td class='linked' test-id='95'>AASC HM_Add Service User - Port ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:29:21 pm</td>
+										<td class='linked' test-id='339'>AASC HM_Add Service User - Port ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:29:20 pm</td>
+										<td class='linked' test-id='338'>TC_166600:  AASC HM_Complete a service user search - Active/surname - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:15:55 pm</td>
+										<td class='linked' test-id='133'>AASC HM_Add Service User validation checks - Date of birth cant be in the future</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:15:55 pm</td>
+										<td class='linked' test-id='134'>AASC HM_Add Service User validation checks - Date of birth cant be in the future</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@150542_AASC_HM_Add_Service_User_validation_checks</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:16:45 pm</td>
+										<td class='linked' test-id='147'>TC_166626:   AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:16:45 pm</td>
+										<td class='linked' test-id='149'>AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166609_AASC_HM_Add_Service_User_Nass_ref_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:19:22 pm</td>
+										<td class='linked' test-id='183'>TC_166609:  AASC HM_Add Service User - Nass ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:19:22 pm</td>
+										<td class='linked' test-id='185'>AASC HM_Add Service User - Nass ref - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166624_166622_AASC_HM_Add_Service_User_and_edit_Nass</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:21:44 pm</td>
+										<td class='linked' test-id='225'>TC_166624:  AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:21:44 pm</td>
+										<td class='linked' test-id='227'>AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:23:40 pm</td>
+										<td class='linked' test-id='257'>AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166624_AASC_HM_Add_Service_User_and_edit_Nass</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:21:44 pm</td>
+										<td class='linked' test-id='226'>AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:21:44 pm</td>
+										<td class='linked' test-id='227'>AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@166622_AASC_HM_Add_Service_User_and_edit_Nass</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:23:40 pm</td>
+										<td class='linked' test-id='257'>AASC HM_Add Service User and edit - Nass re</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:29:57 pm</td>
+										<td class='linked' test-id='353'>TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:29:57 pm</td>
+										<td class='linked' test-id='355'>AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sept 29, 2023 09:29:57 pm</td>
+										<td class='linked' test-id='354'>AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sept 29, 2023 09:29:57 pm</td>
+										<td class='linked' test-id='355'>AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>15</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>307</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sept 29, 2023 09:07:14 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sept 29, 2023 09:31:30 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 24m 16s+138ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@149444_166628_166610</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									75%
+							</td>
+						</tr>
+						<tr>
+							<td>@149444_AASC_HM_Edit_Service_User_Add_Email_address_Done</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@149444_149445_1150537_150538</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@149444_149445</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@166627_AASC_HM_Add_Service_User_validation_checks_Country_of_Origin_validation</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@166628_AASC_HM_Add_Service_User_validation_checks_Invalid_telephone_no</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@166610_AASC_HM_Edit_Service_User_Add_Tel_No_Done</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@150537_150538</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@150541_166626</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@150541_AASC_HM_Add_Service_User_Port_ref-Done</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@150542_AASC_HM_Add_Service_User_validation_checks</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@166609_AASC_HM_Add_Service_User_Nass_ref_Done</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@166624_166622_AASC_HM_Add_Service_User_and_edit_Nass</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@166624_AASC_HM_Add_Service_User_and_edit_Nass</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@166622_AASC_HM_Add_Service_User_and_edit_Nass</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@97634_166655_AASC_HM_Address_Page_Remove_the_"Absconder"_flag_from_a_Service_User_Done</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 9,
+				passParent: 9,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 15,
+				passChild: 15,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 307,
+				passGrandChild: 307,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "TC_149444: AASC HM_Edit Service User - Add Email address - Done":263.282,"TC_149444:  AASC HM_View Service User - Done":78.86,"TC_150541: AASC HM_Add Service User - Port ref - Done":163.286,"TC_166626:   AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)":148.865,"TC_166609:  AASC HM_Add Service User - Nass ref - Done":140.839,"TC_166624:  AASC HM_Add Service User and edit - Nass re":245.707,"TC_166627: AASC HM_Add Service User validation checks - Country of Origin validation":0,"TC_166600:  AASC HM_Complete a service user search - Active/surname - Done":0,"TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done":93.051
+			};
+		</script>
+	
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

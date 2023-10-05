@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.sat.TestRunner.TestRunner_AASC_HM">
+      <class name="com.sat.TestRunner.LivingHMTestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="2"/>
+          <include name="runScenario" invocation-numbers="3 1"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.sat.TestRunner.TestRunner_AASC_HM -->
+      </class> <!-- com.sat.TestRunner.LivingHMTestRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -24,26 +24,22 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@TC71632_TC146366 or \r\n" +
-			//"@150655_AASC_HM_Create_a_PM_appointment_for_today or \r \n" +
-			"@150658_AASC_HM_Add_a_Complaint_Made_By_the_Service_User_against_a_staff_member or \r \n" +
-			"@150656_AASC_HM_Add_an_sensitive_note or \r \n" +
-			"@150658_AASC_HM_Add_a_Complaint_Made_By_the_Service_User_against_a_staff_member or \r \n" +
-	    	"@164833_165331_AASC_HM_Raise_an_Incident_against_Other_&_AASC_HM_Can_edit_an_existing_incident_raised_by_SU_and_set_it_to_Complete or \r \n" +
-			"@90608_AASC_HM_Edit_PM-Appt_Change_to_an_hour_earlier_within_same_client_classification_slot or \r \n" +
-			"@TC146193_AASC_HM_Can_edit_an_existing_incident_raised_against_Other_and_set_it_to_Monitoring or \r \n" +
-			"@TC146120_AASC_HM_Can_edit_an_existing_complaint_rasied_by_Staff_member_and_set_it_to_Escalated_to_AIRE"
+	tags= {	"@122381_122383_149530_LivingHO_Edit_Tenant_Add_Language&Tick_support_needs&AddNewEmployed or \r\n" +
+			"@122389_147672_Living_HO-Edit_Tenant_Comm_details-Delete_comms_type_&_View_Tenant or \r \n" +
+			"@124662_149546_149556_Living_HO_Address_Page-Remove_Tenancy_VF_Edge_&_Address_Page-Edit_TenancyVF_Add_Tenancy_VF or \r \n" +
+			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type or \r \n" +
+			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type"
 			})
 	
-	public class TestRunner extends AbstractTestNGCucumberTests{
-		@Override
+	public class LivingHO_TestRunner extends AbstractTestNGCucumberTests{
+	//	@Override
 	      
-	      @DataProvider(parallel = true) 
-	      public Object[][] scenarios() { 
-			 return super.scenarios();
+	    //  @DataProvider(parallel = true) 
+	   //  public Object[][] scenarios() { 
+		//	 return super.scenarios();
 		 
 	}
-	}
+	//}
 		/*
 		@After
 		public void afterScenario(Scenario scenario) {

@@ -11,6 +11,7 @@ Feature: TC_166624:  AASC HM_Add Service User and edit - Nass re
   Scenario Outline: AASC HM_Add Service User and edit - Nass re
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     ########################################################################
@@ -44,6 +45,7 @@ Feature: TC_166624:  AASC HM_Add Service User and edit - Nass re
   Scenario Outline: AASC HM_Add Service User and edit - Nass re
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     ########################################################################

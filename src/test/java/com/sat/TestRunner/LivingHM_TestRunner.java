@@ -1,7 +1,17 @@
 package com.sat.TestRunner;
 
+import org.openqa.selenium.WebDriver;
+import org.slf4j.helpers.Util;
+import org.testng.annotations.DataProvider;
+
+import com.sat.testUtil.Testutil;
+import com.sat.testbase.TestBase;
+
+import io.cucumber.core.gherkin.Scenario;
+import io.cucumber.java.After;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+
 
 
 //	@RunWith(Cucumber.class)
@@ -10,22 +20,36 @@ import io.cucumber.testng.CucumberOptions;
 			glue={"com.sat.StepDefinitions","com.sat.AppHooks"},
 			monochrome=true,
 			strict = true,
-			plugin = {
-					"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-			},
+			plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {"@164833_165331_AASC_HM_Raise_an_Incident_against_Other_&_AASC_HM_Can_edit_an_existing_incident_raised_by_SU_and_set_it_to_Complete"})
+	tags= {	"@TC_149452_AASC_HM_Address_Page-Add_keys_showing_keys_held_by or \r\n" +
+			"@TC_149480_167366_AASC_HM-Add_and_Edit_a_Risk-Amend_Review_date_Add_mitigating_factors or \r\n" +
+			"@TC_167607_167609_167614_167628_AASC_HM_Address_Page-Add_keys or \r \n" +
+			"@TC_146367_Add_risk_assessment_and_risk_and_then_Edit_the_Risk_Add_person_factors or \r \n" +
+			"@TC167367_AASC_HM_Address_Page-Add_first_risk_assessment"
+			})
 	
-	public class AllureDemo extends AbstractTestNGCucumberTests{
-		/* @Override
+	public class LivingHM_TestRunner extends AbstractTestNGCucumberTests{
+		//@Override
 	      
-	      @DataProvider(parallel = true) public Object[][] scenarios() { 
-			 return super.scenarios();
-		 }*/
+	  //    @DataProvider(parallel = true) 
+	 //   public Object[][] scenarios() { 
+	//		 return super.scenarios();
+		 
 	}
-		
+	//}
+		/*
+		@After
+		public void afterScenario(Scenario scenario) {
+			TestBase testbase = new TestBase();
+			WebDriver driver = TestBase.getDriver();
+			byte[] screenshot= Testutil.takesscreenshot(driver);
+			scenario.attach( "image/png", scenario.getName());
+	}
+	}
+	*/
 		/*@BeforeStep
 		public void beforeStep() {
 		}

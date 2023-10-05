@@ -108,12 +108,12 @@
 				<div class="p-2 px-3 text-muted text-sm">Tags</div>
 					<div class="list-item attr">
 						<div class="list-body">
-							<a href="#" class="item-title _500">org.openqa.selenium.NoSuchWindowException</a>
+							<a href="#" class="item-title _500">org.openqa.selenium.NoSuchElementException</a>
 							<div class="item-except text-sm text-muted h-1x">
 								2 tests
 							</div>
 							<div class="tc d-none">
-								<h5 class="mb-4">org.openqa.selenium.NoSuchWindowException</h5>
+								<h5 class="mb-4">org.openqa.selenium.NoSuchElementException</h5>
 								<table class="table">
 									<thead><tr>
 										<th id="status-col"></th>
@@ -125,10 +125,10 @@
 									</tr></thead>
 									<tbody>
 	
-<tr class="s-fail" test-id="67" parent-id="4">
+<tr class="s-fail" test-id="115" parent-id="7">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">Then User click on check Box for "Enhanced Confidential Matter" <br/><span class="text-muted text-sm">AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span></td>
-	<td>0h 0m 1s+516msc</td>
+	<td class="_600">Then user click the calender and select the slot "August" "2023" "29" <br/><span class="text-muted text-sm">Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed</span></td>
+	<td>0h 0m 40s+63msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -137,15 +137,15 @@
 <tr class="details">
 	<td colspan="5">
 		
-		<textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@aria-label='Open calendar']"}
   (Session info: chrome=114.0.5735.91)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:62329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9c918a53e42568c5f23c35e1c9da9b92
-*** Element info: {Using=xpath, value=//*[contains(text(),'Enhanced Confidential Matter')]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:64150}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 404e60e6e72c32e9f4c521bbac8e91d8
+*** Element info: {Using=xpath, value=//*[@aria-label='Open calendar']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -161,17 +161,20 @@ Session ID: 9c918a53e42568c5f23c35e1c9da9b92
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.sat.Pages.MCMviewAppLoginPage.clickOnCheckBox(MCMviewAppLoginPage.java:827)
-	at com.sat.StepDefinitions.MCMloginStepDef.user_click_on_check_box(MCMloginStepDef.java:368)
-	at ✽.User click on check Box for "Enhanced Confidential Matter"(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/AASC_HM/TC_97634_166655.feature:36)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
+	at com.sat.Pages.MCMviewAppLoginPage.selectSlotDate(MCMviewAppLoginPage.java:1109)
+	at com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(MCMloginStepDef.java:395)
+	at ✽.user click the calender and select the slot "August" "2023" "29"(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/Living_HM/@TC_146367_Add_risk_assessment_and_risk_and_then_Edit_the_Risk-Add_person_at_risk.feature:28)
 </textarea>
 	</td>
 </tr>
 	
-<tr class="s-fail" test-id="71" parent-id="4">
+<tr class="s-fail" test-id="114" parent-id="7">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">com.sat.AppHooks.ApplicationHooks.teardown(io.cucumber.java.Scenario) <br/><span class="text-muted text-sm">AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done</span></td>
-	<td>0h 0m 0s+4msc</td>
+	<td class="_600">Then user click the calender and select the slot "August" "2023" "29" <br/><span class="text-muted text-sm">Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed</span></td>
+	<td>0h 0m 40s+45msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -180,14 +183,15 @@ Session ID: 9c918a53e42568c5f23c35e1c9da9b92
 <tr class="details">
 	<td colspan="5">
 		
-		<textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@aria-label='Open calendar']"}
   (Session info: chrome=114.0.5735.91)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:62329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9c918a53e42568c5f23c35e1c9da9b92
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:64149}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4159f4e2e07816bb0f29b5bb7d03378b
+*** Element info: {Using=xpath, value=//*[@aria-label='Open calendar']}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -199,9 +203,16 @@ Session ID: 9c918a53e42568c5f23c35e1c9da9b92
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at com.sat.AppHooks.ApplicationHooks.teardown(ApplicationHooks.java:38)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
+	at com.sat.Pages.MCMviewAppLoginPage.selectSlotDate(MCMviewAppLoginPage.java:1109)
+	at com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(MCMloginStepDef.java:395)
+	at ✽.user click the calender and select the slot "August" "2023" "29"(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/Living_HM/@TC_149480_167366_AASC_HM-Add_and_Edit_a_Risk-Amend_Review_date_Add_mitigating_factors.feature:28)
 </textarea>
 	</td>
 </tr>
@@ -229,7 +240,7 @@ Session ID: 9c918a53e42568c5f23c35e1c9da9b92
 						            </div>
 									<ul class="nav nav-xs flex-row no-border pull-right">
 <li><a href="#" class="b-l"><span class="badge badge-pull">ExtentReports</span></a></li>
-<li><a href="#" class="b-l"><span class="badge badge-pull">Sept 13, 2023 01:08:08 pm</span></a></li>
+<li><a href="#" class="b-l"><span class="badge badge-pull">Sept 29, 2023 10:54:48 pm</span></a></li>
 <li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
 								    </ul>
 								</div>
