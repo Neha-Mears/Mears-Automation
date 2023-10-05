@@ -11,6 +11,7 @@ Feature: TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Serv
   Scenario Outline: AASC HM_Address Page - Remove the "Absconder" flag from a Service User - Done
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "<username>"
@@ -25,7 +26,7 @@ Feature: TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Serv
     Then User click on check Box for "Enhanced Confidential Matter"
     Then user click on save button
    Then user click on Cancel button
-   Then user click on Close button "Successfully marked as absconded on 13/9/2023"
+   Then user click on Close button "Successfully marked as absconded on 29/9/2023"
     And user click on Ok appointment page
     ##############################################################
    Then Scroll down and click on expansion panel header button for "<username>"

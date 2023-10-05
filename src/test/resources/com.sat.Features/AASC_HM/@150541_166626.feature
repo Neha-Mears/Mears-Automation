@@ -9,8 +9,9 @@ Feature: TC_150541: AASC HM_Add Service User - Port ref - Done
 
   @150541_AASC_HM_Add_Service_User_Port_ref-Done
   Scenario Outline: AASC HM_Add Service User - Port ref - Done
-    And user enter valid credential "<username>" and "<password>"
+     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"
@@ -49,8 +50,9 @@ Feature: TC_150541: AASC HM_Add Service User - Port ref - Done
 
   @166626_AASC_HM_Add_Service_User_validation_checks_Date_of_birth_cant_be_in_the_future
   Scenario Outline: AASC HM_Add Service User validation checks - Date of birth cant be in the future
-    And user enter valid credential "<username>" and "<password>"
+     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"

@@ -12,6 +12,7 @@ Feature: TC_150655:AASC HM_Create a AM appointment for today
     # Given user login to Home Mears Page
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     And user select "Appointment Diary" from drop down List and navigate to "Appointment"
     And select the appointment screen is displaying
@@ -39,10 +40,10 @@ Feature: TC_150655:AASC HM_Create a AM appointment for today
     Then Click on the next button
     # Then Click on ok pop up window to confirm
     #Then Click on the next button
-    And user take the screenshot for confirmation page
+    And user take the screenshot for confirmation page for Test case "150655_165905"
     And click on the Submit button
     Then user validate the popup "<text>" and popup "<message>"
-     And user click on Ok appointment page
+    And user click on Ok appointment page
 
     # When user search "<address>" and click on the address details
     Examples: 

@@ -24,6 +24,7 @@ import javax.imageio.ImageIO;
 
 import org.joda.time.LocalDate;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -33,6 +34,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -64,6 +66,8 @@ public class AASCHmAddPage {
 	@FindBy(xpath = "//span[text()='OK']")
 	private WebElement OKbtn;
 	
+	@FindBy(xpath = "//span[normalize-space()='Save']") 
+	private WebElement Savebtn;
 	
 	@FindBy(xpath = "//*[starts-with(@class,'mat-focus-indicator mears-form')]//*[contains(text(),'Find')]")
 	private WebElement Findbtn;
@@ -129,18 +133,53 @@ public class AASCHmAddPage {
          Assert.assertEquals(ele.getText(), actual.get(i));
 	}
 				}
-	
+	public void verifyKeysheader(DataTable datatable) throws InterruptedException {
+		
+		List<String> actual = datatable.asList();
+		System.out.println("Size = "+ actual.size());
+		for (int i = 0; i <= actual.size()-1; i++) {
+            int j =i + 1;
+            Thread.sleep(2000);
+            WebElement ele= driver.findElement(By.xpath("(//*[contains(@title,'"+actual.get(i)+"')]//*[contains(text(),'"+actual.get(i)+"')])[1]"));
+            System.out.println(driver.findElement(By.xpath("(//*[contains(@title,'"+actual.get(i)+"')]//*[contains(text(),'"+actual.get(i)+"')])[1]"))
+            		.getAttribute("innerText")+ "==" + actual.get(i));
+          String data= driver.findElement(By.xpath("(//*[contains(@title,'"+actual.get(i)+"')]//*[contains(text(),'"+actual.get(i)+"')])[1]")).getAttribute("innerText");
+         // System.out.println(data);
+          Wait.waitUntilElementVisible(driver, ele);
+         Assert.assertEquals(ele.getText(), actual.get(i));
+	}
+				}
+public void verifyserviceuserheader(String field,DataTable datatable) throws InterruptedException {
+		
+		List<String> actual = datatable.asList();
+		System.out.println("Size = "+ actual.size());
+		System.out.println("Validation is for "+field );
+		for (int i = 0; i <= actual.size()-1; i++) {
+        	
+            int j =i + 1;
+            Thread.sleep(2000);
+            WebElement ele= driver.findElement(By.xpath("//*[contains(text(),'"+actual.get(i)+"')]"));
+            System.out.println(driver.findElement(By.xpath("//*[contains(text(),'"+actual.get(i)+"')]"))
+            		.getAttribute("innerText")+ "==" + actual.get(i));
+          String data= driver.findElement(By.xpath("//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("innerText");
+         // System.out.println(data);
+          Wait.waitUntilElementVisible(driver, ele);
+         Assert.assertEquals(ele.getText(), actual.get(i));
+	}
+				}
 	public void selectFromDateAndToDate(String setMonth, String setYear, String setDate) throws ParseException {
 		
 		gettingDate.click();
-		System.out.println("Select the year");
+		//System.out.println("Select the year");
 		driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
 		WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setYear+"']"));
 		Wait.elementToBeClickable(driver, fromyear, 3);
 		testutil.actionMethodClick(driver, fromyear);
-		System.out.println("Select the month");
+		System.out.println("Select the year" +fromyear);
+		//System.out.println("Select the month");
 		WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setMonth+" "+setYear+"']"));
 		Wait.elementToBeClickable(driver, frommonth, 3);
+		System.out.println("Select the month" +frommonth);
 		testutil.actionMethodClick(driver, frommonth);
 		WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setDate+" " +setMonth+" "+ setYear+"']"));
 		System.out.println("Select the date");
@@ -184,6 +223,37 @@ public class AASCHmAddPage {
 	    	WebElement clearbtn = driver.findElement(By.xpath("//*[starts-with(@aria-label,'Open calendar')]//*[contains(text(),'clear')]"));
 	    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",clearbtn );
 	    	util.actionMethodClick(driver, clearbtn);
+	    	
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    }
+	 public void clickOnDetail(String option) throws InterruptedException
+	    {
+	    	
+	    	 switch(option)
+				{
+				case "Risk Details":
+					try {
+				    	Thread.sleep(1000);
+				    	WebElement riskbtn = driver.findElement(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column')]"));
+				    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",riskbtn );
+				    	util.actionMethodClick(driver, riskbtn);
+				    	  break;
+				    	}
+		 
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+				}
+	    }
+	 public void clickOnplusIcon() throws InterruptedException
+	    {
+	    	try {
+	    	Thread.sleep(1000);
+	    	WebElement plusbtn = driver.findElement(By.xpath("(//*[starts-with(@class,'mat-expansion-panel-header')]//*[contains(@svgicon,'add')])[1]"));
+	    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",plusbtn );
+	    	util.actionMethodClick(driver, plusbtn);
 	    	
 	    	}catch(Exception e) {
 	    		e.printStackTrace();
@@ -490,14 +560,14 @@ public class AASCHmAddPage {
 			//dropdownappointmentuser.click();
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentuser );
 			System.out.println("inside try");
-			dropdownappointmentuser.click();
-			//testutil.jsclick(driver,dropdownappointmentuser);
+			//dropdownappointmentuser.click();
+			testutil.jsclick(driver,dropdownappointmentuser);
 			//util.actionMethodClick(driver, dropdownappointmentuser);
 		}catch(Exception e) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentuser );
 			System.out.println("inside catch");
-			util.actionMethodClick(driver, dropdownappointmentuser);
-			//dropdownappointmentuser.click();
+			//util.actionMethodClick(driver, dropdownappointmentuser);
+			dropdownappointmentuser.click();
 		}
 
 	}
@@ -505,13 +575,21 @@ public class AASCHmAddPage {
 	{
 				Boolean flag = false;
 				while (!flag) {
-					List<WebElement> dropdownappointmentvalue = driver.findElements(By.xpath("//*[contains(text(),'"+value+"')]"));
-					//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentvalue );
+					List<WebElement> dropdownappointmentvalue = driver.findElements(By.xpath("//*[starts-with(@class,'cdk-overlay-pane')]//*[contains(text(),'"+value+"')]"));
 						for (int i = 0; i < dropdownappointmentvalue.size(); i++) {
 							if (isClickable(dropdownappointmentvalue.get(i))) {
-								// ele.get(i).click();
-								// testutil.jsclick(driver,dropdownappointmentvalue.get(i));
-								util.actionMethodClick(driver, dropdownappointmentvalue.get(i));
+							
+								try {
+									//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentvalue.get(i));
+									System.out.println("inside try");
+									dropdownappointmentvalue.get(i).click();
+									//testutil.jsclick(driver,dropdownappointmentvalue.get(i));
+								}catch(Exception e) {
+								//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentvalue.get(i) );
+									System.out.println("inside catch");
+									util.actionMethodClick(driver,dropdownappointmentvalue.get(i));
+									//dropdownappointmentvalue.get(i).click();
+								}
 								System.out.println("clicked on "+ value);
 								flag = true;
 								i = dropdownappointmentvalue.size();
@@ -568,19 +646,20 @@ public class AASCHmAddPage {
 		 Boolean flag = false;
 			while (!flag) {
 				List<WebElement> Nextbtn = driver.findElements(By.xpath("//*[@type='submit']//span[normalize-space()='Next']"));
-				//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownappointmentvalue );
+				
+				
 					for (int i = 0; i < Nextbtn.size(); i++) {
+						((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Nextbtn.get(i) );
 						if (isClickable(Nextbtn.get(i))) {
-							System.out.println("click on ok");
-							// ele.get(i).click();
-							// testutil.jsclick(driver,ele.get(i));
+							System.out.println("click on Next");
 							util.actionMethodClick(driver, Nextbtn.get(i));
 							System.out.println("clicked on next");
 							flag = true;
 							i = Nextbtn.size();
 			}
-		}
-	}
+		
+					}
+			}
 	}
 public void clickOnCalcelbtnAndOkbtnappointment() {
 		
@@ -596,8 +675,9 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 			}
 		}
 	}
-    public void takescreenshotappointmentpage()
+    public void takescreenshotappointmentpage(String testcase) throws IOException
     {
+    	/*
     	System.out.println("Going to take screenshot");
     	//Take Screenshot
     	File screenshotfile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -611,7 +691,21 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     		{
     			e.printStackTrace();
     		}
+    	*/
     	
+    	/////////////
+    	
+    	SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+    	String timestamp= sdf.format(new Date());
+    	//Define the file path and name
+    	String testCaseName= testcase;
+    	String screenshotName = testCaseName+ "_"+ timestamp+".png";
+    	String screenshotDirectory= "C:\\Users\\neha.sain\\OneDrive - Mears Group\\Pictures\\TestCasesScreenShot";
+    	String filePath= screenshotDirectory + File.separator+screenshotName;
+    	//Take the screenshot and save it
+    	File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    	FileHandler.copy(screenshotFile, new File(filePath));
+    	System.out.println("Screenshot saved: "+filePath);
     }
     public void submitbtnappointmentpage()
     {
@@ -788,9 +882,9 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 }
      public void validatevalueundercolumn(String Columnname) throws InterruptedException
      {
-    	WebElement table= driver.findElement(By.xpath("//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')]"));
+    	WebElement table= driver.findElement(By.xpath("(//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')])[1]"));
     	List<WebElement> rows= table.findElements(By.xpath("(//*[@class='mat-header-row cdk-header-row ng-star-inserted'])[1]"));
-    	
+    	rows.get(0).click();
     	boolean found=false;
     	for(WebElement row : rows) {
     		List<WebElement> columns = row.findElements(By.xpath("//*[starts-with(@class,'mat-sort-header mat-header-cell cdk-header-cell mears-table__column-header ng-tns')]"));
@@ -810,9 +904,60 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     		System.out.println("Name '"+Columnname+"' not found in the table.");
     	}
      }
+     public void validatevalueundercolumnRisk(String Columnname) throws InterruptedException
+     {
+    	WebElement table= driver.findElement(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')]"));
+    	List<WebElement> rows= table.findElements(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[@class='mat-header-row cdk-header-row ng-star-inserted']"));
+    	
+    	boolean found=false;
+    	for(WebElement row : rows) {
+    		List<WebElement> columns = row.findElements(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[starts-with(@class,'mat-sort-header mat-header-cell cdk-header-cell')]"));
+    		for(int i=0;i<columns.size();i++)
+    		{
+    		if(columns.size()>0 && columns.get(i).getText().equals(Columnname))
+    		{
+    			found=true;
+    			break;
+    		}
+    	}
+    	}
+    	if(found) {
+    		System.out.println("Name '"+Columnname+"'found in the table.");
+    	}
+    	else {
+    		System.out.println("Name '"+Columnname+"' not found in the table.");
+    	}
+    	
+     }
+     public void validatevalueunderrowRisk(String rowname) throws InterruptedException
+     {
+    	WebElement table= driver.findElement(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')]"));
+    	List<WebElement> rows= table.findElements(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[starts-with(@class,'mat-cell cdk-cell mea')]"));
+    	
+    	boolean found=false;
+    	for(WebElement row : rows) {
+    		List<WebElement> rowsval = row.findElements(By.xpath("//*[@class='risks-panel__wrapper ng-star-inserted']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column')]"));
+    		//List<WebElement> rowsval = row.findElements(By.xpath("//*[contains(text(),'"+rowname+"')]"));
+    		for(int i=0;i<rowsval.size();i++)
+    		{
+    		if(rowsval.size()>0 && rowsval.get(i).getText().equals(rowname))
+    		{
+    			found=true;
+    			break;
+    		}
+    	}
+    	}
+    	if(found) {
+    		System.out.println("Name '"+rowname+"'found in the table. Value matches with the data entered ");
+    	}
+    	else {
+    		System.out.println("Name '"+rowname+"' not found in the table. Value not matches with the data entered");
+    	}
+     }
      public void validatevalueunderrow(String rowname) throws InterruptedException
      {
-    	WebElement table= driver.findElement(By.xpath("//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')]"));
+    	 
+    	 WebElement table= driver.findElement(By.xpath("//*[starts-with(@class,'mat-table cdk-table mat-sort mears-table')]"));
     	List<WebElement> rows= table.findElements(By.xpath("//*[starts-with(@class,'mat-row cdk-row mears-table__data-row mears-table__data-row--hover ng-star-inserted')]"));
     	
     	boolean found=false;
@@ -834,6 +979,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     	else {
     		System.out.println("Name '"+rowname+"' not found in the table. Value not matches with the data entered");
     	}
+    	
      }
      public void ClickSameClientClassificationSlot(String appointment) throws InterruptedException
  	{
@@ -860,17 +1006,25 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
   	{
   		switch(field) {
   		case "Appointment Start Date": 
+  			System.out.println("Appointment Start Date  ");
   			 Boolean flag= false;
    	 		while (!flag) {
-   	 			List<WebElement> okBtn = driver.findElements(By.xpath("(//*[starts-with(@class,'mat-focus-indicator mat-menu-trigger')])[1]"));
+   	 			List<WebElement> okBtn = driver.findElements(By.xpath("//*[@placeholder='Appointment Start Date']//*[starts-with(@class,'mat-focus-indicator mat-menu-trigger')][1]"));
    	 			for (int i = 0; i < okBtn.size(); i++) {
    	 				if (isClickable(okBtn.get(i))) {
-   	 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",okBtn.get(i) );	
-   	 				Wait.elementToBeClickable(driver, okBtn.get(i), 5);
+   	 				
+   	 				try {
+   	 				Wait.elementToBeClickable(driver, okBtn.get(i), 10);
+   	 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",okBtn.get(i) );	
    	 					okBtn.get(i).click();
+   	 			
    	 					flag = true;
    	 					i = okBtn.size();
+   	 				} catch(ElementClickInterceptedException e)
+   	 				{
+   	 					
    	 				}
+   	 			}
    	 			}
    	 		/*
    	 		WebElement upbuttonStartDate = driver.findElement(By.xpath("(//*[starts-with(@class,'mat-focus-indicator number-input__button mat-button mat-icon-button mat-button-base')]//*[@data-mat-icon-name='down'])[1]"));
@@ -948,7 +1102,14 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
      }
      public void GenerateUniquePortNumber(String txtfeild) throws InterruptedException
      {
-    	
+    	 if(! Savebtn.isEnabled())
+			{
+				System.out.println("Save button is initially disable.");
+			}
+			else
+			{
+				System.out.println("Save button is not initially disable.");
+			}
     	 WebElement portno = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+txtfeild+"')]"));
      	System.out.println("Trying to create unique port Number");
      	//util.actionMethodClick(driver, portno);
@@ -962,11 +1123,62 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
      	portno.sendKeys(Keys.ENTER);
      	portno.click();
      	Wait.waitForInvisibilityOfElement(driver, portno, 5);
-     	
+     	if(Savebtn.isEnabled())
+		{
+			System.out.println("Save button is enable after filling out the field.");
+		}
+		else
+		{
+			System.out.println("Save button is not enable after filling out the field.");
+		}
      	
      	
      }
+     
+     public void validatetitleService(DataTable datatable) throws InterruptedException
+     {
+    	List<String> actual = datatable.asList();
+    	System.out.println("Size :" + datatable.asList().size());
+    	
+    	
+    	for (int i = 0; i <= actual.size()-1; i++) {
+            int j =i + 1;
+            Thread.sleep(2000);
+            WebElement ele= driver.findElement(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(i)+"')]"));
+            System.out.println(driver.findElement(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(i)+"')]"))
+            		.getAttribute("innerText")+ "==" + actual.get(i));
+          String data= driver.findElement(By.xpath("//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("innerText");
+         // System.out.println(data);
+          Wait.waitUntilElementVisible(driver, ele);
+         Assert.assertEquals(ele.getText(), actual.get(i));
+    	}
+    	/*
+    	try {
+    	
+    		for(int j=0;j<datatable.asList().size();j++)
+    		{
+    			System.out.println(actual.get(j));
+    			List<WebElement> fielddata= driver.findElements(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(j)+"')]"));
+    			String expected = ((WebElement) fielddata).getAttribute("textContent");
+    			System.out.println(expected);
+    			assertion.CheckAssertionTrue(expected.contains(actual.get(j)), actual.get(j));
+    		}
+    	
+    		}
+    	catch(Exception e)
+    	{
+    		System.out.println("Exception :" +e+ "has occured");
+    	}
+     }
+     */
+     }  	
 }
+
+
+
+    	
+    	
+    	
 
 	
 	

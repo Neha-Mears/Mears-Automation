@@ -11,18 +11,19 @@ Feature: Living-HO - Living HO_Tenancy_Add a long note__A valid Note Type is req
   Scenario Outline: Make sure User is able to Login and add a long note and valid note type required
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
-    And user select "Property Search" from drop down List and navigate to "Propertiy Tab"
+    And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
     Then Click on "Tenancy Details" expansion button
-    And user select "View Tenancy" from drop down List and navigate to "Tenancy Details screen"
+    And user select "View Tenancy" from drop down List and navigate to "Tenancy"
     Then Click on "Tenancy Details" expansion button
-    And user select "Add Note" from drop down List and navigate to "Notes header"
+    And user select "Add Note" from drop down List and navigate to "Notes"
     And user click on "Sub Type" the Drop Down List
     And user select "Accounts" from dropdown
     Then user fill details for "Notes" as "This is Tenancy to Add long Notes from Demo Test for testing purpose"
     Then user click on save button
-    Then user validate the Alert message for Add Incident
+    Then user validate the Alert message for "Add Incident"
       | A valid Note Type is required |
     And user click on "Type of Note" the Drop Down List
     And user select "Covid" from dropdown

@@ -10,8 +10,9 @@ Feature: TC_165901: RLAP Mears_Can edit an existing complaint rasied against Oth
   @TC165901_RLAP_Mears_Can_edit_an_existing_complaint_rasied_against_Other_and_set_it_to_Complete
   Scenario Outline: RLAP Mears_Can edit an existing complaint rasied against Other and set it to Complete
     #Given user login to Home Mears Page
-    And user enter valid credential "<username>" and "<password>"
+  And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
@@ -42,7 +43,7 @@ Feature: TC_165901: RLAP Mears_Can edit an existing complaint rasied against Oth
     Then user validate the popup "<text>" and popup "<message>"
     Then user click on save button
     Then user fill details for "Outcome" as "ComplaintMadeByUser"
-    And user take the screenshot for confirmation page
+       And user take the screenshot for confirmation page for Test case "TC165901"
 
     Examples: 
       | username      | password          | serviceName | address                                                                  | text                              | message                                                          | setmonth | setyear | setDate | success_msg                  |

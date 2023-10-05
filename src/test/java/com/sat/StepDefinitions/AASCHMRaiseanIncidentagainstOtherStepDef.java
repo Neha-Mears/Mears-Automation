@@ -30,13 +30,14 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 	
 	@Then("user varify the following grids is displayed")
 	public void verify_grid_displayed(DataTable datatable) throws InterruptedException {
+		Thread.sleep(8000);
 		 try {
 			 List<String> actual = datatable.asList();
-			 System.out.println("Size of the data table" +actual.size());
-			 for(int i=0;i<=actual.size()-1;i++)
+			 System.out.println("Size of the data table " +actual.size());
+			 for(int i=1;i<=actual.size()-1;i++)
 			 {
 				 Thread.sleep(1000);
-				 String expected =driver.findElement(By.xpath("//*[starts-with(@class,'mat-header-row')]//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("outerText");
+				 String expected =driver.findElement(By.xpath("//*[starts-with(@class,'mat-header-row') or starts-with(@class,'risk-details-panel')]//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("outerText");
 				 System.out.println(expected);
 				 assertion.CheckAssertionTrue(expected.contains(actual.get(i)), actual.get(i));
 				 
@@ -69,13 +70,27 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 @Then ("user validate the Alert message for {string}")
 		 public void verify_aleartmsg_Add_Incident(String field,DataTable datatable) throws InterruptedException {
 			 try {
-				 Thread.sleep(3000);
+				 Thread.sleep(5000);
 				 aashm.verifyalertmessage(field,datatable);
 				 
 			 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }
+		 }
+		 @Then ("Verify all the values are present under Keys")
+		 public void Validate_header_Keys(DataTable datatable)
+		 {  
+			 try {
+				// Thread.sleep(5000);
+				 aashm.verifyKeysheader(datatable);
+				 Thread.sleep(5000);
+				 
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+			 
 		 }
 
 		  @Then ("user click the calender and select the slot available {string} {string} {string}")
@@ -106,6 +121,28 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 					 
 					Thread.sleep(3000);
 					aashm.clickOnCancel();
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+		  }
+		  @Then ("user click on {string} button")
+		  public void click_on_Risk_Details_btn(String Risk_Detail) throws InterruptedException {
+				 try {
+					 
+					Thread.sleep(3000);
+					aashm.clickOnDetail(Risk_Detail);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+		  }
+		  @Then ("user click on plus icon in keys tab")
+		  public void click_on_keys_plus_icon() throws InterruptedException {
+				 try {
+					 
+					Thread.sleep(3000);
+					aashm.clickOnplusIcon();
 				 }
 				 catch(Exception e) {
 					 System.out.println("Exception :"+ e + "has occured" );
@@ -267,6 +304,13 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 						Thread.sleep(1500);
 						// aashm.clickOnNext();
 						break;
+				case "AASC_HMusername":
+					Thread.sleep(1000);
+					aashm.clickOnCalcelbtnAndOkbtnappointment();
+					System.out.println("user select : " + option );
+					Thread.sleep(1500);
+					// aashm.clickOnNext();
+					break;
 				case "Living_HO_username":
 					
 					 System.out.println("Element not found move to next stem in cucumber");
@@ -274,13 +318,13 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				
 				}
 					 } 
-		 @And ("user take the screenshot for confirmation page")
-		 public void takes_screenshot_appointment_page()throws InterruptedException
+		 @And ("user take the screenshot for confirmation page for Test case {string}")
+		 public void takes_screenshot_appointment_page(String testcase)throws InterruptedException
 		 {
 			 try {
-				 //Thread.sleep(1000);
+				 Thread.sleep(5000);
 				 System.out.println("Going to take screenshot1");
-				 aashm.takescreenshotappointmentpage();
+				 aashm.takescreenshotappointmentpage(testcase);
 			 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
@@ -400,15 +444,18 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 			 }
 		 }
 		 @When ("I verify values under the {string} column")
-		 public void iverifyValuesUnderColumn(String Columnname)
+		 public void verifyValuesUnderColumn(String Columnname) throws InterruptedException
 		 {
+			 
 			 try {
-				 Thread.sleep(5000);
-				 aashm.validatevalueundercolumn(Columnname);
-				 }
+						 aashm.validatevalueundercolumn(Columnname);
+						System.out.println("user select : " + Columnname );
+						Thread.sleep(1500);
+			 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }
+			
 		 }
 		 @Then ("I should see the value {string}")
 		 public void iverifyValuesUnderrow(String rowname)
@@ -448,7 +495,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 {
 			 {
 				 try {
-					 Thread.sleep(1500);
+					 Thread.sleep(5000);
 					 aashm.ClickOnCalenderEditAppointment(field);
 				 }
 				 catch(Exception e) {
@@ -515,6 +562,19 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 try {
 					 Thread.sleep(1500);
 					 aashm.GenerateUniquePortNumber(field);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+			 } 
+		 }
+		 @Then ("user validate below field are displayed under Service User")
+		 public void user_validate_title_in_service_user(DataTable datatable)
+		 {
+			 {
+				 try {
+					 Thread.sleep(1500);
+					 aashm.validatetitleService(datatable);
 				 }
 				 catch(Exception e) {
 					 System.out.println("Exception :"+ e + "has occured" );

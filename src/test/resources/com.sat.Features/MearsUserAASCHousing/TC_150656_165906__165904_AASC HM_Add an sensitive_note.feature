@@ -9,15 +9,16 @@ Feature: AASC HM_&_RLAP_Add an sensitive note
 
   @TC_150656_165904
   Scenario Outline: AASC HM_&_RLAP_Add an sensitive note with sub-type
-    And user enter valid credential "<username>" and "<password>"
+   And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
-    And user select "Property Search" from drop down List and navigate to "Propertiy Tab"
+    And user select "Property Search" from drop down List and navigate to "Property"
     When user search "<address>" and click on the address details
     Then user click on three dots in service user
     And user select "View Service User" from drop down List and navigate to "Service User"
     Then Click on "Notes" expansion button
-    And user select "Add Note" from drop down List and navigate to "Notes header"
+    And user select "Add Note" from drop down List and navigate to "Notes"
     And user click on "Type of Note" the Drop Down List
     And user select "Covid" from dropdown
     And user click on "Sub Type" the Drop Down List
@@ -32,15 +33,16 @@ Feature: AASC HM_&_RLAP_Add an sensitive note
 
   @TC_165906
   Scenario Outline: AASC HM_&_RLAP_Add an sensitive note without sub-type
-    And user enter valid credential "<username>" and "<password>"
+     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
-    And user select "Property Search" from drop down List and navigate to "Propertiy Tab"
+    And user select "Property Search" from drop down List and navigate to "Property"
     When user search "<address>" and click on the address details
     Then user click on three dots in service user
     And user select "View Service User" from drop down List and navigate to "Service User"
     Then Click on "Notes" expansion button
-    And user select "Add Note" from drop down List and navigate to "Notes header"
+    And user select "Add Note" from drop down List and navigate to "Notes"
     And user click on "Type of Note" the Drop Down List
     And user select "Covid" from dropdown
     Then user fill details for "Notes" as "DemotestNotes"

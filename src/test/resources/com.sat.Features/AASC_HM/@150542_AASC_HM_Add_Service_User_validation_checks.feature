@@ -9,8 +9,9 @@ Feature: TC_166626:   AASC HM_Add Service User validation checks - Saving when n
 
   @150542_AASC_HM_Add_Service_User_validation_checks
   Scenario Outline:  AASC HM_Add Service User validation checks - Saving when no fields completed (Edit last)
-    And user enter valid credential "<username>" and "<password>"
+      And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     When user search "<address>" and click on the address details
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion"

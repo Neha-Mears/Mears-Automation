@@ -10,8 +10,9 @@ Feature: TC_146120: AASC HM| Can edit an existing complaint rasied by Staff memb
   @TC146120_166007_AASC_HM_&_RLAP_Can_edit_an_existing_complaint_rasied_by_Staff_member_and_set_it_to_Escalated_to_AIRE
   Scenario Outline: ser is on the address page of a property with an existing tenancy and existing complaint raised by Staff member which is not at "Escalated to AIRE or Complete" status
     #Given user login to Home Mears Page
-    And user enter valid credential "<username>" and "<password>"
+   And user enter valid credential "<username>" and "<password>"
     And click on LogIn
+    And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Propertiy Tab"
     When user search "<address>" and click on the address details
