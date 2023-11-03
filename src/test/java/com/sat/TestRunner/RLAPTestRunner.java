@@ -29,7 +29,7 @@ import io.cucumber.testng.CucumberOptions;
 			"@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default or \r \n" +
 			"@TC167368_Add_a_Risk-Mandatory_fields_only or \r \n" +
 			"@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation or \r \n" +
-	    	"@TC_167052_167054_167059_RLAP_Mears_View_Service_User or \r \n" +
+	    	"@TC_167052_167054_167059_RLAP_Mears_View_Service_User or \r \n" + 
 			"@167057_RLAP_Complete_a_service_user_search-Active/surname or \r \n" +
 			"@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today"
 			})

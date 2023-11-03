@@ -110,7 +110,7 @@
 						<div class="list-body">
 							<a href="#" class="item-title _500">org.openqa.selenium.NoSuchElementException</a>
 							<div class="item-except text-sm text-muted h-1x">
-								2 tests
+								3 tests
 							</div>
 							<div class="tc d-none">
 								<h5 class="mb-4">org.openqa.selenium.NoSuchElementException</h5>
@@ -125,10 +125,10 @@
 									</tr></thead>
 									<tbody>
 	
-<tr class="s-fail" test-id="115" parent-id="7">
+<tr class="s-fail" test-id="325" parent-id="129">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">Then user click the calender and select the slot "August" "2023" "29" <br/><span class="text-muted text-sm">Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed</span></td>
-	<td>0h 0m 40s+63msc</td>
+	<td class="_600">Then verify all tabs appearing on the Add risk Assessment popup page <br/><span class="text-muted text-sm">Make sure User is able to Login</span></td>
+	<td>0h 0m 42s+64msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -136,16 +136,18 @@
 </tr>
 <tr class="details">
 	<td colspan="5">
+		<textarea disabled class="code-block"><table class='runtime-table table-striped table'><tr><td>Add New Risk Assessment</td><td>Risk associated tenancy</td><td>Created On</td></tr></table></textarea>
 		
-		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@aria-label='Open calendar']"}
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]"}
   (Session info: chrome=114.0.5735.91)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:64150}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 404e60e6e72c32e9f4c521bbac8e91d8
-*** Element info: {Using=xpath, value=//*[@aria-label='Open calendar']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:49879}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ec4ac9f85722185fe7c25fd38b64df8a
+*** Element info: {Using=xpath, value=//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -161,20 +163,17 @@ Session ID: 404e60e6e72c32e9f4c521bbac8e91d8
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at com.sat.Pages.MCMviewAppLoginPage.selectSlotDate(MCMviewAppLoginPage.java:1109)
-	at com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(MCMloginStepDef.java:395)
-	at ✽.user click the calender and select the slot "August" "2023" "29"(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/Living_HM/@TC_146367_Add_risk_assessment_and_risk_and_then_Edit_the_Risk-Add_person_at_risk.feature:28)
+	at com.sat.Pages.MCMviewAppLoginPage.validate_risk_ass_popuppage(MCMviewAppLoginPage.java:819)
+	at com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(MCMloginStepDef.java:279)
+	at ✽.verify all tabs appearing on the Add risk Assessment popup page(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/MearsUserAASCHousing/71632_146366_166005_149542_AddRiskMandotoryField.feature:23)
 </textarea>
 	</td>
 </tr>
 	
-<tr class="s-fail" test-id="114" parent-id="7">
+<tr class="s-fail" test-id="817" parent-id="746">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">Then user click the calender and select the slot "August" "2023" "29" <br/><span class="text-muted text-sm">Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed</span></td>
-	<td>0h 0m 40s+45msc</td>
+	<td class="_600">Then verify all tabs appearing on the Add risk Assessment popup page <br/><span class="text-muted text-sm">Make sure User is able to Login and add mandatory field</span></td>
+	<td>0h 0m 42s+59msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -182,16 +181,18 @@ Session ID: 404e60e6e72c32e9f4c521bbac8e91d8
 </tr>
 <tr class="details">
 	<td colspan="5">
+		<textarea disabled class="code-block"><table class='runtime-table table-striped table'><tr><td>Add New Risk Assessment</td><td>Risk associated tenancy</td><td>Created On</td></tr></table></textarea>
 		
-		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@aria-label='Open calendar']"}
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]"}
   (Session info: chrome=114.0.5735.91)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:64149}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4159f4e2e07816bb0f29b5bb7d03378b
-*** Element info: {Using=xpath, value=//*[@aria-label='Open calendar']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:61190}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7d03b8b537ed486450d288c9dcacefca
+*** Element info: {Using=xpath, value=//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -207,12 +208,261 @@ Session ID: 4159f4e2e07816bb0f29b5bb7d03378b
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at com.sat.Pages.MCMviewAppLoginPage.selectSlotDate(MCMviewAppLoginPage.java:1109)
-	at com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(MCMloginStepDef.java:395)
-	at ✽.user click the calender and select the slot "August" "2023" "29"(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/Living_HM/@TC_149480_167366_AASC_HM-Add_and_Edit_a_Risk-Amend_Review_date_Add_mitigating_factors.feature:28)
+	at com.sat.Pages.MCMviewAppLoginPage.validate_risk_ass_popuppage(MCMviewAppLoginPage.java:819)
+	at com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(MCMloginStepDef.java:279)
+	at ✽.verify all tabs appearing on the Add risk Assessment popup page(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/MearsUserAASCHousing/TC71632_146366_166005_149542_122393_149543_Add_a_Risk_and_delete_the_details.feature:22)
+</textarea>
+	</td>
+</tr>
+	
+<tr class="s-fail" test-id="912" parent-id="746">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">Then verify all tabs appearing on the Add risk Assessment popup page <br/><span class="text-muted text-sm">Make sure User is able to Login and add all field</span></td>
+	<td>0h 0m 42s+29msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		<textarea disabled class="code-block"><table class='runtime-table table-striped table'><tr><td>Add New Risk Assessment</td><td>Risk associated tenancy</td><td>Created On</td></tr></table></textarea>
+		
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]"}
+  (Session info: chrome=114.0.5735.91)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:61690}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 553f6389c1c60515a16b262d32f938b1
+*** Element info: {Using=xpath, value=//*[contains(text(),'Add New Risk Assessment') or contains(@title,'Add New Risk Assessment')]}
+	at jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.sat.Pages.MCMviewAppLoginPage.validate_risk_ass_popuppage(MCMviewAppLoginPage.java:819)
+	at com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(MCMloginStepDef.java:279)
+	at ✽.verify all tabs appearing on the Add risk Assessment popup page(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/MearsUserAASCHousing/TC71632_146366_166005_149542_122393_149543_Add_a_Risk_and_delete_the_details.feature:59)
+</textarea>
+	</td>
+</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="list-item attr">
+						<div class="list-body">
+							<a href="#" class="item-title _500">org.openqa.selenium.WebDriverException</a>
+							<div class="item-except text-sm text-muted h-1x">
+								2 tests
+							</div>
+							<div class="tc d-none">
+								<h5 class="mb-4">org.openqa.selenium.WebDriverException</h5>
+								<table class="table">
+									<thead><tr>
+										<th id="status-col"></th>
+										<th>Test</th>
+										<th>Duration</th>
+										<th>Attributes</th>
+										<th>Media</th>
+										<th>Source</th>
+									</tr></thead>
+									<tbody>
+	
+<tr class="s-fail" test-id="388" parent-id="342">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">And user click on "Contract" the Drop Down List for appointment <br/><span class="text-muted text-sm">AASC HM_Create a PM appointment for today</span></td>
+	<td>0h 0m 1s+523msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.91)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:50075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 987c770bed450d7713680c24f7e73673
+*** Element info: {Using=xpath, value=//*[contains(@placeholder,'Contract')]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.sat.Pages.AASCHmAddPage.selectlistapppointment(AASCHmAddPage.java:620)
+	at com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(AASCHMRaiseanIncidentagainstOtherStepDef.java:277)
+	at ✽.user click on "Contract" the Drop Down List for appointment(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/MearsUserAASCHousing/@150655_149580_AASC_HM_Living_HO_Create_a_PM_appointment_for_today.feature:23)
+</textarea>
+	</td>
+</tr>
+	
+<tr class="s-fail" test-id="406" parent-id="342">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">com.sat.AppHooks.ApplicationHooks.teardown(io.cucumber.java.Scenario) <br/><span class="text-muted text-sm">AASC HM_Create a PM appointment for today</span></td>
+	<td>0h 0m 0s+4msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=114.0.5735.91)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:50075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 987c770bed450d7713680c24f7e73673
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at com.sat.AppHooks.ApplicationHooks.teardown(ApplicationHooks.java:38)
+</textarea>
+	</td>
+</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="list-item attr">
+						<div class="list-body">
+							<a href="#" class="item-title _500">org.openqa.selenium.NoSuchWindowException</a>
+							<div class="item-except text-sm text-muted h-1x">
+								2 tests
+							</div>
+							<div class="tc d-none">
+								<h5 class="mb-4">org.openqa.selenium.NoSuchWindowException</h5>
+								<table class="table">
+									<thead><tr>
+										<th id="status-col"></th>
+										<th>Test</th>
+										<th>Duration</th>
+										<th>Attributes</th>
+										<th>Media</th>
+										<th>Source</th>
+									</tr></thead>
+									<tbody>
+	
+<tr class="s-fail" test-id="1,036" parent-id="342">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">And user click on "Contract" the Drop Down List for appointment <br/><span class="text-muted text-sm">AASC HM_Create a PM appointment for today</span></td>
+	<td>0h 0m 1s+507msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.91)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:62474}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3aec59b73ea6e6a52a446a52bceaff1f
+*** Element info: {Using=xpath, value=//*[contains(@placeholder,'Contract')]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.sat.Pages.AASCHmAddPage.selectlistapppointment(AASCHmAddPage.java:620)
+	at com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(AASCHMRaiseanIncidentagainstOtherStepDef.java:277)
+	at ✽.user click on "Contract" the Drop Down List for appointment(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/RLAP/@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today.feature:25)
+</textarea>
+	</td>
+</tr>
+	
+<tr class="s-fail" test-id="1,055" parent-id="342">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">com.sat.AppHooks.ApplicationHooks.teardown(io.cucumber.java.Scenario) <br/><span class="text-muted text-sm">AASC HM_Create a PM appointment for today</span></td>
+	<td>0h 0m 0s+2msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.91)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'A45318', ip: '192.168.1.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:62474}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3aec59b73ea6e6a52a446a52bceaff1f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at com.sat.AppHooks.ApplicationHooks.teardown(ApplicationHooks.java:38)
 </textarea>
 	</td>
 </tr>
@@ -240,7 +490,7 @@ Session ID: 4159f4e2e07816bb0f29b5bb7d03378b
 						            </div>
 									<ul class="nav nav-xs flex-row no-border pull-right">
 <li><a href="#" class="b-l"><span class="badge badge-pull">ExtentReports</span></a></li>
-<li><a href="#" class="b-l"><span class="badge badge-pull">Sept 29, 2023 10:54:48 pm</span></a></li>
+<li><a href="#" class="b-l"><span class="badge badge-pull">Oct 24, 2023 05:04:39 pm</span></a></li>
 <li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
 								    </ul>
 								</div>

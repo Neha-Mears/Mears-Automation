@@ -24,19 +24,20 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@TC_149452_AASC_HM_Address_Page-Add_keys_showing_keys_held_by or \r\n" +
-			"@TC_149480_167366_AASC_HM-Add_and_Edit_a_Risk-Amend_Review_date_Add_mitigating_factors or \r\n" +
-			"@TC_167607_167609_167614_167628_AASC_HM_Address_Page-Add_keys or \r \n" +
-			"@TC_146367_Add_risk_assessment_and_risk_and_then_Edit_the_Risk_Add_person_factors or \r \n" +
-			"@TC167367_AASC_HM_Address_Page-Add_first_risk_assessment"
+	tags= {	
+			"@TC_167651_122406_Living_HO_Edit_alarm-Code_access_details_&_Address_Page-Edit_key_type or \r \n" +
+			"@TC_167652_167722_Edit_alarm-Alert_Password_&_edit_notes or \r \n" +
+			"@TC_167725_167632_Edit_key_log-Mark_key_as_returned_&_supplier_added or \r \n" +
+			"@TC_167726_Living_HO_Edit_key_log-Change_who_has_key or \r \n" +
+			"@TC_167727_167634_who_has_key_Update_&_booked_out_by_&_Edit_key_reference" 
 			})
 	
-	public class LivingHM_TestRunner extends AbstractTestNGCucumberTests{
-		//@Override
+	public class LivingHO_PacK3 extends AbstractTestNGCucumberTests{
+	//	@Override
 	      
-	  //    @DataProvider(parallel = true) 
-	 //   public Object[][] scenarios() { 
-	//		 return super.scenarios();
+	    //  @DataProvider(parallel = true) 
+	   //  public Object[][] scenarios() { 
+		//	 return super.scenarios();
 		 
 	}
 	//}
