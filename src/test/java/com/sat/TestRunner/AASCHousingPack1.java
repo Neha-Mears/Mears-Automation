@@ -33,9 +33,10 @@ import io.cucumber.testng.CucumberOptions;
 			"@149444_166628_166610 or \r \n" +
 			"@166600_AASC_HM_Complete_a_service_user_search_Active/surname_Done or \r \n" +
 			"@97634_166655_AASC_HM_Address_Page_Remove_the_Absconder_flag_from_a_Service_User_Done"
+			
 			})
 	
-	public class AASCH_TestRunner extends AbstractTestNGCucumberTests{
+	public class AASCHousingPack1 extends AbstractTestNGCucumberTests{
 		//@Override
 	      
 	   //   @DataProvider(parallel = true) 

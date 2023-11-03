@@ -65,6 +65,10 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  public void Click_on_Login()  throws InterruptedException {
 	 MCMviewAppLogin.ClickOnLogIn();
  }
+ @And ("I click on Mear Logo home Page")
+ public void Click_on_Mears_Logo()  throws InterruptedException {
+	 MCMviewAppLogin.ClickOnMearLogo();
+ }
  @And ("Click on the Menu expansion button in Home page")
  public void Click_on_Menu_expansion_btn()  throws InterruptedException {
 	 Thread.sleep(3000);
@@ -84,6 +88,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  @And ("user select {string} from drop down List and navigate to {string}")
  public void user_select_from_drop_down_list(String Option,String value ) throws InterruptedException {
 	 try {
+		 Thread.sleep(7000);
 		 MCMviewAppLogin.ClickAllService(Option,value);
 		 System.out.println("user select : " + Option +"and navigate to " +value );
 	 }
@@ -156,6 +161,20 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 	 try {
 		 Thread.sleep(1000);
 		 MCMviewAppLogin.ClickAddressname(addname);
+		 
+	 }
+	 catch(Exception e) {
+		 System.out.println("Exception :"+ e + "has occured" );
+	 }
+ }
+ 
+ @When ("user search {string} and {string} click on the address details for new version")
+ public void click_on_address_details_new_version(String partadd,String addname)
+ {
+	 try {
+		 Thread.sleep(1000);
+		 MCMviewAppLogin.ClickAddressnamenewVerion(partadd,addname);
+		 
 	 }
 	 catch(Exception e) {
 		 System.out.println("Exception :"+ e + "has occured" );
@@ -187,23 +206,35 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 			    MCMviewAppLogin.click_expansionpanel();
 			    break;
 			case "AASC_HMexpansion":
-			    Thread.sleep(1000);
+			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_AASCHM_panel(Value);
 			    break;
-			case "Living_HOexpansion":
+			case "Tenancy Detail":
 			    Thread.sleep(1000);
+			    MCMviewAppLogin.click_TenancyDetailexpamsionbtn();
+			    break;
+			case "Communication Details":
+			    Thread.sleep(5000);
+			    MCMviewAppLogin. click_CommunicationDetail_expansionpanel();
+			    break;
+			case "Application Details":
+			    Thread.sleep(5000);
+			    MCMviewAppLogin. ApplicationDetailexpbtn();
+			    break;
+			case "Living_HOexpansion":
+			    Thread.sleep(5000);
 			    MCMviewAppLogin. click_LivingHO_expansionpanel();
 			    break;
-			case "Living_HO_username":
-			    Thread.sleep(1000);
+			case "Living_HOThreeDots":
+			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_threedotTenancy();
 			    break;
 			case "AASC_HMusername":
-			    Thread.sleep(1000);
+			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_threedotTenancy();
 			    break;
 			case "RLAPMearsthreedots":
-			    Thread.sleep(1000);
+			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_threedotTenancy();
 			    break;
 			   
@@ -232,8 +263,13 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 					System.out.println("user select : " + option );
 					break;
 			case "Notes":
-				 Thread.sleep(1000);
+				 Thread.sleep(9000);
 				MCMviewAppLogin.Notesxpansionbtn();
+				System.out.println("user select : " + option );
+				break;
+			case "Note Documents":
+				 Thread.sleep(9000);
+				MCMviewAppLogin.NoteDocumentsxpansionbtn();
 				System.out.println("user select : " + option );
 				break;
 			case "Incidents":
@@ -263,15 +299,16 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 	 }
  }
  @Then ("verify all tabs appearing on the Add risk Assessment popup page")
- public void Validate_risk_ass_popup_page(DataTable datatable)
+ public void Validate_risk_ass_popup_page(DataTable datatable) throws InterruptedException
  {
+	 Thread.sleep(2000);
 	 MCMviewAppLogin.validate_risk_ass_popuppage(datatable);
  }
  @Then ("varify all the values are prsent under Risk Assessment")
  public void Validate_risk_assessment_page(DataTable datatable)
  {  
 	 try {
-		 Thread.sleep(2000);
+		 Thread.sleep(7000);
 		 MCMviewAppLogin.Validate_risk_assessment_page(datatable);
 		 
 	 }
@@ -297,7 +334,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  {
 	 Thread.sleep(8000);
 	 System.out.println("Field : " + field );
-		System.out.println("Value : " + field );
+		System.out.println("Value : " + value );
 	 MCMviewAppLogin.selectAddNewRisk(field,value);
  }
  @When ("I set the {string} to {string}")
@@ -308,17 +345,25 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 		System.out.println("Value : " + field );
 	 MCMviewAppLogin.generatePasswordValue(field,value);
  }
+ @Then ("user fill random details for {string} as {string}")
+ public void generate_random_txt(String field, String value)throws InterruptedException
+ {
+	// Thread.sleep(3000);
+	 System.out.println("Field : " + field );
+		System.out.println("Value : " + field );
+	 MCMviewAppLogin.generateRandomtxt(field,value);
+ }
  @Then ("user validate the Alert message {string} and {string} for Add New Risk form")
  public void user_validate_the_Alert_message(String msg1,String msg2) throws InterruptedException
  {
 	 MCMviewAppLogin.validate_message_in_textbox(msg1,msg2) ;
  }
- @Then ("user click on save button")
- public void user_click_on_save_button()throws InterruptedException
+ @Then ("user click on {string} button")
+ public void user_click_on_save_button(String option)throws InterruptedException
  {
 	 try {
-		 Thread.sleep(1000);
-		 MCMviewAppLogin.clickOnSave();
+		 Thread.sleep(5000);
+		 MCMviewAppLogin.clickOnSave(option);
 	 }
 	 catch(Exception e) {
 		 System.out.println("Exception :"+ e + "has occured" );
@@ -383,12 +428,26 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 		 System.out.println("Exception :"+ e + "has occured" );
 	 }
  }
+ 
+ 
+ 
  @Then ("user click on the edit icon under {string}")
  public void user_click_on_Edit_Icon_button(String str)throws InterruptedException
  {
 	 try {
 		 Thread.sleep(6000);
 		 MCMviewAppLogin.clickOnEditIconRisk(str);
+	 }
+	 catch(Exception e) {
+		 System.out.println("Exception :"+ e + "has occured" );
+	 }
+ }
+ @Then ("user click on the plus icon under {string}")
+ public void user_click_on_plus_Icon_button(String str)throws InterruptedException
+ {
+	 try {
+		 Thread.sleep(6000);
+		 MCMviewAppLogin.clickOnplusIconRisk(str);
 	 }
 	 catch(Exception e) {
 		 System.out.println("Exception :"+ e + "has occured" );
@@ -459,14 +518,26 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 			 System.out.println("Exception :"+ e + "has occured" );
 		 }
 	 }
-	 @And ("user select {string} from dropdown")
-		 public void user_select_from_drop_down_List(String option)
+	 @And ("user select {string} from dropdown for {string}")
+		 public void user_select_from_drop_down_List(String option,String value)
 		 {
 		
-			 try {
-				 Thread.sleep(1500);
-				 MCMviewAppLogin.clickonOptionDropDown(option);
+				 try {
+					 Thread.sleep(2000);
+					 switch(value)
+						{
+						case "Calender":
+							    Thread.sleep(1000);
+								MCMviewAppLogin.clickonOptionDropDownCalender(option);
+								System.out.println("user select : " + option );
+								break;
+						case "Other":
+						    Thread.sleep(1000);
+						    MCMviewAppLogin.clickonOptionDropDown(option);
+							System.out.println("user select : " + option );
+							break;
 			 }
+				 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }

@@ -15,8 +15,14 @@ Feature: TC_122389: Living HO- Edit Tenant - Comm details - Delete comms type
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
-    Then Scroll down and click on expansion panel header button for "Living_HO_username"
+    Then Scroll down and click on expansion panel header button for "Living_HOThreeDots" with ""
     And user select "Edit Tenant" from drop down List and navigate to "Edit Tenant Details"
+    # Then Scroll down and click on expansion panel header button for "Communication Details" with ""
+    #  And user select "Add Communication" from drop down List and navigate to "Communication Details"
+    #  And user click on "Type" the Drop Down List
+    #And user select "Email" from dropdown for "Other"
+    #Then user fill details for "Detail" as "neha.h@gmail.com"
+   #  Then user click on save button
     Then user scroll to "Communication Details" and click on delete
 
     Examples: 
@@ -31,7 +37,7 @@ Feature: TC_122389: Living HO- Edit Tenant - Comm details - Delete comms type
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
-    Then Scroll down and click on expansion panel header button for "Living_HO_username"
+     Then Scroll down and click on expansion panel header button for "Living_HO_username" with ""
     And user select "View Tenant" from drop down List and navigate to "Tenant"
 
     Examples: 

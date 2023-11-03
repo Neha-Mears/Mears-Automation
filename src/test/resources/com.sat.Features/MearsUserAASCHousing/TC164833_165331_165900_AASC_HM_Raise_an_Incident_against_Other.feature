@@ -30,10 +30,10 @@ Feature: TC_164833_165331:  RLAP Mears_Can edit an existing incident raised by S
       | Valid incident raised by required | A valid date of incident is required | A valid category is required | A valid incident description is required | A valid status is required |
     Then user fill details for "Other" as "test"
     And user click on "Category" the Drop Down List
-    And user select "ASB by SU" from dropdown
+    And user select "ASB by SU" from dropdown for "Other"
     Then user click the calender and select the slot available "<setmonth>" "<setyear>" "<setDate>"
     And user click on "Status" the Drop Down List
-    And user select "Active" from dropdown
+    And user select "Active" from dropdown for "Other"
     Then user fill details for "Incident Description" as "testingDemo"
     Then user click on save button
     Then user varify the following grids is displayed
@@ -44,14 +44,14 @@ Feature: TC_164833_165331:  RLAP Mears_Can edit an existing incident raised by S
     Then user click on the pencil icon
     Then user validate the fields "Incident Raised By" and "Incident Raised Against"
     And user click on "Status" the Drop Down List
-    And user select "Complete" from dropdown
-     And user click on Ok appointment page
+    And user select "Complete" from dropdown for "Other"
+    And user click on Ok appointment page
     Then user validate the popup "<text>" and popup "<message>"
     Then user click on save button
     Then user validate the Alert message for "Add Incident"
       | A valid outcome is required |
     Then user fill details for "Outcome" as "IncidentUserDemo"
-  #  And user click on Ok appointment page
+    #  And user click on Ok appointment page
     Then user click on save button
     When I verify values under the "Status" column
     Then I should see the value "Complete"
@@ -62,5 +62,5 @@ Feature: TC_164833_165331:  RLAP Mears_Can edit an existing incident raised by S
     And user take the screenshot for confirmation page for Test case "TC_164833_165331_165900"
 
     Examples: 
-      | username      | password          | serviceName | address                                                                  | text                               | message                                                          | setmonth | setyear | setDate | success_msg                  |
-      | RLAPMearsuser | RLAPMearspassword | Portal      | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | Incident Status Set to Completed.. | Please ensure you have specified an outcome and a resolved date. | October  |    2023 |       4 | The operation was successful |
+      | username      | password          | serviceName | address                                      | text                               | message                                                          | setmonth | setyear | setDate | success_msg                  |
+      | RLAPMearsuser | RLAPMearspassword | Portal      | Room 3, 1 Agincourt Avenue, Belfast, BT7 1QA | Incident Status Set to Completed.. | Please ensure you have specified an outcome and a resolved date. | October  |    2023 |       4 | The operation was successful |

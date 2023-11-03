@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
@@ -28,6 +29,7 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -75,11 +77,16 @@ public class AASCHmAddPage {
 	@FindBy(xpath = "(//*[starts-with(@class,'mat-cell cdk-cell risks')]//*[contains(@aria-label,'row icon')])[1]")
 	private WebElement pencilIcon;
 	
+	WebElement Iconeditbtn;
 	Testutil testutil = new Testutil();
 	Wait waits = new Wait();
 	Testutil util = new Testutil();
     Assertions assertion = new Assertions(driver);
+    WebElement Defaultchk;
+    private static String actualref;
+
 	
+ 	 
 	public AASCHmAddPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -98,7 +105,8 @@ public class AASCHmAddPage {
 	}
 	
 	
-	
+
+
 	//switching to the frame 
 	public void switchToFrame() {
 		driver.switchTo().frame("fullscreen-app-host");
@@ -175,11 +183,11 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 		WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setYear+"']"));
 		Wait.elementToBeClickable(driver, fromyear, 3);
 		testutil.actionMethodClick(driver, fromyear);
-		System.out.println("Select the year" +fromyear);
+		//System.out.println("Select the year" +fromyear);
 		//System.out.println("Select the month");
 		WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setMonth+" "+setYear+"']"));
 		Wait.elementToBeClickable(driver, frommonth, 3);
-		System.out.println("Select the month" +frommonth);
+		//System.out.println("Select the month" +frommonth);
 		testutil.actionMethodClick(driver, frommonth);
 		WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setDate+" " +setMonth+" "+ setYear+"']"));
 		System.out.println("Select the date");
@@ -213,9 +221,9 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 					fromDate.click();
 					//testutil.actionMethodClick(driver, fromDate);
 				}
-			
+			}
 		
-		}
+		
 	 public void clickOnCancel() throws InterruptedException
 	    {
 	    	try {
@@ -370,21 +378,21 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 					}
 				}		
 			Thread.sleep(2000);
-			System.out.println("Select the Today month");
+			//System.out.println("Select the Today month");
 			 String monthsubstring = fullMonth.substring(0,3);
-			 System.out.println("Sub string  "+monthsubstring);
+			// System.out.println("Sub string  "+monthsubstring);
 					//WebElement monthselected = driver.findElement(By.xpath("(//*[contains(text(),'"+monthsubstring+"')])[2]"));
 			 WebElement monthselected = driver.findElement(By.xpath("//*[starts-with(@class,'jqx-calendar-view')]//*[contains(text(),'"+monthsubstring+"')]"));
 			 Wait.elementToBeClickable(driver, monthselected, 3);
 					testutil.actionMethodClick(driver, monthselected);	
 						
 						
-	System.out.println("Select the Today date");
+	//System.out.println("Select the Today date");
 	 Wait.untilPageLoadComplete(driver,2000);	
 		WebElement date= driver.findElement(By.xpath("(//*[starts-with(@class,'jqx-rc-all jqx-item jqx-calendar-cell jqx-calendar-cell-month')])["+dayToSelect+"]"));
 		Wait.elementToBeClickable(driver, date, 3);
 		testutil.actionMethodClick(driver, date);
-		
+		System.out.println("Select the Today date "+date.getText());
 		date.click();
 		
 	}
@@ -395,7 +403,7 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 		Wait.elementToBeClickable(driver, calenderElement, 2);
 		calenderElement.click();
 		
-		// Get the current date
+		// Get the tommorow date
 		Date currentDate= new Date();
 		Calendar calender= Calendar.getInstance();
 		calender.setTime(currentDate);
@@ -410,34 +418,59 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 		String fullMonth = month.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
 		int tommorowDay =  tommorowDate.getDayOfMonth();
 		int correctdate=tommorowDay-1;
-		
-		System.out.println("Today's Year "+yearToSelect);
-		System.out.println("Today's Month "+fullMonth);
-		System.out.println("Tommorow's Date  "+tommorowDay);
-		 driver.findElement(By.xpath("(//*[starts-with(@id,'calendarTitleHeaderViewinnerCalendarjqxWidget')]//*[contains(text(),'"+fullMonth+" "+yearToSelect+"')])[2]")).click();
+		System.out.println("Current Year "+yearToSelect);
+		System.out.println("Current Month "+fullMonth);
+		System.out.println("Tommorows's Date  "+tommorowDay);
+		//Find the year, month and date cells and click them
+		WebElement monthyear= driver.findElement(By.xpath("//*[starts-with(@id,'calendarTitleHeaderViewinnerCalendarjqxWidget')]//*[contains(text(),'"+fullMonth+" "+yearToSelect+"')]"));
+		monthyear.click();
+	//	System.out.println("Select the Today Year"+monthyear.getText());
 		 Wait.untilPageLoadComplete(driver,2000);	
-				////********For Month*********************************************
+		 Boolean flag = false;
+			while (!flag) {
+				List<WebElement> ele = driver.findElements(By.xpath("//*[starts-with(@class,'jqx-calendar-title-content')]"));
+				System.out.println(ele.size());
+				//System.out.println(ele);
+				if(ele.size() != 0) {
+					for (int i = 0; i < ele.size(); i++){
+						if (isClickable(ele.get(i))) {
+							testutil.actionMethodClick(driver, ele.get(i));
+							//testutil.jsclick(driver, Service.get(i));
+							System.out.println("Today year is selected");
+							flag = true;
+							i = ele.size();
+						}
+						else {
+							System.out.println("element is not clickable so executing else");
+						}
+					}
+					}
+				}		
 			Thread.sleep(2000);
+			//System.out.println("Select the Today month");
 			 String monthsubstring = fullMonth.substring(0,3);
 			 System.out.println("Sub string  "+monthsubstring);
-					//WebElement monthselected = driver.findElement(By.xpath("(//*[contains(text(),'"+monthsubstring+"')])[2]"));
-			 WebElement monthselected = driver.findElement(By.xpath("//*[starts-with(@class,'jqx-calendar-view')]//*[contains(text(),'"+monthsubstring+"')]"));
-			 Wait.elementToBeClickable(driver, monthselected, 3);
+					WebElement monthselected = driver.findElement(By.xpath("(//*[contains(text(),'"+monthsubstring+"')])[2]"));
+					Wait.elementToBeClickable(driver, monthselected, 3);
 					testutil.actionMethodClick(driver, monthselected);	
-					////********For Day*********************************************
-					 Wait.untilPageLoadComplete(driver,2000);	
-						WebElement date= driver.findElement(By.xpath("(//*[@class='jqx-calendar jqx-widget jqx-widget-content jqx-rc-all jqx-popup jqx-fill-state-focus jqx-popup-show']//*[starts-with(@class,'jqx-rc-all jqx-item jqx-calendar-cell jqx-calendar-cel')])["+tommorowDay+"]"));
-						System.out.println("Today's Date selected is  "+date.getText());
-						Wait.elementToBeClickable(driver, date, 3);
-						testutil.actionMethodClick(driver, date);
-						date.click();
+						
+						
+	//System.out.println("Select the Tommorow date");
+	 Wait.untilPageLoadComplete(driver,2000);	
+		WebElement date= driver.findElement(By.xpath("(//*[starts-with(@class,'jqx-rc-all jqx-item jqx-calendar-cell jqx-calendar-cell-month')])["+correctdate+"]"));
+		//String dateclick =  date.getText().toString();
+		//int correctdate = Integer.parseInt(dateclick)-1;
+		Wait.elementToBeClickable(driver, date, 3);
+		testutil.actionMethodClick(driver, date);
+		System.out.println("Date selected "+date.getText());
+		date.click();
+						
 				
 			}
 					
 
 						
 				
-			
 			
 			
 	
@@ -518,9 +551,10 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 		SimpleDateFormat formatter =new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate= formatter.format(currentDate);
 		System.out.println("Current date  "+formattedDate);
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.TAB,Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN,Keys.PAGE_DOWN);  
-		Thread.sleep(3000);
+		//driver.findElement(By.cssSelector("body")).sendKeys(Keys.TAB,Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN,Keys.PAGE_DOWN);  
 		WebElement slotTime= driver.findElement(By.xpath("(//*[starts-with(@data-date,'"+formattedDate+" "+appointment+"')][last()])[1]"));
+		new Actions(driver).moveToElement(slotTime).perform(); 
+		System.out.println("Slot time  "+slotTime.getText());
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",slotTime );
 		Wait.elementToBeClickable(driver, slotTime, 3);
 		testutil.actionMethodClick(driver, slotTime);
@@ -532,11 +566,12 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 	}
 	public void selecttommorowtimeslotappointment(String appointment) throws InterruptedException
 	{
+		try {
 		//LocalDate currentD= LocalDate.now();
 		LocalDate tommorowDate = LocalDate.now().plusDays(1);
 		System.out.println("Date display to select  "+tommorowDate);
 		//DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		//System.out.println("Next Current date  "+formattedDate);
+		System.out.println("Next Current date  "+tommorowDate);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.TAB,Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN,Keys.PAGE_DOWN);  
 		Thread.sleep(3000);
 		WebElement slotTime= driver.findElement(By.xpath("(//*[starts-with(@data-date,'"+tommorowDate+" "+appointment+"')][last()])[1]"));
@@ -548,7 +583,41 @@ public void verifyserviceuserheader(String field,DataTable datatable) throws Int
 		Actions actions= new Actions(driver);
 		actions.contextClick(slotTime).perform();
 		
+	}catch(Exception e) {
+	
+		System.out.println("inside catch");
+		
+		
 	}
+}
+	public void selecttEditappointment(String appointment) throws InterruptedException
+	{
+		try {
+		//LocalDate currentD= LocalDate.now();
+		LocalDate tommorowDate = LocalDate.now().plusDays(1);
+		System.out.println("Date display to select  "+tommorowDate);
+		//DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		//System.out.println("Next Current date  "+formattedDate);
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.TAB,Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN,Keys.PAGE_DOWN);  
+		Thread.sleep(3000);
+		WebElement slotTime= driver.findElement(By.xpath("(//*[contains(@class,'jqx-scheduler-appointment jqx-rc-all')])[last()]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",slotTime );
+		Wait.elementToBeClickable(driver, slotTime, 3);
+		testutil.actionMethodClick(driver, slotTime);
+		//System.out.println("System date  "+slotTime.getText());
+		//right click slottime
+		Actions actions= new Actions(driver);
+		actions.contextClick(slotTime).perform();
+		
+	}catch(Exception e) {
+	
+		System.out.println("inside catch");
+		
+		
+	}
+}
+		
+	
 	public void selectlistapppointment(String value) 
 	{
 		WebElement dropdownappointmentuser = driver.findElement(By.xpath("//*[contains(@placeholder,'"+value+"')]"));
@@ -724,6 +793,110 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 	}
 	
 }
+    
+    
+    public void ClickRecentEditButtonOnLastPage()
+    {
+    	boolean isLastPage = false;
+    	while(!isLastPage)
+    	{
+    		if(isOnLastPage())
+    		{
+    			isLastPage=true;
+    		}
+    	else
+    	{
+    		navigateToNextPage(driver);
+    	}
+    }
+    }
+    public void EditbtunderIcon(String underIcon)
+    {
+    	
+    	try {
+	    	Thread.sleep(1000);
+	    	Iconeditbtn = driver.findElement(By.xpath("//*[contains(@title,'"+underIcon+"')]//*[@data-mat-icon-name='edit'][1]"));
+	    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Iconeditbtn );
+	    	util.actionMethodClick(driver, Iconeditbtn);
+	    	
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    	}
+	
+    }
+
+    public void icheckTheStateOfTheCheckbox()
+    {
+    	
+    	try {
+	    	Thread.sleep(1000);
+		    List<WebElement> checkboxes= driver.findElements(By.xpath("(//*[contains(@title,'Keys')]//*[contains(@class,'mat-checkbox-checked')])[last()]"));
+	    	if(!checkboxes.isEmpty())
+	    	{
+	    		System.out.println("\u001B[32mCheckbox is checked.\u001B[0m");
+	    		
+	    	}
+	    	else
+	    	{
+	    		System.out.println("\u001B[32mCheckbox is not checked.\u001B[0m");
+	    	}
+	    	}catch(Exception e) {
+	    		e.printStackTrace();
+	    	}
+	
+    }
+   
+    public void Clickdecending(String column,String Tab)
+    {
+    	System.out.println("going to click decending arrow");
+    	Wait.untilPageLoadComplete(driver,500);
+    	   Actions actions= new Actions(driver);
+    	WebElement descbutton= driver.findElement(By.xpath("//*[@title='"+Tab+"'or @matsortactive='"+Tab+"']//*[contains(text(),'"+column+"')]"));
+    	actions.moveToElement(descbutton);
+    	//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",descbutton );
+    	try {
+    		util.actionMethodClick(driver, descbutton);
+    		//descbutton.click();
+    		
+    	}catch(Exception e) {
+    		//descbutton.click();
+    		//testutil.jsclick(driver, descbutton);
+    		((JavascriptExecutor) driver).executeScript("arguments[0].click();", descbutton);
+    	}
+    }
+   
+    public  boolean isOnLastPage()
+    {
+    	WebElement nextbutton= driver.findElement(By.xpath("(//*[@aria-label='Next page'])[2]"));
+    	if(nextbutton.isDisplayed() && nextbutton.isEnabled() )
+    	{
+    		return false;
+    	}
+    	else
+    	{
+    		return true;
+    	}
+    }
+    public void navigateToNextPage(WebDriver driver)
+    {
+    	WebElement nextbutton= driver.findElement(By.xpath("(//*[@aria-label='Next page'])[2]"));
+    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",nextbutton );
+    	if(nextbutton.isDisplayed() && nextbutton.isEnabled() )
+    	{
+    		//nextbutton.click();
+    		try {
+				testutil.jsclick(driver, nextbutton);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    	else
+    	{
+    		throw new NoSuchElementException("Next Button not found or not enabled");
+    	}
+    }
     public void clickOnOkNewAppointment(String poptext, String popcomment)
 	{
     Wait.untilPageLoadComplete(driver,500);
@@ -769,11 +942,27 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     }
     public void enterValue(String value,String txtfield) 
     {
-    	Wait.untilPageLoadComplete(driver,500);
-    	WebElement txt=driver.findElement(By.xpath("(//*[starts-with(@class,'search-form__row')]//*[@formcontrolname='value'])[1]"));
-    	txt.click();
-    	Wait.untilPageLoadComplete(driver,500);
-    	txt.sendKeys(value);
+    	switch(txtfield)
+		{
+		case "value_1":
+				 	Wait.untilPageLoadComplete(driver,500);
+			    	WebElement txt=driver.findElement(By.xpath("(//*[starts-with(@class,'search-form__row')]//*[@formcontrolname='value'])[1]"));
+			    	txt.click();
+			    	Wait.untilPageLoadComplete(driver,500);
+			    	txt.sendKeys(value);
+			    	break;
+			 
+		case "value_2":
+			    
+			    	WebElement txt2=driver.findElement(By.xpath("(//*[starts-with(@class,'search-form__row')]//*[@formcontrolname='value'])[2]"));
+			    	Wait.elementToBeClickable(driver, txt2, 2);
+			    	txt2.click();
+			    	Wait.untilPageLoadComplete(driver,500);
+			    	txt2.sendKeys(value);
+			    	break;
+			
+			 }	
+    	
     	
     }
     public void clickFind() throws InterruptedException
@@ -808,17 +997,46 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     public void clickOnDietchk(String Itemcount, String value) throws InterruptedException
     {
     	int item = Integer.parseInt(Itemcount);
-    	 System.out.println("Number of item to be selected is "+item);
-    	 for(int i=0;i<item;i++)
-    	 {
-    		 int a=i+1;
-    		 WebElement checkbox= driver.findElement(By.xpath("(//*[starts-with(@formarrayname,'"+value+"') or starts-with(@formcontrolname,'"+value+"')]//*[starts-with(@class,'mat-checkbox-background')])["+a+"]"));
-    		// System.out.println(a);
-    		 Wait.elementToBeClickable(driver, checkbox, 3);
-    		 util.actionMethodClick(driver, checkbox);
-    	 }
+   	 System.out.println("Number of item to be selected is "+item);
+   	 for(int i=0;i<item;i++)
+   	 {
+   		 int a=i+1;
+   		 WebElement checkbox= driver.findElement(By.xpath("(//*[starts-with(@formarrayname,'"+value+"') or starts-with(@formcontrolname,'"+value+"')]//*[starts-with(@class,'mat-checkbox-background')])["+a+"]"));
+   		// System.out.println(a);
+   		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",checkbox );
+   		 Wait.elementToBeClickable(driver, checkbox, 3);
+   		// util.actionMethodClick(driver, checkbox);
+   		try {
+   		 util.actionMethodClick(driver, checkbox);
+   	    	}
+   	    	catch(Exception e)
+   	    	{
+   	    		util.actionMethodClick(driver, checkbox);
+   	}
+   	 }
     	
     }
+    public void verifyReturnedchk(String value) throws InterruptedException
+    {
+    	
+    		 WebElement checkbox= driver.findElement(By.xpath("(//*[contains(@title,'"+value+"')]//*[@type='checkbox'])[1]"));
+    		 Wait.elementToBeClickable(driver, checkbox, 7);
+    		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",checkbox );
+    		 boolean ischecked = (Boolean)((JavascriptExecutor) driver).executeScript("return arguments[0].checked", checkbox);
+    		// boolean isChecked =checkbox.isSelected();
+    		 
+    		System.out.println("Validate Checkbox is selected "+ischecked);
+    	if(ischecked)
+    	{
+    		System.out.println("\u001B[32mReturned Checkbox is checked\u001B[0m");
+    	}
+    	else
+    	{
+    		System.out.println("\u001B[32mReturned Checkbox is not checked\u001B[0m");
+    	}
+    	 }
+    	
+    
     public void Continuebtndisabled() throws InterruptedException
     {
     	WebElement ContinuebtnDisable = driver.findElement(By.xpath("//*[contains(@class,'mat-button-base mat-save mat-button-disabled')]"));
@@ -854,7 +1072,14 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
      public void clickOnPencilIcon() throws InterruptedException
      {
     	 Thread.sleep(1000);
-     	util.actionMethodClick(driver, pencilIcon);
+     	
+    	try {
+        	util.actionMethodClick(driver, pencilIcon);
+        	}
+        	catch(Exception e)
+        	{
+        		util.actionMethodClick(driver, pencilIcon);
+     }
      }
      public void validateComplaintsfieldDisabled(String ComplaintMadeBystr,String ComplaintMadeAgainststr) throws InterruptedException
      {
@@ -1100,7 +1325,22 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
      	util.actionMethodClick(driver, elementdropdown);
      	
      }
-     public void GenerateUniquePortNumber(String txtfeild) throws InterruptedException
+     public void iClickItemPerPage(String val) throws InterruptedException
+     {
+    	try {
+    	 Thread.sleep(1000);
+     	WebElement ItemPage = driver.findElement(By.xpath("(//*[@class='"+val+"']//*[@aria-label='Items per page:'])[1]//*[contains(@class,'mat-select-value ng-tns')]"));
+     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ItemPage);
+     System.out.println("The Work Order display before change is: "+ItemPage.getText());
+     util.actionMethodClick(driver, ItemPage);
+    	}
+    	catch(Exception e)
+    	{
+    		e.printStackTrace();
+    	}
+     	
+     }
+     public String GenerateUniquePortNumber(String txtfeild) throws InterruptedException
      {
     	 if(! Savebtn.isEnabled())
 			{
@@ -1112,12 +1352,15 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 			}
     	 WebElement portno = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+txtfeild+"')]"));
      	System.out.println("Trying to create unique port Number");
-     	//util.actionMethodClick(driver, portno);
      	int number= ThreadLocalRandom.current().nextInt();
+     	//util.actionMethodClick(driver, portno);
+     	//int number= ThreadLocalRandom.current().nextInt();
      	System.out.println("Random number before absolute: "+number);
-     	int randomnumber = Math.abs(number);
+     	 int randomnumber = Math.abs(number);
      	System.out.println("Random number is: "+randomnumber);
      	Wait.waitUntilElementVisible(driver, portno);
+     	actualref=String.valueOf(randomnumber);
+     	System.out.println("Random number is from reference: "+actualref);
      	portno.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
      	portno.sendKeys(String.valueOf(randomnumber));
      	portno.sendKeys(Keys.ENTER);
@@ -1131,12 +1374,53 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 		{
 			System.out.println("Save button is not enable after filling out the field.");
 		}
-     	
+     	return actualref;
      	
      }
-     
+     public void ValidateKeyAsDefalt(String Tab,String elementID) throws InterruptedException {
+ 		
+     	boolean found=false;
+     	String expectedval= String.valueOf(actualref);
+     	System.out.println("Random number is in string: "+expectedval);
+     		List<WebElement> cells = driver.findElements(By.xpath("//*[@title='"+Tab+"']//*[ contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-reference mat-column-reference ng-star-inserted')]"));
+     		System.out.println("Number of Row present in Table : "+cells.size());
+     		for(int i=0;i<=cells.size()-1;i++)
+     		{
+     			Thread.sleep(7000);
+     			String actualtext=cells.get(i).getText();
+     			//System.out.println(actualtext);
+     			if(cells.get(i).getText().equals(actualref))
+     			{
+     				//System.out.println("\u001B[32mValue is added.\u001B[0m");
+     				List<WebElement> cellVal = driver.findElements(By.xpath("//*[@title='Keys']//*[ contains(@class,'mat-row cdk-row mears-table__data-row ng-star-inserted')]"));
+     				
+     				String cell1value= cellVal.get(i).getText();
+     				String[] substring = cell1value.split(" ");
+         	
+         			System.out.println("Keys Type :"+substring[0]);
+         			System.out.println("Reference :"+substring[1]);
+         			System.out.println("No of Sets :"+substring[2]);
+         			//System.out.println("Keys Held By :"+substring[4]);
+         			  List<WebElement> checkboxes= driver.findElements(By.xpath("(//*[contains(@title,'Keys')]//*[contains(@class,'mat-checkbox-checked')])[last()]"));
+         		    	if(!checkboxes.isEmpty())
+         		    	{
+         		    		System.out.println("\u001B[32mDefault Checkbox is checked.\u001B[0m");
+         		    		
+         		    	}
+         		    	else
+         		    	{
+         		    		System.out.println("\u001B[32mDefault Checkbox is not checked.\u001B[0m");
+         		    	}
+         		    	
+     			}
+     		}
+     		
+     		}
+     		
+    
      public void validatetitleService(DataTable datatable) throws InterruptedException
      {
+    	 
     	List<String> actual = datatable.asList();
     	System.out.println("Size :" + datatable.asList().size());
     	
@@ -1144,7 +1428,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     	for (int i = 0; i <= actual.size()-1; i++) {
             int j =i + 1;
             Thread.sleep(2000);
-            WebElement ele= driver.findElement(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(i)+"')]"));
+            WebElement ele= driver.findElement(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[starts-with(text(),'"+actual.get(i)+"')]"));
             System.out.println(driver.findElement(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(i)+"')]"))
             		.getAttribute("innerText")+ "==" + actual.get(i));
           String data= driver.findElement(By.xpath("//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("innerText");
@@ -1152,25 +1436,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
           Wait.waitUntilElementVisible(driver, ele);
          Assert.assertEquals(ele.getText(), actual.get(i));
     	}
-    	/*
-    	try {
-    	
-    		for(int j=0;j<datatable.asList().size();j++)
-    		{
-    			System.out.println(actual.get(j));
-    			List<WebElement> fielddata= driver.findElements(By.xpath("//*[starts-with(@class,'breadcrumb hidden-print')]//*[contains(text(),'"+actual.get(j)+"')]"));
-    			String expected = ((WebElement) fielddata).getAttribute("textContent");
-    			System.out.println(expected);
-    			assertion.CheckAssertionTrue(expected.contains(actual.get(j)), actual.get(j));
-    		}
-    	
-    		}
-    	catch(Exception e)
-    	{
-    		System.out.println("Exception :" +e+ "has occured");
-    	}
-     }
-     */
+ 
      }  	
 }
 

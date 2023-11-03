@@ -20,13 +20,13 @@ Feature:RLAP Mears_Address Page - Add keys marking 1 as default
     And Verify all the values are present under Keys
       | Alarm Details | Keys | Key Log |
     Then user click on plus icon in keys tab
-    And user select multiple option "2" for the "default" checkbox
+    And user select multiple option "1" for the "default" checkbox
     And user click on "Key Type" the Drop Down List
-    And user select "Garage" from dropdown
+    And user select "Garage" from dropdown for "Other"
     Then user fill details for "No. of Sets" as "1"
     Then user generate the unique number for "Reference"
     Then user fill details for "Keys Held By" as "Finaltest"
-    Then user click on save button
+    Then user click on "Save" button
     Then validate the last entry default checkbox is selected
 
     Examples: 

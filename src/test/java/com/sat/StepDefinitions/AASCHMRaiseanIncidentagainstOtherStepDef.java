@@ -1,8 +1,11 @@
 package com.sat.StepDefinitions;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,6 +31,9 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 	 Assertions assertion = new Assertions(driver);
 	 private ConfigFileReader config = new ConfigFileReader();
 	
+	 private String initialValue;
+	 private String updatedValue;
+	 
 	@Then("user varify the following grids is displayed")
 	public void verify_grid_displayed(DataTable datatable) throws InterruptedException {
 		Thread.sleep(8000);
@@ -126,7 +132,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 					 System.out.println("Exception :"+ e + "has occured" );
 				 }
 		  }
-		  @Then ("user click on {string} button")
+		  @Then ("user click on {string} Risk button")
 		  public void click_on_Risk_Details_btn(String Risk_Detail) throws InterruptedException {
 				 try {
 					 
@@ -170,6 +176,19 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 					 System.out.println("Exception :"+ e + "has occured" );
 				 }
 		  }
+		  @Then ("user verify checkbox is checked under Returned {string}")
+		  public void verify_chkbox_checked(String value) throws InterruptedException {
+				 try {
+					 
+					Thread.sleep(3000);
+					aashm.verifyReturnedchk(value);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+		  }
+		
+		  
 		  @Then ("user varify the following grids and information appears")
 		  public void verify_under_grid_data_displayed(DataTable datatable) throws InterruptedException {
 				 try {
@@ -223,6 +242,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 @And ("user select the time slot for the appointment {string}")
 		 public void select_current_time_slot_for_appointment(String appointment) throws InterruptedException {
 			 try {
+				 Thread.sleep(5000);
 				 aashm.selectcurrenttimeslotappointment(appointment);
 			 }
 			 catch(Exception e) {
@@ -232,8 +252,19 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 @And ("user select the tommorow time slot for the appointment {string}")
 		 public void select_tommorow_time_slot_for_appointment(String appointment) throws InterruptedException {
 			 try {
-				 System.out.println("selecting time slot");
-				 aashm.selecttommorowtimeslotappointment(appointment);
+				
+				// switch(appointment)
+					//{
+					//case "availableslot":
+						 System.out.println("selecting time slot");
+						 aashm.selecttommorowtimeslotappointment(appointment);
+						 System.out.println("selecting time slot entered");
+						//	break;
+					//case "EditAppointmentSlot":
+					//	 System.out.println("selecting time slot");
+					//	 aashm.selecttEditappointment(appointment);
+					//		break;
+			// }
 			 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
@@ -275,7 +306,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 public void user_click_on_next_button()throws InterruptedException
 		 {
 			 try {
-				 Thread.sleep(1500);
+				 Thread.sleep(5000);
 				 aashm.clickOnNext();
 			 }
 			 catch(org.openqa.selenium.NoSuchElementException e)
@@ -330,6 +361,50 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }
 		 }
+		 @Then ("user click on edit button under icon name {string}")
+		 public void click_edit_btn_under_icon(String EditIconbtn)throws InterruptedException
+		 {
+			 try {
+				 Thread.sleep(8000);
+				 aashm.EditbtunderIcon(EditIconbtn);
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+		
+		 @Then ("the checkbox should be checked")
+		 public void checkbox_checkbox()throws InterruptedException
+		 {
+			 Thread.sleep(2000);
+			 aashm.icheckTheStateOfTheCheckbox();
+		 }
+		@ When ("user click on the descending {string} under tab {string}")
+		 public void click_decending(String col,String tab)throws InterruptedException
+		 {
+			 Thread.sleep(5000);
+			 aashm.Clickdecending(col, tab);
+		 }
+		  @Then ("the checkbox should not be checked")
+		  public void checkbox_should_not_be_checked()throws InterruptedException
+			 {
+			 
+			  	Thread.sleep(2000);
+				aashm.icheckTheStateOfTheCheckbox();
+			 }
+			 
+		 @Then ("user click on next button under Key Log")
+		 public void click_on_next_btn()throws InterruptedException
+		 {
+			 try {
+				 Thread.sleep(5000);
+				 aashm.ClickRecentEditButtonOnLastPage();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+		 
 		 @And ("click on the Submit button")
 		 public void user_click_on_submit_button()throws InterruptedException
 		 {
@@ -424,7 +499,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 {
 			
 			 try {
-				 Thread.sleep(1500);
+				 Thread.sleep(7000);
 				 aashm.clickOnPencilIcon();
 				 }
 			 catch(Exception e) {
@@ -495,7 +570,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 {
 			 {
 				 try {
-					 Thread.sleep(5000);
+					 Thread.sleep(9000);
 					 aashm.ClickOnCalenderEditAppointment(field);
 				 }
 				 catch(Exception e) {
@@ -508,7 +583,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 		 {
 			 {
 				 try {
-					 Thread.sleep(1500);
+					 Thread.sleep(2000);
 					 aashm.clickOnSet(value);
 				 }
 				 catch(Exception e) {
@@ -555,6 +630,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 }
 			 } 
 		 }
+		
 		 @Then ("user generate the unique number for {string}")
 		 public void generate_port_reference(String field)
 		 {
@@ -568,12 +644,272 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 }
 			 } 
 		 }
+		 @When ("the user checks if the Code Access Number exists for {string} under {string}")
+		 public void checkCodeAccessNumber(String elementID, String Tab) throws InterruptedException {
+			 Thread.sleep(7000);
+			 WebElement ele = driver.findElement(By.xpath("//*[@title='Alarm Details']//*[contains(@data-placeholder,'Code Access Number')]"));
+			 String CodeAccessValue=ele.getAttribute("value");
+			 System.out.println("CodeAccess Value displayed: "+ CodeAccessValue);
+			 System.out.println("CodeAccess Value displayed: "+ CodeAccessValue.isEmpty());
+			 if (CodeAccessValue.equals("-") || CodeAccessValue.isEmpty()) {
+				 Thread.sleep(6000);
+				 MCMviewAppLogin.clickOnEditIconRisk(Tab);
+				 aashm.GenerateUniquePortNumber(elementID);
+				 String alertpass="Alert Password";
+				 String generatepass="Generate Alert Password";
+				 MCMviewAppLogin.generatePasswordValue(alertpass,generatepass);
+				 String falsepass="False Alarm Password";
+				 String generatefalsepass="Generate False Alarm Password";
+				 MCMviewAppLogin.generatePasswordValue(falsepass,generatefalsepass);
+				 String option="save";
+				 MCMviewAppLogin.clickOnSave(option);
+			 }
+			 else
+			 {
+				 System.out.println("\u001B[32mCode Access Value Exist is displayed as : \u001B[0m"+ CodeAccessValue);
+				 return;
+			 }
+		 }
+		 @Then ("I reset the content of text box under {string} as pre-requist")
+		 public void Clear_alarm_detail(String Tab) throws InterruptedException {
+			// MCMviewAppLogin.clickOnEditIconRisk(Tab);
+			 WebElement portno = driver.findElement(By.xpath("//*[contains(@data-placeholder,'Code Access Number')]"));
+			// portno.clear();
+			 portno.sendKeys(Keys.chord(Keys.CONTROL, "a")); // Select all text
+			 portno.sendKeys(Keys.DELETE); // Delete selected text
+			 Thread.sleep(1000);
+			 WebElement Alertpassword = driver.findElement(By.xpath("//*[contains(@data-placeholder,'Alert Password')]"));
+			 Alertpassword.sendKeys(Keys.chord(Keys.CONTROL, "a")); // Select all text
+			 Alertpassword.sendKeys(Keys.DELETE); // Delete selected text
+			 Thread.sleep(1000);
+			 WebElement Falsepassword = driver.findElement(By.xpath("//*[contains(@data-placeholder,'False Alarm Password')]"));
+			 Falsepassword.sendKeys(Keys.chord(Keys.CONTROL, "a")); // Select all text
+			 Falsepassword.sendKeys(Keys.DELETE); // Delete selected text
+			 Thread.sleep(5000);
+			 String option="save";
+			 MCMviewAppLogin.clickOnSave(option);
+		 }
+		 
+		 @When ("I capture the initial value of {string} under {string}")
+		 public void capture_initial_value(String elementID, String Tab)
+		 {
+			 
+			 switch(Tab)
+				{
+				case "Alarm Details":
+					 try {
+						 Thread.sleep(1500);
+						 WebElement ele = driver.findElement(By.xpath("//*[@title='"+Tab+"']//*[contains(@data-placeholder,'"+elementID+"') or contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keyType mat-column-keyType ng-star-inserted')]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getAttribute("value");
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					 }
+					 catch(Exception e) {
+						 System.out.println("Exception :"+ e + "has occured" );
+					 }
+						break;
+				case "Keys":
+					 try {
+						 Thread.sleep(1500);
+						 WebElement ele = driver.findElement(By.xpath("(//*[@title='"+Tab+"']//*[contains(@data-placeholder,'"+elementID+"') or contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keyType mat-column-keyType ng-star-inserted')])[1]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					 }
+					 catch(Exception e) {
+						 System.out.println("Exception :"+ e + "has occured" );
+					 }
+						break;
+				case "Key Log":
+					try {
+						Thread.sleep(1500);
+						WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-bookedOutBy mat-column-bookedOutBy ng-star-inserted')])[1]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					}
+					catch(Exception e) {
+						System.out.println("Exception :"+ e + "has occured" );
+					}
+					break;
+				case "Reference":
+					try {
+						Thread.sleep(1500);
+						WebElement ele = driver.findElement(By.xpath("(//*[@title='Keys']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-reference mat-column-reference ng-star-inserted')])[last()]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					}
+					catch(Exception e) {
+						System.out.println("Exception :"+ e + "has occured" );
+					}
+					break;
+					
+				case "Who has key":
+					try {
+						Thread.sleep(1500);
+						WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keyHeldBy mat-column-keyHeldBy ng-star-inserted')])[1]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					}
+					catch(Exception e) {
+						System.out.println("Exception :"+ e + "has occured" );
+					}
+					break;
+				case "Date":
+					try {
+						Thread.sleep(1500);
+						WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-date mat-column-date ng-star-inserted')])[1]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					}
+					catch(Exception e) {
+						System.out.println("Exception :"+ e + "has occured" );
+					}
+					break;
+				case "Keys Held By":
+					 try {
+						 Thread.sleep(1500);
+						 WebElement ele = driver.findElement(By.xpath("(//*[@title='Keys']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keysHeldBy mat-column-keysHeldBy ng-star-inserted')])[1]"));
+						 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+						 initialValue=ele.getText();
+						 System.out.println("\u001B[32mInitial Value displayed : .\u001B[0m"+ initialValue);
+					 }
+					 catch(Exception e) {
+						 System.out.println("Exception :"+ e + "has occured" );
+					 }
+						break;
+ }
+		 }
+		  @When("I click on {string}")
+			 public void user_click_under_active_work_order(String tab)
+			 {
+				 {
+					 try {
+						//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+						 aashm.iClickItemPerPage(tab);
+						 
+						 System.out.println("User clicked on "+tab);
+						 
+					 }
+					 catch(Exception e) {
+						 System.out.println("Exception :"+ e + "has occured" );
+					 }
+				 } 
+			 }
+		  @When ("I capture the new updated value of {string} under {string}")
+		  public void capture_new_value(String elementID,String Tab)
+			 {
+				 
+				 switch(Tab)
+					{
+					case "Alarm Details":
+						 try {
+							 Thread.sleep(1500);
+							 WebElement ele = driver.findElement(By.xpath("//*[@title='"+Tab+"']//*[contains(@data-placeholder,'"+elementID+"') or contains(text(),'"+elementID+"')]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getAttribute("value");
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						 }
+						 catch(Exception e) {
+							 System.out.println("Exception :"+ e + "has occured" );
+						 }
+							break;
+					case "Keys":
+						 try {
+							 Thread.sleep(1500);
+							 WebElement ele = driver.findElement(By.xpath("//*[@title='"+Tab+"']//*[contains(@data-placeholder,'"+elementID+"') or contains(text(),'"+elementID+"')]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						 }
+						 catch(Exception e) {
+							 System.out.println("Exception :"+ e + "has occured" );
+						 }
+							break;
+					case "Reference":
+						try {
+							Thread.sleep(1500);
+							WebElement ele = driver.findElement(By.xpath("(//*[@title='Keys']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-reference mat-column-reference ng-star-inserted')])[last()]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						}
+						catch(Exception e) {
+							System.out.println("Exception :"+ e + "has occured" );
+						}
+						break;
+					case "Key Log":
+						try {
+							Thread.sleep(1500);
+							WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-bookedOutBy mat-column-bookedOutBy ng-star-inserted')])[1]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						}
+						catch(Exception e) {
+							System.out.println("Exception :"+ e + "has occured" );
+						}
+						break;
+					case "Who has key":
+						try {
+							Thread.sleep(1500);
+							WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keyHeldBy mat-column-keyHeldBy ng-star-inserted')])[1]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						}
+						catch(Exception e) {
+							System.out.println("Exception :"+ e + "has occured" );
+						}
+						break;
+					case "Date":
+						try {
+							Thread.sleep(1500);
+							WebElement ele = driver.findElement(By.xpath("(//*[@title='Key Log']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-date mat-column-date ng-star-inserted')])[1]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						}
+						catch(Exception e) {
+							System.out.println("Exception :"+ e + "has occured" );
+						}
+						break;
+					case "Keys Held By":
+						 try {
+							 Thread.sleep(1500);
+							 WebElement ele = driver.findElement(By.xpath("(//*[@title='Keys']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-keysHeldBy mat-column-keysHeldBy ng-star-inserted')])[1]"));
+							 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",ele );
+							 updatedValue=ele.getText();
+							 System.out.println("\u001B[32mUpdated Value displayed : \u001B[0m"+ updatedValue);
+						 }
+						 catch(Exception e) {
+							 System.out.println("Exception :"+ e + "has occured" );
+						 }
+							break;
+			 }
+			 }
+		  @And ("validate the initial value of {string} is not same as new value")
+		  public void validate_value(String elementID)
+			 {
+				 assert initialValue !=null && updatedValue !=null;
+				 if(initialValue.equals(updatedValue))
+				 {
+					 System.out.println(initialValue +" :\u001B[32mValue remain unchanged after the update: \u001B[0m" +updatedValue);
+				 }
+				 else
+				 {
+					 System.out.println(initialValue +" :\u001B[32mValue changed after the update: \u001B[0m" +updatedValue);
+				 }
+			 }
 		 @Then ("user validate below field are displayed under Service User")
 		 public void user_validate_title_in_service_user(DataTable datatable)
 		 {
 			 {
 				 try {
-					 Thread.sleep(1500);
+					 Thread.sleep(1000);
 					 aashm.validatetitleService(datatable);
 				 }
 				 catch(Exception e) {
@@ -581,4 +917,5 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 }
 			 } 
 		 }
+	
 }
