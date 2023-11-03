@@ -20,14 +20,14 @@ Feature: TC_90680_122433:: Living HO_Living_Prop_Add a short note & Valid note c
     Then Click on "Tenancy Details" expansion button
     And user select "Add Note" from drop down List and navigate to "Notes"
     And user click on "Sub Type" the Drop Down List
-    And user select "Accounts" from dropdown
+    And user select "Accounts" from dropdown for "Other"
     And user click on "Type of Note" the Drop Down List
-    And user select "Covid" from dropdown
-    Then user click on save button
+    And user select "Covid" from dropdown for "Other"
+   Then user click on "Save" button
     Then user validate the Alert message for "Notes"
       | A valid text entry for the details of the Note is required |
     Then user fill details for "Notes" as "This is Tenancy to Add long Notes from Demo Test for testing purpose"
-    Then user click on save button
+   Then user click on "Save" button
 
     Examples: 
       | username           | password          | serviceName | address               | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |

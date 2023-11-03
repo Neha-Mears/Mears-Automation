@@ -15,7 +15,7 @@ Feature: TC_149531: Living HO - Edit Tenant - Comm details - Edit comms type
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
-    Then Scroll down and click on expansion panel header button for "Living_HO_username"
+    Then Scroll down and click on expansion panel header button for "Living_HO_username" with ""
     And user select "Edit Tenant" from drop down List and navigate to "Edit Tenant Details"
     When the user checks for the message "-- No communication details found --"
 

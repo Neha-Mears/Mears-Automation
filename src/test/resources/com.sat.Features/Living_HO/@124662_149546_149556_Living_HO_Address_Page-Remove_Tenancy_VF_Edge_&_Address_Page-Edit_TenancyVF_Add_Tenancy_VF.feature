@@ -15,19 +15,19 @@ Feature: TC_124662: Living HO_Address Page - Remove Tenancy VF_Edge and Address 
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
-    Then Scroll down and click on expansion panel header button for "Living_HOexpansion"
+    Then Scroll down and click on expansion panel header button for "Living_HOexpansion" with ""
     And user select "Edit Tenancy" from drop down List and navigate to "Edit Tenancy"
     And user click on "(Tenancy) Vulnerability Flags" the Drop Down List
-    And user select "02. Child under 12 months old in the household" from dropdown
-    Then user click on save button
+    And user select "02. Child under 12 months old in the household" from dropdown for "Other"
+   Then user click on "Save" button
     Then user validate red triangle warning on Tenancy detail
     Then user click on red triangle warning button
     Then user validate Tenancy warning containing the VF added is displayed
-    Then Scroll down and click on expansion panel header button for "Living_HOexpansion"
+    Then Scroll down and click on expansion panel header button for "Living_HOexpansion" with ""
     And user select "Edit Tenancy" from drop down List and navigate to "Edit Tenancy"
    And user click on "(Tenancy) Vulnerability Flags" the Drop Down List
     And user delete the content "(Tenancy) Vulnerability Flags" from the Drop Down List
-    Then user click on save button
+    Then user click on "Save" button
     Then user validate red triangle warning on Tenancy detail
 
     Examples: 

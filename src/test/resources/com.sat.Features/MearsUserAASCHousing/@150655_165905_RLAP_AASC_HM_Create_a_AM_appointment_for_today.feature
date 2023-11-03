@@ -16,10 +16,10 @@ Feature: TC_150655:AASC HM_Create a AM appointment for today
     Then select navapp "<serviceName>"
     And user select "Appointment Diary" from drop down List and navigate to "Appointment"
     And select the appointment screen is displaying
-    And user select "30" from dropdown
-    Then user select the today date for appointment
+    And user select "30" from dropdown for "Other"
+     Then user select the today date for appointment for day
     And user select the time slot for the appointment "<availableslot>"
-    And user select "Create Appointment" from dropdown
+    And user select "Create Appointment" from dropdown for "Calender"
     #####################################
     When user search "<address>" and click on the address details
     And user click on "Contract" the Drop Down List for appointment
@@ -38,15 +38,10 @@ Feature: TC_150655:AASC HM_Create a AM appointment for today
     And user click on "Appointment Type" the Drop Down List for appointment
     And user select "Ad Hoc Visit" from dropdown for appointment
     Then Click on the next button
-    # Then Click on ok pop up window to confirm
-    #Then Click on the next button
-    And user take the screenshot for confirmation page for Test case "150655_165905"
-    And click on the Submit button
+     And click on the Submit button
     Then user validate the popup "<text>" and popup "<message>"
     And user click on Ok appointment page
-
     # When user search "<address>" and click on the address details
     Examples: 
       | username      | password          | serviceName | address                                                                  | availableslot | text                                 | message                                                |
-      #| MCMViewHMUsername | MCMAppUserPassword | Portal      | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | 16:00:00      | New Appointment Sent to Mears Enable | The appointment was successfully sent to Mears Enable. |
       | RLAPMearsuser | RLAPMearspassword | Portal      | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | 10:00:00      | New Appointment Sent to Mears Enable | The appointment was successfully sent to Mears Enable. |

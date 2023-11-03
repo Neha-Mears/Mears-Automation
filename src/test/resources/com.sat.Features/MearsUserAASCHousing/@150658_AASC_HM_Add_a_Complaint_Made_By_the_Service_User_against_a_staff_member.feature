@@ -28,16 +28,16 @@ Feature: TC_150658: AASC HM_Add a Complaint Made By the Service User against a s
     Then user Select the "Stuart Wheeler" whom the complaint is against and click "Continue" button
     Then user click on save button
     And user click on "Status" the Drop Down List
-    And user select "Archived" from dropdown
+     And user select "Archived" from dropdown for "Other"
     Then user click the calender and select the slot available "<setmonth>" "<setyear>" "<setDate>"
     And user click on "Category" the Drop Down List
-    And user select "Landlord" from dropdown
+    And user select "Landlord" from dropdown for "Other"
     Then user fill details for "Complaint Description" as "UserDemotestNotes"
     Then user click on save button
     Then user click on the pencil icon
     Then user validate the fields "Complaint Made By" and "Complaint Made Against is disabled"
     And user click on "Status" the Drop Down List
-    And user select "Complete" from dropdown
+    And user select "Complete" from dropdown for "Other"
     Then user validate the popup "<text>" and popup "<message>"
     Then user click on save button
     And user click on Ok appointment page

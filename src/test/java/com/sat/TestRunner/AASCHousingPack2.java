@@ -24,14 +24,16 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@122381_122383_149530_LivingHO_Edit_Tenant_Add_Language&Tick_support_needs&AddNewEmployed or \r\n" +
-			"@122389_147672_Living_HO-Edit_Tenant_Comm_details-Delete_comms_type_&_View_Tenant or \r \n" +
-			"@124662_149546_149556_Living_HO_Address_Page-Remove_Tenancy_VF_Edge_&_Address_Page-Edit_TenancyVF_Add_Tenancy_VF or \r \n" +
-			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type or \r \n" +
-			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type"
+	tags= {	"@TC_146367_Add_risk_assessment_and_risk_and_then_Edit_the_Risk_Add_person_factors or \r \n"+
+			"@TC_149452_AASC_HM_Address_Page-Add_keys_showing_keys_held_by or \r \n" +
+			"@TC_149480_167366_AASC_HM-Add_and_Edit_a_Risk-Amend_Review_date_Add_mitigating_factors or \r \n" +
+			"@TC_167607_167609_167614_167628 or \r \n" +
+			"@TC167367_AASC_HM_Address_Page-Add_first_risk_assessment" 
+			
+		
 			})
 	
-	public class AASCHousing_TestRunner extends AbstractTestNGCucumberTests{
+	public class AASCHousingPack2 extends AbstractTestNGCucumberTests{
 	//	@Override
 	      
 	    //  @DataProvider(parallel = true) 

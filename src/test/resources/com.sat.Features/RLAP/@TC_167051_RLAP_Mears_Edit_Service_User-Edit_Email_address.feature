@@ -15,10 +15,10 @@ Feature: RLAP Mears_Edit Service User - Edit Email address
     Then select navapp "<serviceName>"
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "<address>" and click on the address details
-    Then Scroll down and click on expansion panel header button for "RLAPMearsthreedots"
+    Then Scroll down and click on expansion panel header button for "RLAPMearsthreedots" with ""
     And user select "Edit Service User" from drop down List and navigate to "Service User Details"
     Then user fill details for "Email Address" as "nehaH.sain@mearsgroup.co.uk"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username      | password          | serviceName | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |

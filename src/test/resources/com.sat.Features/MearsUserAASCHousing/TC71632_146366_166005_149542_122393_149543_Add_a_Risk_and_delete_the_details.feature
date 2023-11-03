@@ -30,8 +30,8 @@ Feature: AASC HM_&_RLAP_Living-HO - Add a Risk
     Then user click the calender and select the slot "<setmonth>" "<setyear>" "<setDate>"
     Then user click on save button
     ## Then user able to see "<success_msg>" toaster
-    # Then user verify the field are displayed in Risk Details page
-    #   | Details: | Aggravating Factors: | Mitigating Factors: | Incidents: | Person at Risk: | Review Date: | Active: |
+     Then user verify the field are displayed in Risk Details page
+       | Details: | Aggravating Factors: | Mitigating Factors: | Incidents: | Person at Risk: | Review Date: | Active: |
     Then user click on the edit icon under 'Risk'
     Then user delete "Details" content and verify save button is enable
     Then user click on save button
@@ -39,10 +39,10 @@ Feature: AASC HM_&_RLAP_Living-HO - Add a Risk
       | Valid details are required |
 
     Examples: 
-      | username           | password          | serviceName | ExpansionPanel     | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
-      | AASC_HMusername    | AASC_HMpassword   | Portal      | AASC_HMexpansion   | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | Valid details are required | A valid review date is required | August   |    2023 |      18 | The operation was successful |
-      | RLAPMearsuser      | RLAPMearspassword | Portal      | RLAPMearsuser      | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
-      | Living_HO_username | Living_HOpassword | Portal      | Living_HO_username | Room 16, St Catherine                                                    | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
+      | username           | password          | serviceName | ExpansionPanel     | address                                      | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
+      | AASC_HMusername    | AASC_HMpassword   | Portal      | AASC_HMexpansion   | Room 3, 1 Agincourt Avenue, Belfast, BT7 1QA | Valid details are required | A valid review date is required | August   |    2023 |      18 | The operation was successful |
+      | RLAPMearsuser      | RLAPMearspassword | Portal      | RLAPMearsuser      | Room 3, 1 Agincourt Avenue, Belfast, BT7 1QA | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
+      | Living_HO_username | Living_HOpassword | Portal      | Living_HO_username | Room 16, St Catherine                        | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
 
   @TC_122393_149543
   Scenario Outline: Make sure User is able to Login and add all field
@@ -66,15 +66,15 @@ Feature: AASC HM_&_RLAP_Living-HO - Add a Risk
     Then user fill details for "Incidents" as "Broken"
     Then user fill details for "Person at Risk" as "test1"
     Then user click on save button
-    ## Then user able to see "<success_msg>" toaster
+  #  ## Then user able to see "<success_msg>" toaster
     Then user validate the Alert message "<message1>" and "<message2>" for Add New Risk form
     Then user fill details for "Details" as "Demotestforallfield"
     Then user fill details for "Mitigating Factors" as "Risktest"
     Then user click the calender and select the slot "<setmonth>" "<setyear>" "<setDate>"
     Then user click on save button
-    ## Then user able to see "<success_msg>" toaster
-    # Then user verify the field are displayed in Risk Details page
-    #   | Details: | Aggravating Factors: | Mitigating Factors: | Incidents: | Person at Risk: | Review Date: | Active: |
+   # ## Then user able to see "<success_msg>" toaster
+    Then user verify the field are displayed in Risk Details page
+     | Details: | Aggravating Factors: | Mitigating Factors: | Incidents: | Person at Risk: | Review Date: | Active: |
     Then user click on the edit icon under "Risk"
     Then user delete "Details" content and verify save button is enable
     Then user click on save button
@@ -82,7 +82,7 @@ Feature: AASC HM_&_RLAP_Living-HO - Add a Risk
       | Valid details are required |
 
     Examples: 
-      | username           | password          | serviceName | ExpansionPanel     | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
-      | AASC_HMusername    | AASC_HMpassword   | Portal      | AASC_HMexpansion   | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | Valid details are required | A valid review date is required | August   |    2023 |      18 | The operation was successful |
-      | RLAPMearsuser      | RLAPMearspassword | Portal      | RLAPMearsuser      | SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
-      | Living_HO_username | Living_HOpassword | Portal      | Living_HO_username | Room 16, St Catherine                                                    | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
+      | username           | password          | serviceName | ExpansionPanel     | address                                      | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
+      | AASC_HMusername    | AASC_HMpassword   | Portal      | AASC_HMexpansion   | Room 3, 1 Agincourt Avenue, Belfast, BT7 1QA | Valid details are required | A valid review date is required | August   |    2023 |      18 | The operation was successful |
+     | RLAPMearsuser      | RLAPMearspassword | Portal      | RLAPMearsuser      | Room 3, 1 Agincourt Avenue, Belfast, BT7 1QA | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |
+      | Living_HO_username | Living_HOpassword | Portal      | Living_HO_username | Room 16, St Catherine                        | Valid details are required | A valid review date is required | August   |    2023 |      29 | The operation was successful |

@@ -26,7 +26,7 @@ Feature: RLAP Mears_Edit Service User - Edit Email address
     And user click on "Accommodation Status" the Drop Down List
     And user select "Current" from dropdown
     Then user fill details for "Telephone Number" as "0745626131"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username      | password          | serviceName | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
