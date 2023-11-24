@@ -66,12 +66,12 @@ Feature: TC_166624:  AASC HM_Add Service User and edit - Nass re
     And user select multiple option "<number of option>" for the "vulnerabilities" checkbox
     Then user click on "Disabilities" section
     And user select multiple option "<number of option>" for the "disabilities" checkbox
-    Then user click on save button
+    Then user click on "Save" button
     ###########2############################################
     Then Scroll down and click on expansion panel header button for "AASC_HMexpansion" with "Service Users"
     And user select "Edit Service User" from drop down List and navigate to "Service User Details"
     Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username        | password        | serviceName | address                                                                  | availableslot | start_time | end_time | text                                 | updatedtext                              | message                                                | downloadpath                                                | setmonth | setyear | setDate | number of option |

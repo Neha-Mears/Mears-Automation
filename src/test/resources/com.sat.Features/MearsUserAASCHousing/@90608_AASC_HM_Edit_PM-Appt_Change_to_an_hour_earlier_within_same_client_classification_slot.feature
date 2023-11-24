@@ -52,7 +52,7 @@ Feature: TC_90608: AASC HM -Edit PM Appt - Change to an hour earlier within same
     Then Click on "Appointment End Date" calender icon
     Then Appointment end at "<end_time>"
     Then click on the "Set" button
-    Then user click on save button
+    Then user click on "Save" button
     Then user validate the popup "<text>" and popup "<message>"
     Then click on the "OK" button
 

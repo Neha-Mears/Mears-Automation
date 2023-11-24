@@ -24,7 +24,7 @@ Feature: RLAP Mears_Edit key log - Update booked out by
     Then user click the calender and select the slot available "October" "2023" "29"
     Then user fill random details for "Notes" as "Generate Random Notes"
     And user click on "Key" the Drop Down List
-    And user select "Garage | 1006711858" from dropdown for "Other"
+    And user select "Garage | 190817236" from dropdown for "Other"
     Then user fill details for "Who Has Key" as "Owner"
     And user click on "Supplier" the Drop Down List
     And user select "Esther, Uriz (J3087L4704-5AA910A7)" from dropdown for "Other"
@@ -38,8 +38,10 @@ Feature: RLAP Mears_Edit key log - Update booked out by
     Then user click on edit button under icon name "Key Log"
     And user click on "Booked Out By" the Drop Down List
     And user select "AASC Client" from dropdown for "Other"
-    Then user click on "Save" button
-    When I click on "mcmview-flex-container property-key-log__container"
-    And user select "25" from dropdown for "Other"
+    And user click on "Supplier" the Drop Down List
+    And user select "Capone's Protection (H5848E1501-0F5EFAA7)" from dropdown for "Other"
+    Then user click on "Save" button 
+   # When I click on "mcmview-flex-container property-key-log__container"
+   # And user select "25" from dropdown for "Other"
     When user click on the descending "Returned" under tab "Key Log"
-    Then Validate the "Key Log" is added shows as "Booked Out By" for "AASC Client"
+   Then Validate the "Key Log" is added shows as "Booked Out By" for "AASC Client"

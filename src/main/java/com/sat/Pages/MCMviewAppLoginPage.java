@@ -89,8 +89,10 @@ public class MCMviewAppLoginPage {
 	@FindBy(xpath = "//span[normalize-space()='Cancel']") 
 	private WebElement Cancelbtn;
 	
-	@FindBy(xpath = "(//*[starts-with(@class,'mat-icon notranslate mat-icon-no-color ng-star-inserted')])[1]") 
+	//@FindBy(xpath = "(//*[@class='risks-list__wrapper']//*[@svgicon='edit'])[1]") 
+	@FindBy(xpath = "//*[@class='expansion-panel__header-buttons ng-star-inserted' or @class='risks-list__wrapper']//*[@svgicon='edit']") 
 	private WebElement EditIconbtn;
+	
 	@FindBy(xpath = "(//*[starts-with(@class,'mat-icon notranslate mat-icon-no-color ng-star-inserted')])[last()]") 
 	private WebElement plusIconbtn;
 	
@@ -279,7 +281,14 @@ public class MCMviewAppLoginPage {
 			if(Service.size() != 0) {
 				for (int i = 0; i < Service.size(); i++){
 					if (isClickable(Service.get(i))) {
-						testutil.actionMethodClick(driver, Service.get(i));
+						
+						 try {
+								// ele.get(i).click();
+							 testutil.actionMethodClick(driver, Service.get(i));
+								}catch(Exception e) {
+									testutil.jsclick(driver,  Service.get(i));
+									// Savebtn.click();
+								}
 						//testutil.jsclick(driver, Service.get(i));
 						flag = true;
 						i = Service.size();
@@ -293,18 +302,21 @@ public class MCMviewAppLoginPage {
 	}
 	
 	public void ClickAllService(String Option, String value) {
-		Wait.untilPageLoadComplete(driver,1000);
+		Wait.untilPageLoadComplete(driver,2000);
 		//Wait.elementToBeClickable(driver, driver.findElement(By.xpath("//*[contains(text(),'" + Option + "')]")), 0);
 		Boolean flag = false;
 		while (!flag) {
 			List<WebElement> ele = driver.findElements(By.xpath("//*[contains(text(),'" + Option + "')]"));
 			System.out.println(ele.size());
-			//System.out.println(ele);
 			if(ele.size() != 0) {
 				for (int i = 0; i < ele.size(); i++){
 					if (isClickable(ele.get(i))) {
-						testutil.actionMethodClick(driver, ele.get(i));
-						//testutil.jsclick(driver, ele.get(i));
+						 try {
+								util.actionMethodClick(driver,  ele.get(i));
+							}catch(Exception e) {
+								testutil.jsclick(driver,  ele.get(i));
+								// Savebtn.click();
+							}
 						flag = true;
 						i = ele.size();
 					}
@@ -616,11 +628,14 @@ public class MCMviewAppLoginPage {
 			Wait.elementToBeClickable(driver, expansionbtn, 2);
 			try {
 				Thread.sleep(5000);
+				util.actionMethodClick(driver, expansionbtn);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
+				util.actionMethodClick(driver, expansionbtn);
+				testutil.jsclick(driver, expansionbtn);
 				e.printStackTrace();
 			}
-			util.actionMethodClick(driver, expansionbtn);
+			
 		}
 		public void click_EditServiceUserexpansionpanel()
 		{
@@ -1094,27 +1109,27 @@ public void ValidateKeyAsNotes(String Tab,String elementID) throws InterruptedEx
 		}
 		public void clickOnSave(String option)throws InterruptedException
 		{   
-			WebElement val = driver.findElement(By.xpath("//span[normalize-space()='"+option+"']"));
+			WebElement val = driver.findElement(By.xpath("//span[normalize-space()='"+option+"' or @class='"+option+"']"));
+			//Wait.elementToBeClickable(driver, val, 2);
 			 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",val );
 			 Boolean flag = false;
 				while (!flag) {
 					//*[contains(@svgicon,'edit')]
-					List<WebElement> saveval = driver.findElements(By.xpath("//span[normalize-space()='"+option+"']"));
+					List<WebElement> saveval = driver.findElements(By.xpath("//span[normalize-space()='"+option+"' or @class='"+option+"']"));
 					for (int i = 0; i < saveval.size(); i++) {
 						if (isClickable(saveval.get(i))) {
 							((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",saveval.get(i) );
-							//util.actionMethodClick(driver, saveval.get(i));
 							 try {
-								 saveval.get(i).click();
-									//util.actionMethodClick(driver, Savebtn);
+								 //saveval.get(i).click();
+									util.actionMethodClick(driver, saveval.get(i));
 								}catch(Exception e) {
-									testutil.jsclick(driver,  saveval.get(i));
-									// Savebtn.click();
+									//testutil.jsclick(driver, saveval.get(i));
+								saveval.get(i).click();
 								}
 							flag = true;
 							i = saveval.size();
 							
-				System.out.println("User select option: Save");
+				System.out.println("User click option:"+ option );
 				
 			}
 					}
@@ -1310,14 +1325,16 @@ public void ValidateKeyAsNotes(String Tab,String elementID) throws InterruptedEx
 			 try {
 				// EditIconbtn.click();
 				 Wait.elementToBeClickable(driver, EditIconbtn, 3);
-					util.actionMethodClick(driver, EditIconbtn);
+					//util.actionMethodClick(driver, EditIconbtn);
+				 util.jsclick(driver, EditIconbtn);
 					//EditIconbtn.click();
 					clicked=true;
 				}catch(Exception e) {
-					//util.actionMethodClick(driver, EditIconbtn);
+					util.actionMethodClick(driver, EditIconbtn);
+				//	util.jsclick(driver, EditIconbtn);
+					//EditIconbtn.click();
 					retryCount++;
 					Thread.sleep(1000);
-				//	EditIconbtn.click();
 				}
 
 			 System.out.println("Selected the edit button under: "+str +retryCount);

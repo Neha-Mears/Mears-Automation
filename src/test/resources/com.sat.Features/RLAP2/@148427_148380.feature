@@ -10,7 +10,9 @@ Feature: TC_167630: RLAP Mears_Address Page - Add keys marking 1 as default
     And click on LogIn
     And I click on Mear Logo home Page
     When user search "<partaddress>" and "<address>" click on the address details for new version
+  And I click on checkbox Include closed task under Task for this Address "service-users-list__checkbox"
     Then Scroll down and click on expansion panel header button for "RLAPMearsthreedots" with ""
+    #write the pr
     And user select "View Service User" from drop down List and navigate to "Service User"
     Then Scroll down and click on expansion panel header button for "RLAPMearEditServiceUser" with ""
     And user select "Add Request" from drop down List and navigate to "Add Request"

@@ -1,0 +1,1671 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Nov 21, 2023 01:37:34 pm</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes</a></li>
+					<li><a href='#'>@TC_168098_168099</a></li>
+					<li><a href='#'>@TC_168098_RLAP_Mears_Edit_key_log-_Add_and_edit_notes</a></li>
+					<li><a href='#'>@TC_168099_RLAP_Mears_Edit_key_log-Mark_key_as_returned</a></li>
+					<li><a href='#'>@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes</a></li>
+					<li><a href='#'>@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details</a></li>
+					<li><a href='#'>@TC_168109_168101_168111__Add_key_log_Update_booked_out_with_supplier_added</a></li>
+					<li><a href='#'>@TC_168101_Living_HO_Edit_key_log-Update_booked_out_by</a></li>
+					<li><a href='#'>@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> feature(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>7</span> scenario(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>202</span> step(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Testing of RLAP Mears keys tap</span>
+						<span class='test-time'>Nov 21, 2023 01:37:39 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='2' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+		<span class='category label'>@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+	</div>
+	<span class='duration right label'>0h 6m 15s+741ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_ Edit key log - Add and edit notes</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='4' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='5' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='6' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='7' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='8' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='9' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Address" from drop down List and navigate to "Add Property"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='10' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_Add_address(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user search "101" and "Add Address" for Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='11' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Portfolio" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='12' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "AASC" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='13' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_checkbox_under_Contract_Name(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I click on "4" checkbox for Contract Name</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='14' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='15' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Room / Building" as "6711"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='16' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Postcode" as "ex1 3ut"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='17' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Location" as "Exeter"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='18' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='19' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Marketing Office" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='20' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "AASC" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='21' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Property Type" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='22' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select " Apartment " from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='23' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Property Usage" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='24' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "SSSA" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='25' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_chk_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "da" checkbox in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='26' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Rent" as "1300"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='27' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Bed Spaces" as "2"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='28' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='29' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_enter_value_in_text_box(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user enter the "Wheeler" in "value_2" text box</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='30' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_Find()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Find</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='31' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.select_surname(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I select the bottom owner "wheeler" under Owner details</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='32' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Select" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='33' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='34' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Submit" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='35' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='36' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='37' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "6711,  Exeter" and "6711,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='38' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_chk_under_task_for_this_address(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I click on checkbox Include closed task under Task for this Address "tasks-panel__wrapper"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='39' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "" is added shows as "tasks-panel__wrapper" for "Open"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='40' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Yes / No" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='41' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Reason notes" as "Yes, property should go for DIO approval"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='42' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_user_pop_up(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on pop-up "Yes" button window</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='45' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168098_168099</span>
+		<span class='category label'>@TC_168098_RLAP_Mears_Edit_key_log-_Add_and_edit_notes</span>
+	</div>
+	<span class='duration right label'>0h 7m 33s+356ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_ Edit key log - Add and edit notes</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='47' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='48' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='49' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='50' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='51' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='52' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='53' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "Thu Jan 06" and " Thu Jan 06 2022 08:59:09 GMT+0000 (GMT Standard Time) Room , Automated Test Street,  Devon,  Exeter Business Park,  England,  EX1 3UT " click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='54' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='55' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "Property Details" expansion button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='56' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Key Details" from drop down List and navigate to "Keys"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='57' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Validate_header_Keys(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Verify all the values are present under Keys</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Alarm Details</td><td>Keys</td><td>Key Log</td></tr></table></div>
+		</li>
+		<li test-id='58' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_plus_Icon_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on the plus icon under "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='59' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_slot(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the calender and select the slot available "October" "2023" "27"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='60' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.generate_random_txt(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill random details for "Notes" as "Generate Random Notes"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='61' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Key" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='62' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Front Door | 677676" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='63' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Who Has Key" as "Owner"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='64' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Booked Out By" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='65' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Adam Lucas" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='66' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='67' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='68' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "Key Log" is added shows as "Notes" for ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='69' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.takes_screenshot_appointment_page(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user take the screenshot for confirmation page for Test case "TC_167652"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='70' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='71' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_edit_btn_under_icon(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on edit button under icon name "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='72' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.generate_random_txt(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill random details for "Notes" as "Generate Random Notes"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='73' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='74' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='75' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "Key Log" is added shows as "Notes" for ""</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='78' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168098_168099</span>
+		<span class='category label'>@TC_168099_RLAP_Mears_Edit_key_log-Mark_key_as_returned</span>
+	</div>
+	<span class='duration right label'>0h 1m 48s+669ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_ Edit key log - Add and edit notes</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='80' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='81' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='82' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='83' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='84' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='85' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='86' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "Thu Jan 06" and " Thu Jan 06 2022 08:59:09 GMT+0000 (GMT Standard Time) Room , Automated Test Street,  Devon,  Exeter Business Park,  England,  EX1 3UT " click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='87' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='88' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "Property Details" expansion button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='89' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Key Details" from drop down List and navigate to "Keys"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='90' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Validate_header_Keys(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Verify all the values are present under Keys</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Alarm Details</td><td>Keys</td><td>Key Log</td></tr></table></div>
+		</li>
+		<li test-id='91' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='92' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_chkbox_checked(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user verify checkbox is checked under Returned "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='93' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_edit_btn_under_icon(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on edit button under icon name "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='94' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "returned" checkbox</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='95' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='96' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_chkbox_checked(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user verify checkbox is checked under Returned "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='97' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.takes_screenshot_appointment_page(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user take the screenshot for confirmation page for Test case "TC_167652"</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='190' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+		<span class='category label'>@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+	</div>
+	<span class='duration right label'>0h 10m 34s+737ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_ Edit key log - Add and edit notes</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='192' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='193' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='194' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='195' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='196' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='197' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Add Address" from drop down List and navigate to "Add Property"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='198' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_Add_address(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user search "101" and "Add Address" for Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='199' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Portfolio" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='200' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "AASC" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='201' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_checkbox_under_Contract_Name(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I click on "3" checkbox for Contract Name</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='202' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='203' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Room / Building" as "1288"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='204' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Postcode" as "ex1 3ut"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='205' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Location" as "Exeter"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='206' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='207' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Marketing Office" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='208' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "AASC" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='209' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Property Type" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='210' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select " Apartment " from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='211' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Property Usage" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='212' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "SSFA" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='213' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_chk_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "newHome" checkbox in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='214' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_chk_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select multiple option "1" for the "da" checkbox in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='215' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Rent" as "1400"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='216' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Bed Spaces" as "2"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='217' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='218' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_enter_value_in_text_box(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user enter the "Wheeler" in "value_2" text box</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='219' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_Find()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on Find</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='220' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.select_surname(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I select the bottom owner "wheeler" under Owner details</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='221' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Select" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='222' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_next_under_Add_Property(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='223' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Submit" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='224' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='225' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='226' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "1288,  Exeter" and "1288,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='227' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_on_chk_under_task_for_this_address(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I click on checkbox Include closed task under Task for this Address ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='228' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "" is added shows as "tasks-panel__wrapper" for "Open"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='229' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Yes / No" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='230' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Reason notes" as "Yes, property should go for DIO approval"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='231' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.click_user_pop_up(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on pop-up "Yes" button window</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='100'>
+					<div class='test-heading'>
+						<span class='test-name'>RLAP Mears_Edit key log - Update booked out by</span>
+						<span class='test-time'>Nov 21, 2023 01:53:21 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='101' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details</span>
+		<span class='category label'>@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details</span>
+	</div>
+	<span class='duration right label'>0h 2m 8s+907ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_Edit key log - Update booked out by</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='103' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='104' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='105' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='106' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='107' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='108' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='109' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "Test TOWN" and "Test, Test, Test Test, Test TOWN, TE1 1TE" click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='110' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "Property Details" expansion button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='111' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Key Details" from drop down List and navigate to "Keys"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='112' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Edit_Icon_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on the edit icon under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='113' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Code Access Number"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='114' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.generate_value_for_txt(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I set the "Alert Password" to "Generate Alert Password"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='115' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.generate_value_for_txt(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I set the "False Alarm Password" to "Generate False Alarm Password"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='116' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='117' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Validate_header_Keys(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Verify all the values are present under Keys</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Alarm Details</td><td>Keys</td><td>Key Log</td></tr></table></div>
+		</li>
+		<li test-id='118' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Edit_Icon_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on the edit icon under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='119' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Clear_alarm_detail(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I reset the content of text box under "Alarm Details" as pre-requist</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='120' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.checkCodeAccessNumber(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When the user checks if the Code Access Number exists for "Code Access Number" under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='121' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.capture_initial_value(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I capture the initial value of "Code Access Number" under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='122' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Edit_Icon_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on the edit icon under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='123' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user generate the unique number for "Code Access Number"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='124' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='125' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.capture_new_value(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I capture the new updated value of "Code Access Number" under "Alarm Details"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='126' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.validate_value(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And validate the initial value of "Code Access Number" is not same as new value</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='129' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168109_168101_168111__Add_key_log_Update_booked_out_with_supplier_added</span>
+		<span class='category label'>@TC_168101_Living_HO_Edit_key_log-Update_booked_out_by</span>
+	</div>
+	<span class='duration right label'>0h 4m 50s+928ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: Living HO_Edit key log - Update booked out by</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='131' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='132' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='133' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='134' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='135' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='136' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='137' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "Test TOWN" and "Test, Test, Test Test, Test TOWN, TE1 1TE" click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='138' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Click on "Property Details" expansion button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='139' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Key Details" from drop down List and navigate to "Keys"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='140' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Validate_header_Keys(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Verify all the values are present under Keys</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>Alarm Details</td><td>Keys</td><td>Key Log</td></tr></table></div>
+		</li>
+		<li test-id='141' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_plus_Icon_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on the plus icon under "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='142' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_slot(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click the calender and select the slot available "October" "2023" "29"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='143' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.generate_random_txt(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill random details for "Notes" as "Generate Random Notes"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='144' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Key" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='145' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Garage | 190817236" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='146' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user fill details for "Who Has Key" as "Owner"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='147' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Supplier" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='148' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Esther, Uriz (J3087L4704-5AA910A7)" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='149' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Booked Out By" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='150' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "aasc HM" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='151' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='152' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='153' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "Key Log" is added shows as "Booked Out By" for "aasc HM"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='154' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.takes_screenshot_appointment_page(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user take the screenshot for confirmation page for Test case "TC_167652"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='155' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='156' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_edit_btn_under_icon(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on edit button under icon name "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='157' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Booked Out By" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='158' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "AASC Client" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='159' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on "Supplier" the Drop Down List</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='160' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Capone's Protection (H5848E1501-0F5EFAA7)" from dropdown for "Other"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='161' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then user click on "Save" button</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='162' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_decending(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user click on the descending "Returned" under tab "Key Log"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='163' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.valdate_key_added_shows_as_default(java.lang.String,java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Validate the "Key Log" is added shows as "Booked Out By" for "AASC Client"</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='166'>
+					<div class='test-heading'>
+						<span class='test-name'>RLAP Mears_Update Planned and Actual Arrival</span>
+						<span class='test-time'>Nov 21, 2023 02:00:23 pm</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='167' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure</span>
+		<span class='category label'>@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure</span>
+	</div>
+	<span class='duration right label'>0h 2m 57s+192ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: RLAP Mears_Update Planned and Actual Arrival</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='169' class='node given pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given User Navigate to MCMView App</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='170' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='171' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And click on LogIn</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='172' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And Click on the Menu expansion button in Home page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='173' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then select navapp "Portal"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='174' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Property Search" from drop down List and navigate to "Property Search"</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='175' class='node when pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details_new_version(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When user search "SSSA10 DA" and "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" click on the address details for new version</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='176' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "Tenancy Detail" with ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='177' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Update Planned Arrival" from drop down List and navigate to ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='178' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.update_calender_week_later(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And the user chooses to update the date "one" week later</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='179' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='180' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "Tenancy Detail" with ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='181' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Update Actual Arrival" from drop down List and navigate to ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='182' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.update_calender_week_later(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And the user chooses to update the date "two" week later</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='183' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='184' class='node then pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then Scroll down and click on expansion panel header button for "Tenancy Detail" with ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='185' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user select "Update Planned Departure" from drop down List and navigate to ""</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='186' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.KeysStepDef.update_calender_week_later(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And the user chooses to update the date "one" week later</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='187' class='node and pass' status='pass'>
+			<div class="step-name" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And user click on Ok appointment page</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:37:39 pm</td>
+										<td class='linked' test-id='1'>Testing of RLAP Mears keys tap</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 21, 2023 01:37:39 pm</td>
+										<td class='linked' test-id='2'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168098_168099</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:43:58 pm</td>
+										<td class='linked' test-id='45'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 21, 2023 01:51:32 pm</td>
+										<td class='linked' test-id='78'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168098_RLAP_Mears_Edit_key_log-_Add_and_edit_notes</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:43:58 pm</td>
+										<td class='linked' test-id='45'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168099_RLAP_Mears_Edit_key_log-Mark_key_as_returned</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:51:32 pm</td>
+										<td class='linked' test-id='78'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 02:03:21 pm</td>
+										<td class='linked' test-id='190'>Living HO_ Edit key log - Add and edit notes</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:53:21 pm</td>
+										<td class='linked' test-id='100'>RLAP Mears_Edit key log - Update booked out by</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 21, 2023 01:53:21 pm</td>
+										<td class='linked' test-id='101'>Living HO_Edit key log - Update booked out by</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168109_168101_168111__Add_key_log_Update_booked_out_with_supplier_added</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:55:31 pm</td>
+										<td class='linked' test-id='129'>Living HO_Edit key log - Update booked out by</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168101_Living_HO_Edit_key_log-Update_booked_out_by</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 01:55:31 pm</td>
+										<td class='linked' test-id='129'>Living HO_Edit key log - Update booked out by</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 02:00:23 pm</td>
+										<td class='linked' test-id='166'>RLAP Mears_Update Planned and Actual Arrival</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 21, 2023 02:00:23 pm</td>
+										<td class='linked' test-id='167'>RLAP Mears_Update Planned and Actual Arrival</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>7</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>202</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Nov 21, 2023 01:37:34 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Nov 21, 2023 02:13:56 pm</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 36m 21s+798ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168098_168099</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168098_RLAP_Mears_Edit_key_log-_Add_and_edit_notes</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168099_RLAP_Mears_Edit_key_log-Mark_key_as_returned</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168109_168101_168111__Add_key_log_Update_booked_out_with_supplier_added</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168101_Living_HO_Edit_key_log-Update_booked_out_by</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									50%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 3,
+				passParent: 3,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 7,
+				passChild: 7,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 202,
+				passGrandChild: 202,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Testing of RLAP Mears keys tap":2177.123,"RLAP Mears_Edit key log - Update booked out by":420.61,"RLAP Mears_Update Planned and Actual Arrival":177.192
+			};
+		</script>
+	
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

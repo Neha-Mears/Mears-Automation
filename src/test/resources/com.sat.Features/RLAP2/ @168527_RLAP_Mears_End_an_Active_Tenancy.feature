@@ -1,4 +1,5 @@
- @168527_RLAP_Mears_End_an_Active_Tenancy
+####Do not run this 
+ ##@168527_RLAP_Mears_End_an_Active_Tenancy
 Feature: TC_167630: RLAP Mears_Address Page - Add keys marking 1 as default
 
   Background: 

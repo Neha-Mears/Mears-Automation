@@ -18,11 +18,11 @@ Feature: RLAP Mears_Edit key log - Update booked out by
     Then user generate the unique number for "Code Access Number"
     When I set the "Alert Password" to "Generate Alert Password"
     When I set the "False Alarm Password" to "Generate False Alarm Password"
-   Then user click on "Save" button
+    Then user click on "Save" button
     And Verify all the values are present under Keys
       | Alarm Details | Keys | Key Log |
 
-  @TC_168101_Living_HO_Edit_key_log-Update_booked_out_by
+  @TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details
   Scenario: Living HO_Edit key log - Update booked out by
     Then user click on the edit icon under "Alarm Details"
     Then I reset the content of text box under "Alarm Details" as pre-requist
@@ -30,6 +30,6 @@ Feature: RLAP Mears_Edit key log - Update booked out by
     When I capture the initial value of "Code Access Number" under "Alarm Details"
     Then user click on the edit icon under "Alarm Details"
     Then user generate the unique number for "Code Access Number"
-     Then user click on "Save" button
+    Then user click on "Save" button
     When I capture the new updated value of "Code Access Number" under "Alarm Details"
     And validate the initial value of "Code Access Number" is not same as new value

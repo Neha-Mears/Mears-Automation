@@ -26,7 +26,7 @@ Feature: AASC HM_Address Page - Add keys showing keys held by
     Then user fill details for "No. of Sets" as "1"
     Then user generate the unique number for "Reference"
     Then user fill details for "Keys Held By" as "Finaltest"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username           | password          | serviceName | address                                                                  |

@@ -24,7 +24,7 @@ Feature: TC_150658_165903: AASC HM_Add a Complaint Made By the Service User agai
     Then Click on "Complaints" expansion button
     And user select "Raise Complaint By" from drop down List and navigate to "Add Complaint"
     Then user "Staff Member" field in the "Complaint Made Against" section
-    Then user enter the "Stuart Wheeler" in "Name" text box
+    Then user enter the "Stuart Wheeler" in "value_1" text box
     Then user click on Find
     Then user validate the Continue button is disabled
     Then user Select the "Stuart Wheeler" whom the complaint is against and click "Continue" button

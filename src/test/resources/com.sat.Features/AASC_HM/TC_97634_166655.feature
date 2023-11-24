@@ -14,9 +14,11 @@ Feature: TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Serv
     And Click on the Menu expansion button in Home page
     Then select navapp "Portal"
     And user select "Property Search" from drop down List and navigate to "Property Search"
-    When user search "SSSA10 DA" and "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" click on the address details for new version
+    When user search "SSSA2, SOME STREET" and "SSSA2 , SOME STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" click on the address details for new version
+      And I click on checkbox Include closed task under Task for this Address "service-users-list__checkbox"
      Then Scroll down and click on expansion panel header button for "<username>" with ""
     #### Pre -Request##########################################
+    
    And user select "Flag as Absconder" from drop down List and navigate to "Flag as Absconder"
    And user click on "Type of Note" the Drop Down List
    And user select "Covid" from dropdown for "Other"
@@ -27,7 +29,7 @@ Feature: TC_97634:AASC HM_Address Page - Remove the "Absconder" flag from a Serv
     Then User click on check Box for "Enhanced Confidential Matter"
     Then user click on "Save" button
    Then user click on Cancel button
-   Then user click on Close button "Successfully marked as absconded on 24/10/2023"
+   Then user click on Close button "Successfully marked as absconded on 23/11/2023"
     And user click on Ok appointment page
     ##############################################################
    Then Scroll down and click on expansion panel header button for "<username>" with ""

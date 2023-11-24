@@ -25,7 +25,7 @@ Feature: AASC HM_&_RLAP_Add an sensitive note
     And user select "Absence" from dropdown for "Other"
     Then user fill details for "Notes" as "DemotestNotes"
     Then User click on check Box for "Enhanced Confidential Matter"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username      | password          | serviceName | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |
@@ -48,7 +48,7 @@ Feature: AASC HM_&_RLAP_Add an sensitive note
     And user select "Covid" from dropdown for "Other"
     Then user fill details for "Notes" as "DemotestNotes"
     Then User click on check Box for "Enhanced Confidential Matter"
-    Then user click on save button
+        Then user click on "Save" button
 
     Examples: 
       | username        | password          | serviceName | address                                                                  | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |

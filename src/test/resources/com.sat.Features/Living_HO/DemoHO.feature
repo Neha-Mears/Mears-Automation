@@ -1,6 +1,3 @@
-#Author: neha.sain@mearsgroup.co.uk
-#Keywords Summary :
-#Feature: List of scenarios.
 @TC_122403_167652_167653
 Feature: TC_122403:Living HO_ Add alarm details
 
@@ -13,19 +10,21 @@ Feature: TC_122403:Living HO_ Add alarm details
     And user select "Property Search" from drop down List and navigate to "Property Search"
     When user search "Room 16, St Catherine" and click on the address details
     Then Click on "Property Details" expansion button
+
+  @TC_122403:Living_HO_Add_alarm_details
+  Scenario Outline: Living HO_ Add alarm details
     And user select "Key Details" from drop down List and navigate to "Keys"
-
-
-   @TC_167637_Living_HO_Address_Page-Edit_keys_held_by
-  Scenario Outline: Living HO_Address Page - Edit keys held by
-    When I capture the initial value of "Keys Held By" under "Keys Held By"
-    Then user click on edit button under icon name "Keys"
-    #Then user fill details for "Keys Held By" as "EditKeyTester"
-     Then user fill random details for "Keys Held By" as "Generate Keys Held By"
-    Then user click on save button
-    When I capture the new updated value of "Keys Held By" under "Keys Held By"
- #   And validate the initial value of "Keys Held By" is not same as new value
+    Then user validate below field are displayed under Service User
+      | Mears Housing Management Limited | Property | Keys |
+   And Verify all the values are present under Keys
+     | Alarm Details | Keys | Key Log |
+    Then user click on the edit icon under "Alarm Details"
+    Then user generate the unique number for "Code Access Number"
+   When I set the "Alert Password" to "Generate Alert Password"
+    When I set the "False Alarm Password" to "Generate False Alarm Password"
+    Then user click on "Save" button
+    And user take the screenshot for confirmation page for Test case "TC_122403"
 
     Examples: 
-      | username           | password          | serviceName | address               | setmonth | setyear | setDate |
-      | Living_HO_username | Living_HOpassword | Portal      | Room 16, St Catherine | October  |    2023 |      11 |
+      | username           | password          | serviceName | address               | message1                   | message2                        | success_msg                  |
+      | Living_HO_username | Living_HOpassword | Portal      | Room 16, St Catherine | Valid details are required | A valid review date is required | The operation was successful |

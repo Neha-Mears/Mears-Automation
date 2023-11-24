@@ -1,13 +1,13 @@
-@148445_RLAP_Application_Add_a_request_Standard_No_due_date_RLAP_Mears
-Feature: TC_148445:   RLAP_Applications_Create Service User_Mandatory fields and Email only
+@148445_168930_168929_RLAP_Application_Add_a_request_Standard_No_due_date_RLAP_Mears
+Feature: TC :RLAP_Applications_Create Service User_Mandatory fields and Email only
 
   Background: 
-    Given User Navigate to MCMView App
-
-  @148445_RLAP_Application_Add_a_request_Standard_No_due_date_RLAP_Mears
-  Scenario Outline: RLAP_Applications_Create Service User_Mandatory fields and Email only
-    And user enter valid credential "<username>" and "<password>"
+     Given User Navigate to MCMView App
+    And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"
     And click on LogIn
+
+@148445_168930_168929_RLAP_Application_Add_a_request_Standard_No_due_date_RLAP_Mears
+  Scenario Outline: RLAP_Applications_Create Service User_Mandatory fields and Email only
     And Click on the Menu expansion button in Home page
     Then select navapp "Portal"
     And user select "Applications" from drop down List and navigate to "Applications"
@@ -45,6 +45,29 @@ Feature: TC_148445:   RLAP_Applications_Create Service User_Mandatory fields and
     Then user click on "Apply" button
     Then Validate the "" is added shows as "list__wrapper" for "Complete Request"
     And user take the screenshot for confirmation page for Test case "148445"
+ 
+ @168929_RLAP_Prop_Details_Complete_a_request_Standard_due_date_RLAP_Mears_Notify_unticked
+  Scenario Outline: RLAP_Prop Details_Complete a request_Standard_due date_RLAP Mears_Notify unticked
+    And Click on the Menu expansion button in Home page
+    Then select navapp "<serviceName>"
+    And user select "Task Dashboard" from drop down List and navigate to "Task Dashboard"
+    And I click on Filter Tasks in Task Dashboard
+    When I click on "Service User" under Association
+    Then user enter the "wheelerfrrri" in "value_1" text box
+    Then user enter the "testing12344555" in "value_2" text box
+    Then user click on Find
+    Then I select the bottom owner "wheelerfrrri" under Owner details
+    Then user click on "Continue" button
+    Then user click on "Apply" button
+    Then Validate the "" is added shows as "list__wrapper" for "Complete Request"
+    And user take the screenshot for confirmation page for Test case "148445"
+    Then user click on "Complete Request" button
+    Then user fill details for "Reason notes" as "Yes, Agree Deductions - Demo test for Add request"
+    Then user click on pop-up "Mark as Complete" button window
+    And I click on checkbox Include closed task under Task for this Address "ng-star-inserted"
+    Then user click on "View Outcome Notes" button
+    Then user validate the popup "Outcome Notes" and popup "Yes, Agree Deductions - Demo test for Add request"
+     And user click on Ok appointment page
 
     Examples: 
       | username      | password          | serviceName |
