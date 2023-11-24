@@ -22,12 +22,12 @@ Feature: Living-HO - Living HO_Tenancy_Add a long note__A valid Note Type is req
     And user click on "Sub Type" the Drop Down List
     And user select "Accounts" from dropdown for "Other"
     Then user fill details for "Notes" as "This is Tenancy to Add long Notes from Demo Test for testing purpose"
-    Then user click on save button
+        Then user click on "Save" button
     Then user validate the Alert message for "Add Incident"
       | A valid Note Type is required |
     And user click on "Type of Note" the Drop Down List
     And user select "Covid" from dropdown for "Other"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username           | password          | serviceName | address               | message1                   | message2                        | setmonth | setyear | setDate | success_msg                  |

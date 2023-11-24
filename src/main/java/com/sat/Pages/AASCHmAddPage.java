@@ -65,7 +65,7 @@ public class AASCHmAddPage {
 	@FindBy(xpath = "//*[@class='mat-focus-indicator mat-button mat-button-base mat-save']")
 	private WebElement Submitbtn;
 	
-	@FindBy(xpath = "//span[text()='OK']")
+	@FindBy(xpath = "//span[contains(text(),'OK')]")
 	private WebElement OKbtn;
 	
 	@FindBy(xpath = "//span[normalize-space()='Save']") 
@@ -815,11 +815,14 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     	
     	try {
 	    	Thread.sleep(1000);
+	    	 Actions actions= new Actions(driver);
 	    	Iconeditbtn = driver.findElement(By.xpath("//*[contains(@title,'"+underIcon+"')]//*[@data-mat-icon-name='edit'][1]"));
 	    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Iconeditbtn );
+	    	actions.moveToElement(Iconeditbtn);
 	    	util.actionMethodClick(driver, Iconeditbtn);
-	    	
 	    	}catch(Exception e) {
+	    		testutil.jsclick(driver, Iconeditbtn);
+	    		Iconeditbtn.click();
 	    		e.printStackTrace();
 	    	}
 	
@@ -907,13 +910,17 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 	System.out.println(comment.getText());
 	try {
 		assertTrue(text.getText().contains(poptext), "Status is same");
+		//System.out.println(poptext +" Status is same");
 	} catch (Exception e) {
 		assertTrue(text.getText().contains(poptext), "Status is not same");
+		//System.out.println(poptext+" Status is not same");
 	}
 	try {
 		assertTrue(comment.getText().contains(popcomment), "Status is same");
+		//System.out.println(popcomment+ " Status is same");
 	} catch (Exception e) {
 		assertTrue(comment.getText().contains(popcomment), "Status is not same");
+		//System.out.println(popcomment+" Status is not same");
 	}
 	
 	
@@ -925,8 +932,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
     	try {
     		util.actionMethodClick(driver, OKbtn);
     	}catch(Exception e) {
-    		util.actionMethodClick(driver, OKbtn);
-    	}
+    		 OKbtn.click();   	}
     }
     public void clickstaffMember(String field, String under) throws InterruptedException
     {

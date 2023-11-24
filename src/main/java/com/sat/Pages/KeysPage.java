@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Month;
@@ -63,6 +64,9 @@ public class KeysPage {
 	@FindBy(xpath = "//*[@role='button']//*[contains(@class,'mat-expansion-panel-header-title expansion_panel__header-title')]") 
 	private WebElement Filteratask;
 	
+	@FindBy(xpath = "//*[@aria-label='Open calendar']") 
+	private WebElement gettingDate;
+	
 	WebElement Iconeditbtn;
 	Testutil testutil = new Testutil();
 	Wait waits = new Wait();
@@ -97,9 +101,9 @@ public class KeysPage {
 	 	
 	 	expectedval=val;
 	 	System.out.println("\u001B[32mExpected value: .\u001B[0m"+expectedval);
-	 		List<WebElement> cells = driver.findElements(By.xpath("//*[@title='"+Tab+"']//*[ contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-bookedOutBy mat-column-bookedOutBy ng-star-inserted')]"));
+	 		List<WebElement> cells = driver.findElements(By.xpath("//*[@title='"+Tab+"']//*[contains(@class,'mat-cell cdk-cell mears-table__cell cdk-column-bookedOutBy mat-column-bookedOutBy ng-star-inserted') or contains(@class,'"+val+"')]"));
 	 		System.out.println("\u001B[32mNumber of Row present in Table : .\u001B[0m"+cells.size());
-	 		for(int i=0;i<=cells.size()-1;i++)
+	 		for(int i=0;i<=cells.size();i++)
 	 		{
 	 			Thread.sleep(7000);
 	 			String actualtext=cells.get(i).getText();
@@ -255,7 +259,54 @@ public void ClosedTask(String Tab,String elementID, String val) throws Interrupt
  				
  			}
  		}
- 		
+public void Details(String Tab,String elementID, String val) throws InterruptedException {
+ 	
+ 	expectedval=val;
+ 	System.out.println("\u001B[32mExpected value: .\u001B[0m"+expectedval);
+ 		List<WebElement> cells = driver.findElements(By.xpath("//*[@class='"+Tab+"']//*[ contains(@class,'mat-cell cdk-cell mears-table__cell')]"));
+ 		System.out.println("\u001B[32mNumber of Row present in Table : .\u001B[0m"+cells.size());
+ 		for(int j=0;j<cells.size();j++)
+ 		{
+ 			Thread.sleep(7000);
+ 			String actualtext=cells.get(j).getText();
+ 			
+ 			System.out.println(actualtext);
+ 			//System.out.println("\u001B[32mActual value.\u001B[0m"+actualtext);
+ 			if(cells.get(j).getText().equals(expectedval))
+ 			{
+ 				System.out.println("\u001B[32mExpected value :.\u001B[0m"+expectedval+ "=="+"\u001B[32mActual Value.\u001B[0m" +actualtext);
+ 				//System.out.println("\u001B[32mBooked Out By user by.\u001B[0m"+expectedval);
+ 				List<WebElement> cellVal = driver.findElements(By.xpath("//*[@class='tasks-panel__wrapper']//*[ contains(@class,'mat-row cdk-row')]"));
+ 				String cell1value= cellVal.get(j).getText();
+ 				String[] words = cell1value.split(" ");
+                
+ 		        // Initialize variables to hold the extracted values
+ 		        String title = "";
+ 		        String description = "";
+ 		        String status = "";
+ 		        String date = "";
+
+ 		        for (int i = 0; i < words.length; i++) {
+ 		            if (i == 0) {
+ 		                title = "Title: " + words[i];
+ 		            } else if (words[i].equals("Please")) {
+ 		                description = "Description: " + "Please provide approval decision for this property";
+ 		            } else if (words[i].equals("Closed")) {
+ 		                status = "Status: " + "Closed";
+ 		            } else if (words[i].matches("\\d{2}/\\d{2}/\\d{4}")) {
+ 		                date = "Date: " + words[i];
+ 		            }
+ 		        }
+
+ 		        // Print the formatted output
+ 		        System.out.println(title);
+ 		        System.out.println(description);
+ 		        System.out.println(status);
+ 		        System.out.println(date);
+ 		    }
+ 				
+ 			}
+ 		}
 public void FilterByUser(String Tab,String elementID, String val) throws InterruptedException {
  	
  	expectedval=val;
@@ -481,12 +532,12 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 	    		
 	    	}
 }
-	 public void clickchkTask() throws InterruptedException
+	 public void clickchkTask(String address) throws InterruptedException
 	    {
 	    	try {
 	    		Wait.untilPageLoadComplete(driver);
 	    		
-	    		WebElement Checkboxtask= driver.findElement(By.xpath("//*[@class='tasks-panel__wrapper']//*[starts-with(@class,'mat-checkbox-inner-container')]"));
+	    		WebElement Checkboxtask= driver.findElement(By.xpath("//*[contains(@class,'"+address+"')]//*[starts-with(@class,'mat-checkbox-inner-container')]"));
 	    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Checkboxtask);
 	    		util.actionMethodClick(driver, Checkboxtask);
 	    	}
@@ -523,8 +574,161 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 		 	  	   	    	Serviceusertxt.click();
 		 	  	   	    	}
 		 	    		}
-		 	    	
-	 	    	
+	    	 public void popupwindowOk(String Value) throws InterruptedException
+		 	    {
+		 	    
+		 	    		Wait.untilPageLoadComplete(driver);
+		 	    		WebElement Yespop= driver.findElement(By.xpath("//*[contains(@class,'dynamic-form')]//span[text()='"+Value+"']"));
+		 	    		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Activebtn);
+		 	    		try {
+		 	    			util.actionMethodClick(driver, Yespop);
+		 	  	   	    	}
+		 	  	   	    	catch(Exception e)
+		 	  	   	    	{
+		 	  	   	    	util.actionMethodClick(driver, Yespop);
+		 	  	   	    	}
+		 	    		} 	    	
+
+public void UpdateWeekLater(String week) throws InterruptedException
+    {
+	 switch(week)
+		{
+	 /*
+		case "":
+    		Wait.untilPageLoadComplete(driver);
+    		gettingDate.click();
+    		 String userInput = "2023-12-28";
+    		 LocalDate userDate = LocalDate.parse(userInput);
+    		 LocalDate oneWeekLater = userDate.plusWeeks(1);
+    		 //for year for next week
+     		int lateryear =oneWeekLater.getYear();
+     		System.out.println("Later Year "+lateryear);
+     		
+     		//for month for next week
+     		int laterMon= oneWeekLater.getMonthOfYear();
+     		Month month = Month.of(laterMon);
+     		String fullMonth = month.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+     		System.out.println("Later Month "+fullMonth);
+ 			
+            // for date 1 week later
+     		int Laterdate=oneWeekLater.getDayOfMonth();
+     		System.out.println("Later Year "+Laterdate);
+             
+     		// output
+ 			System.out.println("The current date is "+userDate);
+ 			System.out.println("The date week later is "+oneWeekLater);
+ 			
+ 			// Year and month to select 1 week later
+ 			
+ 			driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
+ 			WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+lateryear+"']"));
+ 			Wait.elementToBeClickable(driver, fromyear, 3);
+ 			testutil.actionMethodClick(driver, fromyear);
+ 			System.out.println("Select the month");
+ 			WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+fullMonth+" "+lateryear+"']"));
+ 			Wait.elementToBeClickable(driver, frommonth, 3);
+ 			testutil.actionMethodClick(driver, frommonth);
+ 			WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+Laterdate+" " +fullMonth+" "+ lateryear+"']"));
+ 			System.out.println("Select the date");
+ 			System.out.println("click on date "+fromDate.getText());
+ 			Wait.elementToBeClickable(driver, fromDate, 3);
+ 			testutil.actionMethodClick(driver, fromDate);
+		*/
+		case "one":
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			List<WebElement> crossButtons = driver.findElements(By.xpath("//button[@aria-label='Open calendar']//*[text()='clear']"));
+
+			if (!crossButtons.isEmpty()) {
+			    WebElement crossButton = crossButtons.get(0);
+			    testutil.actionMethodClick(driver, crossButton);
+			    // Proceed with interactions
+			} else {
+			    System.out.println("Cross button not present. Moving to the next step...");
+			    // Handle accordingly
+			}
+
+    		Wait.untilPageLoadComplete(driver);
+    		gettingDate.click();
+    		 LocalDate currentDate = LocalDate.now();
+    		 LocalDate oneWeekLater = currentDate.plusWeeks(1);
+    		 //for year for next week
+     		int lateryear =oneWeekLater.getYear();
+     		System.out.println("Later Year "+lateryear);
+     		
+     		//for month for next week
+     		int laterMon= oneWeekLater.getMonthOfYear();
+     		Month month = Month.of(laterMon);
+     		String fullMonth = month.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+     		System.out.println("Later Month "+fullMonth);
+ 			
+            // for date 1 week later
+     		int Laterdate=oneWeekLater.getDayOfMonth();
+     		System.out.println("Later Year "+Laterdate);
+             
+     		// output
+ 			System.out.println("The current date is "+currentDate);
+ 			System.out.println("The date week later is "+oneWeekLater);
+ 			
+ 			// Year and month to select 1 week later
+ 			
+ 			driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
+ 			WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+lateryear+"']"));
+ 			Wait.elementToBeClickable(driver, fromyear, 3);
+ 			testutil.actionMethodClick(driver, fromyear);
+ 			System.out.println("Select the month");
+ 			WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+fullMonth+" "+lateryear+"']"));
+ 			Wait.elementToBeClickable(driver, frommonth, 3);
+ 			testutil.actionMethodClick(driver, frommonth);
+ 			WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+Laterdate+" " +fullMonth+" "+ lateryear+"']"));
+ 			System.out.println("Select the date");
+ 			System.out.println("click on date "+fromDate.getText());
+ 			Wait.elementToBeClickable(driver, fromDate, 3);
+ 			testutil.actionMethodClick(driver, fromDate);
+ 			break;
+		case "two":
+			Wait.untilPageLoadComplete(driver);
+			WebElement clear_calender= driver.findElement(By.xpath("//button[@aria-label='Open calendar']//*[text()='clear']"));
+			testutil.actionMethodClick(driver, clear_calender);
+    		gettingDate.click();
+    		 LocalDate currentDate2 = LocalDate.now();
+    		 LocalDate oneWeekLater2 = currentDate2.plusWeeks(2);
+    		
+    		 //for year for next week
+    		int lateryear2 =oneWeekLater2.getYear();
+    		System.out.println("Later Year "+lateryear2);
+    		
+    		//for month for next week
+    		int laterMon2= oneWeekLater2.getMonthOfYear();
+    		Month month2 = Month.of(laterMon2);
+    		String fullMonth2 = month2.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+    		System.out.println("Later Month "+fullMonth2);
+			
+           // for date 1 week later
+    		int Laterdate2=oneWeekLater2.getDayOfMonth();
+    		System.out.println("Later Year "+Laterdate2);
+            
+    		// output
+			System.out.println("The current date is "+currentDate2);
+			System.out.println("The date week later is "+oneWeekLater2);
+			
+			// Year and month to select 1 week later
+			
+			driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
+			WebElement fromyear2= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+lateryear2+"']"));
+			Wait.elementToBeClickable(driver, fromyear2, 3);
+			testutil.actionMethodClick(driver, fromyear2);
+			System.out.println("Select the month");
+			WebElement frommonth2= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+fullMonth2+" "+lateryear2+"']"));
+			Wait.elementToBeClickable(driver, frommonth2, 3);
+			testutil.actionMethodClick(driver, frommonth2);
+			WebElement fromDate2= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+Laterdate2+" " +fullMonth2+" "+ lateryear2+"']"));
+			System.out.println("Select the date");
+			System.out.println("click on date "+fromDate2.getText());
+			Wait.elementToBeClickable(driver, fromDate2, 3);
+			testutil.actionMethodClick(driver, fromDate2);
+			break;
+    		} 
+    }
 }
 
 

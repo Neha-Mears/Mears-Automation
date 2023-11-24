@@ -22,11 +22,11 @@ Feature: TC_165901: RLAP Mears_Can edit an existing complaint rasied against Oth
     ############################################
     And user select "Raise Complaint By" from drop down List and navigate to "Add Complaint"
     Then user "Staff Member" field in the "Complaint Made Against" section
-    Then user enter the "Stuart Wheeler" in "Name" text box
+    Then user enter the "Stuart Wheeler" in "value_1" text box
     Then user click on Find
     Then user validate the Continue button is disabled
     Then user Select the "Stuart Wheeler" whom the complaint is against and click "Continue" button
-    Then user click on save button
+       Then user click on "Save" button
     And user click on "Status" the Drop Down List
     And user select "Archived" from dropdown for "Other"
     Then user click the calender and select the slot available "<setmonth>" "<setyear>" "<setDate>"
@@ -42,9 +42,9 @@ Feature: TC_165901: RLAP Mears_Can edit an existing complaint rasied against Oth
     And user click on Ok appointment page
     Then user validate the popup "<text>" and popup "<message>"
     Then user validate the fields "Complaint Made By" and "Complaint Made Against is disabled"
-    Then user click on save button
+       Then user click on "Save" button
     Then user fill details for "Outcome" as "ComplaintMadeByUser"
-     Then user click on save button
+        Then user click on "Save" button
     And user take the screenshot for confirmation page for Test case "TC165901"
 
     Examples: 

@@ -88,7 +88,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  @And ("user select {string} from drop down List and navigate to {string}")
  public void user_select_from_drop_down_list(String Option,String value ) throws InterruptedException {
 	 try {
-		 Thread.sleep(7000);
+		 Thread.sleep(6000);
 		 MCMviewAppLogin.ClickAllService(Option,value);
 		 System.out.println("user select : " + Option +"and navigate to " +value );
 	 }
@@ -362,7 +362,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  public void user_click_on_save_button(String option)throws InterruptedException
  {
 	 try {
-		 Thread.sleep(5000);
+		 Thread.sleep(4000);
 		 MCMviewAppLogin.clickOnSave(option);
 	 }
 	 catch(Exception e) {
@@ -435,7 +435,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
  public void user_click_on_Edit_Icon_button(String str)throws InterruptedException
  {
 	 try {
-		 Thread.sleep(6000);
+		 Thread.sleep(5000);
 		 MCMviewAppLogin.clickOnEditIconRisk(str);
 	 }
 	 catch(Exception e) {

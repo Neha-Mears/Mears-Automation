@@ -99,6 +99,16 @@ public class KeysStepDef {
 					 System.out.println("Exception :"+ e + "has occured" );
 				 }
 					break;	
+			case "risks-list__wrapper":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.Details(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;	
 	 }
 }
 	 @And ("user select the {string} group from Add Request page")
@@ -201,12 +211,12 @@ public class KeysStepDef {
 			 System.out.println("Exception :"+ e + "has occured" );
 		 }
 }
-	  @And ("I click on checkbox Include closed task under Task for this Address")
-	  public void click_on_chk_under_task_for_this_address()
+	  @And ("I click on checkbox Include closed task under Task for this Address {string}")
+	  public void click_on_chk_under_task_for_this_address(String val)
 		 {
 			 try {
 				 Thread.sleep(1000);
-				 key.clickchkTask();
+				 key.clickchkTask(val);
 			 }
 			 catch(Exception e) {
 				 System.out.println("Exception :"+ e + "has occured" );
@@ -235,5 +245,46 @@ public class KeysStepDef {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }
 		 }
+	  @Then ("user click on pop-up {string} button window")
+	  public void click_user_pop_up(String value)
+		 {
+			 try {
+				 Thread.sleep(3000);
+				 key.popupwindowOk(value);
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @Then("user varify the following grids is displayed under Confirmation Tab")
+		public void verify_grid_displayed(DataTable datatable) throws InterruptedException {
+			Thread.sleep(8000);
+			 try {
+				 List<String> actual = datatable.asList();
+				 System.out.println("Size of the data table " +actual.size());
+				 for(int i=1;i<=actual.size()-1;i++)
+				 {
+					 Thread.sleep(1000);
+					 String expected =driver.findElement(By.xpath("//*[starts-with(@class,'ng-star-inserted')]//*[contains(text(),'"+actual.get(i)+"')]")).getAttribute("outerText");
+					 System.out.println(expected);
+					 assertion.CheckAssertionTrue(expected.contains(actual.get(i)), actual.get(i));
+					 
+				 }
+			 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 } 
+	  }
+	  @And ("the user chooses to update the date {string} week later")
+	  public void update_calender_week_later(String week) throws InterruptedException {
+			Thread.sleep(7000);
+			 try {
+				 key.UpdateWeekLater(week);
+			 
+	  }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 } 
+			 }
 }
 

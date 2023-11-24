@@ -2,19 +2,17 @@
 #Keywords Summary :Login to MCMView
 #Feature: List of scenarios.
 @TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default
-Feature:RLAP Mears_Address Page - Add keys marking 1 as default
+Feature: RLAP Mears_Address Page - Add keys marking 1 as default
 
   Background: 
     Given User Navigate to MCMView App
 
- @TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default
+  @TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default
   Scenario Outline: Make sure User is able to Login
     And user enter valid credential "<username>" and "<password>"
     And click on LogIn
-    And Click on the Menu expansion button in Home page
-    Then select navapp "<serviceName>"
-    And user select "Property Search" from drop down List and navigate to "Property Search"
-    When user search "<address>" and click on the address details
+    And I click on Mear Logo home Page
+    When user search "Test TOWN" and "Test, Test, Test Test, Test TOWN, TE1 1TE" click on the address details for new version
     Then Click on "Property Details" expansion button
     And user select "Key Details" from drop down List and navigate to "Keys"
     And Verify all the values are present under Keys

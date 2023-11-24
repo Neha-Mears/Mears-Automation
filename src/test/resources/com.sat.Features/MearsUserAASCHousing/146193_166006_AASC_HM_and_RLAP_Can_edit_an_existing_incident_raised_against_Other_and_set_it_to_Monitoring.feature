@@ -27,13 +27,13 @@ Feature: TC_146193:AASC HM and RLAP_Mears | Can edit an existing incident raised
     And user click on "Status" the Drop Down List
     And user select "Active" from dropdown for "Other"
     Then user fill details for "Incident Description" as "testingDemo"
-    Then user click on save button
+    Then user click on "Save" button
     # # pre-condition status set to Archived
     Then user click on the pencil icon
     Then user validate the fields "Incident Raised By" and "Incident Raised Against"
     And user click on "Status" the Drop Down List
     And user select "<Status_update>" from dropdown for "Other"
-    Then user click on save button
+    Then user click on "Save" button
     #  When I verify values under the "Status" column
     #  Then I should see the value "<Status_update>"
     And user take the screenshot for confirmation page for Test case "TC146193_166006"

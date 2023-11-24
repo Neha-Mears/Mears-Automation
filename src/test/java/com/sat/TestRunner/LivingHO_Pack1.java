@@ -24,14 +24,15 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@122381_122383_149530_LivingHO_Edit_Tenant_Add_Language&Tick_support_needs&AddNewEmployed or \r\n" +
+	tags= {	"@122381_122383_149530 or \r \n"+
 			"@122389_147672_Living_HO-Edit_Tenant_Comm_details-Delete_comms_type_&_View_Tenant or \r \n" +
 			"@124662_149546_149556_Living_HO_Address_Page-Remove_Tenancy_VF_Edge_&_Address_Page-Edit_TenancyVF_Add_Tenancy_VF or \r \n" +
 			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type or \r \n" +
-			"@149531_Living_HO-Edit_Tenant-Comm_details-Edit_comms_type"
+			"@90680_122433:Living_HO_Living_Prop_Add_a_short_note_Valid_note_content_is_required" 
+			
 			})
 	
-	public class LivingHO_TestRunner extends AbstractTestNGCucumberTests{
+	public class LivingHO_Pack1 extends AbstractTestNGCucumberTests{
 	//	@Override
 	      
 	    //  @DataProvider(parallel = true) 
