@@ -635,6 +635,21 @@ public class MCMviewAppLoginPage {
 			}
 			util.actionMethodClick(driver, expansionEditbtn);
 		}
+		public void click_ExpansionButtonAllUser(String option)
+		{
+			WebElement expansionEditbtn = driver.findElement(By.xpath("//*[starts-with(@class,'"+option+"')]//*[starts-with(@class,'mat-icon notranslate mat-menu-trigger plus-icon mat-icon-no-color')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",expansionEditbtn );
+			Wait.elementToBeClickable(driver, expansionEditbtn, 2);
+			try {
+				Thread.sleep(5000);
+				util.actionMethodClick(driver, expansionEditbtn);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				util.actionMethodClick(driver, expansionEditbtn);
+				e.printStackTrace();
+			}
+			
+		}
 		public void click_AASCHM_panel(String option)
 		{
 			

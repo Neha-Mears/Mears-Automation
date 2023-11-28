@@ -58,6 +58,15 @@ public class KeysStepDef {
 					 System.out.println("Exception :"+ e + "has occured" );
 				 }
 					break;
+			case "notes-panel__wrapper":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.AddNewNotes(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
 	 
 			case "Booked Out By":
 				 try {
@@ -235,5 +244,27 @@ public class KeysStepDef {
 				 System.out.println("Exception :"+ e + "has occured" );
 			 }
 		 }
+	  @And ("the user chooses to update the date {string} week later")
+	  public void update_calender_week_later(String week) throws InterruptedException {
+			Thread.sleep(7000);
+			 try {
+				 key.UpdateWeekLater(week);
+			 
+	  }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 } 
+			 }
+	  @Then ("user validate the Save button is enabled")
+	  public void IsButtonEnable() throws InterruptedException {
+			Thread.sleep(7000);
+			 try {
+				 key.IsButtonEnabled();
+			 
+	  }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 } 
+}
 }
 

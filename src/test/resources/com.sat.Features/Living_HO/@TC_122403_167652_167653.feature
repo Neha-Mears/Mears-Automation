@@ -23,7 +23,7 @@ Feature: TC_122403:Living HO_ Add alarm details
       | Alarm Details | Keys | Key Log |
     Then user click on the edit icon under "Alarm Details"
     Then user generate the unique number for "Code Access Number"
-    Then user click on save button
+    Then user click on "Save" button
     And user take the screenshot for confirmation page for Test case "TC_122403"
 
     Examples: 
@@ -40,7 +40,7 @@ Feature: TC_122403:Living HO_ Add alarm details
     Then user click on the edit icon under "Alarm Details"
     When I set the "Alert Password" to "Generate Alert Password"
     When I set the "False Alarm Password" to "Generate False Alarm Password"
-    Then user click on save button
+ Then user click on "Save" button
     And user take the screenshot for confirmation page for Test case "TC_167652"
 
     Examples: 
@@ -56,7 +56,7 @@ Feature: TC_122403:Living HO_ Add alarm details
       | Alarm Details | Keys | Key Log |
     Then user click on the edit icon under "Alarm Details"
     When I set the "False Alarm Password" to "Generate False Alarm Password"
-    Then user click on save button
+    Then user click on "Save" button
     And user take the screenshot for confirmation page for Test case "TC_167653"
 
     Examples: 

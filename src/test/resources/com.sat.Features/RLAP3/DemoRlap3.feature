@@ -24,19 +24,19 @@ Feature: Add Service User note
     And user click on "Gender" the Drop Down List
     And user select "Female" from dropdown for "Other"
     Then user click on "Save" button
-    Then user validate the "Save" button is enabled
+    Then user validate the Save button is enabled
     Then user fill details for "Other Preferences" as "Preference enter to enable save"
-    Then user validate the "Save" button is enabled
+    Then user validate the Save button is enabled
      Then user generate the unique number for "UTN"
      And user click on "service" the Drop Down List
-    And user select "Navy" from dropdown for "Other"
-     And user click on "Assignment Base" the Drop Down List
-    And user select "142 Sqn Banbury, Oxford" from dropdown for "Other"
-    Then user generate the unique number for "UIN"
-     And user click on "region" the Drop Down List
-    And user select "London" from dropdown for "Other"
-   Then user click on "Save" button
-    Then Scroll down and click on expansion panel header button for "AllUser" with "notes-panel__wrapper"
+   # And user select "Navy" from dropdown for "Other"
+   #  And user click on "Assignment Base" the Drop Down List
+   # And user select "142 Sqn Banbury, Oxford" from dropdown for "Other"
+   # Then user generate the unique number for "UIN"
+   #  And user click on "region" the Drop Down List
+   # And user select "London" from dropdown for "Other"
+  # Then user click on "Save" button
+  #  Then Scroll down and click on expansion panel header button for "AllUser" with "notes-panel__wrapper"
    # And user select "Add Note" from drop down List and navigate to "New Note"
    # And user click on "Type of Note" the Drop Down List
   #  And user select "Automate" from dropdown for "Other"

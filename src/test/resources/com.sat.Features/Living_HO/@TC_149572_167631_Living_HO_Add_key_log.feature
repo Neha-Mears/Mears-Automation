@@ -20,8 +20,7 @@ Feature: TC_167725:   Living HO_Add key log
     Then user generate the unique number for "Reference"
     Then user fill details for "No. of Sets" as "100"
     Then user fill details for "Keys Held By" as "keystest"
-    Then user click on save button
-
+    Then user click on "Save" button
   @TC_149572_Living_HO_Add_key_log
   Scenario Outline: Change who has key
     Then user click on the plus icon under "Key Log"
@@ -34,7 +33,7 @@ Feature: TC_167725:   Living HO_Add key log
     Then user fill details for "Supplier" as "Accounts Payable Section (WALFSTC&F)"
     And user click on "Supplier" the Drop Down List
     And user select "Accounts Payable Section (WALFSTC&F)" from dropdown for "Other"
-    Then user click on save button
+   Then user click on "Save" button
 
     Examples: 
       | username           | password          | serviceName | address               | setmonth | setyear | setDate |
@@ -51,8 +50,7 @@ Feature: TC_167725:   Living HO_Add key log
     And user select "File Reference | 478219211" from dropdown for "Other"
     And user select multiple option "1" for the "returned" checkbox
     Then user fill random details for "Notes" as "Generate Random Notes"
-    Then user click on save button
-
+    Then user click on "Save" button
     Examples: 
       | username           | password          | serviceName | address               | setmonth | setyear | setDate |
       | Living_HO_username | Living_HOpassword | Portal      | Room 16, St Catherine | October  |    2023 |      11 |

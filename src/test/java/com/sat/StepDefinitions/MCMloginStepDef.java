@@ -193,6 +193,10 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 				    Thread.sleep(1000);
 				    MCMviewAppLogin.click_expansionpanel();
 				    break;
+			case "AllUser":
+			    Thread.sleep(1000);
+			    MCMviewAppLogin.click_ExpansionButtonAllUser(Value);
+			    break;
 			case "RLAPMearsuser":
 			    Thread.sleep(1000);
 			    MCMviewAppLogin.click_expansionpanel();
@@ -229,7 +233,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_threedotTenancy();
 			    break;
-			case "AASC_HMusername":
+			case "AASC_HMusername": 
 			    Thread.sleep(5000);
 			    MCMviewAppLogin.click_threedotTenancy();
 			    break;
