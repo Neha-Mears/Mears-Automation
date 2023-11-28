@@ -35,8 +35,8 @@ Feature: Add Service User note
     Then user generate the unique number for "UIN"
      And user click on "region" the Drop Down List
     And user select "London" from dropdown for "Other"
-   # Then user click on "Save" button
-   # Then Scroll down and click on expansion panel header button for "AllUser" with "notes-panel__wrapper"
+   Then user click on "Save" button
+    Then Scroll down and click on expansion panel header button for "AllUser" with "notes-panel__wrapper"
    # And user select "Add Note" from drop down List and navigate to "New Note"
    # And user click on "Type of Note" the Drop Down List
   #  And user select "Automate" from dropdown for "Other"
