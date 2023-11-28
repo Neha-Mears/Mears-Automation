@@ -1,0 +1,239 @@
+package com.sat.StepDefinitions;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import com.sat.Pages.AASCHmAddPage;
+import com.sat.Pages.KeysPage;
+import com.sat.Pages.MCMviewAppLoginPage;
+import com.sat.config.ConfigFileReader;
+import com.sat.testbase.Assertions;
+import com.sat.testbase.TestBase;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class KeysStepDef {
+	
+	
+	TestBase testbase = new TestBase();
+	WebDriver driver= TestBase.getDriver();
+	private KeysPage key= new KeysPage(TestBase.getDriver());
+	private AASCHmAddPage aashm= new AASCHmAddPage(TestBase.getDriver());
+	 Assertions assertion = new Assertions(driver);
+	 private ConfigFileReader config = new ConfigFileReader();
+	 private MCMviewAppLoginPage MCMviewAppLogin = new MCMviewAppLoginPage(TestBase.getDriver());
+
+	 
+	 @Then ("Validate the {string} is added shows as {string} for {string}")
+	 public void valdate_key_added_shows_as_default(String Tab,String elementID,String val) throws InterruptedException {
+		 
+		 switch(elementID)
+			{
+			case "default":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 aashm.ValidateKeyAsDefalt(Tab,elementID);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;
+			case "Notes":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 MCMviewAppLogin.ValidateKeyAsNotes(Tab,elementID);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;
+	 
+			case "Booked Out By":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.ValidateKeyLogBookedOutBy(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;
+			case "service-users-list__table":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.ValidatetenancyStatus(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;	
+			case "tasks-panel__wrapper":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.ClosedTask(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;	
+			case "list__wrapper":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.FilterByUser(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
+					break;	
+	 }
+}
+	 @And ("user select the {string} group from Add Request page")
+	 public void user_select_group(String Option) throws InterruptedException {
+		 try {
+			 Thread.sleep(1000);
+			 key.selectGroup(Option);
+			 System.out.println("user select : " + Option +"");
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
+	 @And ("I click on Filter Tasks in Task Dashboard")
+	 public void click_on_Filter_Task_Dashboard() throws InterruptedException {
+		 try {
+			 Thread.sleep(1000);
+			 key.ClickFilterDashboard();
+			 
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
+	 @Then ("I select the Current Date from calender for Add Request")
+	 public void select_slot() throws InterruptedException {
+		 try {
+			 
+			Thread.sleep(1000);
+			 key.CalendarDateValidation();
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+  }
+	 
+	 @Then ("user click on the Show all checkbox")
+	 public void click_show_all_checkbox() throws InterruptedException {
+		 try {
+			 Thread.sleep(1000);
+			 key.Clickshowallchkbox();
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+  }
+	 @Then ("user search {string} and {string} for Add Property")
+	 public void click_on_Add_address(String add,String option)
+	 {
+		 try {
+			 Thread.sleep(1000);
+			 key.ClickAddAdress(add,option);
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
+	 @Then ("I click on {string} checkbox for Contract Name")
+	 public void click_on_checkbox_under_Contract_Name(String number)
+	 {
+		 try {
+			 Thread.sleep(1000);
+			 key.clickOnContractSelectionchk(number);
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
+	 @Then ("Click on {string} the {string} button in Add Property")
+	 public void click_on_next_under_Add_Property(String option,String val)
+	 {
+		 try {
+			 Thread.sleep(1000);
+			 key.clickOnNext(option,val);
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
+	  @And ("user select multiple option {string} for the {string} checkbox in Add Property")
+	  public void click_on_chk_under_Add_Property(String option,String val)
+		 {
+			 try {
+				 Thread.sleep(1000);
+				 key.clickOnchk(option,val);
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @Then ("I select the bottom owner {string} under Owner details")
+	  public void select_surname(String user)
+	  {
+	  try {
+			 Thread.sleep(1500);
+			 key.selectOwnerSurname(user);
+			 System.out.println("User clicked  " +user+ "  Under Owner detail");	
+			 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+}
+	  @And ("I click on checkbox Include closed task under Task for this Address")
+	  public void click_on_chk_under_task_for_this_address()
+		 {
+			 try {
+				 Thread.sleep(1000);
+				 key.clickchkTask();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  
+	  @Then ("I select the service user with {string} application")
+	  public void select_active_service_user(String value)
+		 {
+			 try {
+				 Thread.sleep(5000);
+				 key.clickActiveServiceUser(value);
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @When ("I click on {string} under Association")
+	  public void click_service_user_under_association(String value)
+		 {
+			 try {
+				 Thread.sleep(5000);
+				 key.ServiceUsertxt(value);
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+}
+

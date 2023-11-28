@@ -1,0 +1,2861 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ExtentReports</title>
+        <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+	    <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7e408aed24af91e1ad76f49a74ecfa0ef1d97cfb/spark/css/spark-style.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+</style></head>    <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa bdd-report standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">ExtentReports</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">Oct 30, 2023 02:29:04 pm</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>            <div class="page-container">
+                <div class="main-content">
+<div class="test-wrapper row test-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tests</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+						
+						
+						
+						
+						
+						<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" href="#">@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today</a>
+						<a class="dropdown-item" href="#">@150655_AASC_HM_Create_a_AM_appointment_for_today</a>
+						<a class="dropdown-item" href="#">@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents</a>
+						<a class="dropdown-item" href="#">@TC167368_Add_a_Risk-Mandatory_fields_only</a>
+						<a class="dropdown-item" href="#">@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation</a>
+						<a class="dropdown-item" href="#">@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default</a>
+						<a class="dropdown-item" href="#">@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address</a>
+						<a class="dropdown-item" href="#">@TC_167052_167054_167059_RLAP_Mears_View_Service_User</a>
+						<a class="dropdown-item" href="#">@TC_167052_167054_167059_RLAP_Mears_Edit_Service_User-Edit_Email_address_Accomdation_status_Edit_Tel_No</a>
+						<a class="dropdown-item" href="#">@167057_RLAP_Complete_a_service_user_search-Active/surname</a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item"  status="pass" test-id="1"
+					author=""
+					tag="@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">TC_150655:AASC HM_Create a AM appointment for today</p>
+							<p class="duration text-sm">0h 8m 28s+46ms</p>
+							<span class="datetime">14:29:10 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">TC_150655:AASC HM_Create a AM appointment for today</h5>
+									<span class='badge badge-success'>10.30.2023 14:29:10</span>
+									<span class='badge badge-danger'>10.30.2023 14:37:38</span>
+									<span class='badge badge-default'>0h 8m 28s+46ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">AASC HM_Create a PM appointment for today</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Create a PM appointment for today</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Appointment Diary" from drop down List and navigate to "Appointment"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_the_appointment_sreen()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And select the appointment screen is displaying</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "30" from dropdown for "Other"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.current_date_selection_day()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user select the today date for appointment for day</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_current_time_slot_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select the time slot for the appointment "10:00:00"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Create Appointment" from dropdown for "Calender"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Contract" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Handy Person" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Priority" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "P2 30 Working Day - Urgent" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Address" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Mears" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Description" as "AppointmentTest"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_next_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on the next button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Client Slot Classification" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "AM (08:00-13:00)" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Trade" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Housing Manager" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Appointment Type" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Ad Hoc Visit" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_next_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on the next button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_submit_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on the Submit button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_validate_popmsg_and_text(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user validate the popup "New Appointment Sent to Mears Enable" and popup "The appointment was successfully sent to Mears Enable."</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on Ok appointment page</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">AASC HM_Create a PM appointment for today</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Appointment Diary" from drop down List and navigate to "Appointment"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_the_appointment_sreen()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And select the appointment screen is displaying</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "30" from dropdown for "Other"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.current_date_selection()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user select the today date for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_current_time_slot_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select the time slot for the appointment "12:00:00"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Create Appointment" from dropdown for "Calender"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Contract" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Handy Person" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Priority" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "P2 30 Working Day - Urgent" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Address" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Mears" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Description" as "AppointmentTest"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_next_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on the next button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Client Slot Classification" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "AM (08:00-13:00)" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Trade" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Housing Manager" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_for_appointment(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Appointment Type" the Drop Down List for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_list_value_for_trade(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Ad Hoc Visit" from dropdown for appointment</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_next_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on the next button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.takes_screenshot_appointment_page(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user take the screenshot for confirmation page for Test case "TC_150655_165905"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_on_submit_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on the Submit button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_validate_popmsg_and_text(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user validate the popup "New Appointment Sent to Mears Enable" and popup "The appointment was successfully sent to Mears Enable."</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on Ok appointment page</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="37"
+					author=""
+					tag="@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">RLAP Mears_Address Page - Edit risk - Add incidents</p>
+							<p class="duration text-sm">0h 15m 49s+470ms</p>
+							<span class="datetime">14:30:53 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">RLAP Mears_Address Page - Edit risk - Add incidents</h5>
+									<span class='badge badge-success'>10.30.2023 14:30:53</span>
+									<span class='badge badge-danger'>10.30.2023 14:46:42</span>
+									<span class='badge badge-default'>0h 15m 49s+470ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Make sure User is able to Login</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Make sure User is able to Login</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearsuser" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "View Risk Assessments" from drop down List and navigate to "Risk Assessments"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Risk Assessments" expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Risk Assessment" from drop down List and navigate to "Add New Risk Assessment"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then verify all tabs appearing on the Add risk Assessment popup page</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Risk associated tenancy</td><td>Created On</td><td>Completed On</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_risk_expensionbtn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Risk" risk expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Risk" from drop down List and navigate to "Add Risk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Aggravating Factors" as "Stutest"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Details" as "Demotestformandatoryfield"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(java.lang.String,java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click the calender and select the slot "August" "2023" "29"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Edit_Icon_button(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on the edit icon under "Risk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_delete_content_savebtl_enable(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user delete "Details" content and verify save button is enable</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Details" as "Demotestformandatoryfield"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Mitigating Factors" as "Emergency factor"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Incidents" as "Immediate"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_Risk_Details_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on "Risk Details" button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_grid_displayed(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user varify the following grids is displayed</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Details:</td><td>Aggravating Factors:</td><td>Mitigating Factors:</td><td>Incidents:</td><td>Review Date:</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.verify_grid_displayed(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user varify the following grids is displayed</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Demotestformandatoryfield</td><td>Stutest</td><td>Emergency factor</td><td>Immediate</td><td>29/08/2023</td></tr></table></div>
+							</div>
+						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Make sure User is able to Login</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearsuser" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "View Risk Assessments" from drop down List and navigate to "Risk Assessments"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Risk Assessments" expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Risk Assessment" from drop down List and navigate to "Add New Risk Assessment"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Make sure User is able to Login</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearsuser" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "View Risk Assessments" from drop down List and navigate to "Risk Assessments"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Risk Assessments" expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Risk Assessment" from drop down List and navigate to "Add New Risk Assessment"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then verify all tabs appearing on the Add risk Assessment popup page</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Risk associated tenancy</td><td>Created On</td><td>Completed On</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_risk_expensionbtn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Risk" risk expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Add Risk" from drop down List and navigate to "Add Risk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Aggravating Factors" as "Stutest"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Details" as "Demotestformandatoryfield"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_slot_date(java.lang.String,java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click the calender and select the slot "August" "2023" "29"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_Edit_Icon_button(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on the edit icon under 'Risk'</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_delete_content_savebtl_enable(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user delete "Details" content and verify save button is enable</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Mitigating Factors" as "Emergency factor"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Incidents" as "Immediate"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">Make sure User is able to Login</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_risk_assesment_btn(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Click on "Property Details" expansion button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Key Details" from drop down List and navigate to "Keys"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.Validate_header_Keys(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Verify all the values are present under Keys</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>Alarm Details</td><td>Keys</td><td>Key Log</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_keys_plus_icon()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on plus icon in keys tab</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.select_Dietry_chkbox(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select multiple option "1" for the "default" checkbox</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Key Type" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Garage" from dropdown for "Other"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "No. of Sets" as "1"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.generate_port_reference(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user generate the unique number for "Reference"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Keys Held By" as "Finaltest"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_validate_last_chkbox_selected()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then validate the last entry default checkbox is selected</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="105"
+					author=""
+					tag="@TC167368_Add_a_Risk-Mandatory_fields_only"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">AASC HM & RLAP & Living-HO - Add a Risk - Mandatory fields only</p>
+							<p class="duration text-sm">0h 0m 0s+0ms</p>
+							<span class="datetime">14:37:38 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">AASC HM & RLAP & Living-HO - Add a Risk - Mandatory fields only</h5>
+									<span class='badge badge-success'>10.30.2023 14:37:38</span>
+									<span class='badge badge-danger'>10.30.2023 14:37:38</span>
+									<span class='badge badge-default'>0h 0m 0s+0ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC167368_Add_a_Risk-Mandatory_fields_only</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="122"
+					author=""
+					tag="@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">RLAP Mears_Add risk assessment and risk and then Edit the Risk - Add mitigation</p>
+							<p class="duration text-sm">0h 0m 0s+0ms</p>
+							<span class="datetime">14:38:59 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">RLAP Mears_Add risk assessment and risk and then Edit the Risk - Add mitigation</h5>
+									<span class='badge badge-success'>10.30.2023 14:38:59</span>
+									<span class='badge badge-danger'>10.30.2023 14:38:59</span>
+									<span class='badge badge-default'>0h 0m 0s+0ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="150"
+					author=""
+					tag="@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">RLAP Mears_Edit Service User - Edit Email address</p>
+							<p class="duration text-sm">0h 1m 17s+283ms</p>
+							<span class="datetime">14:41:35 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">RLAP Mears_Edit Service User - Edit Email address</h5>
+									<span class='badge badge-success'>10.30.2023 14:41:35</span>
+									<span class='badge badge-danger'>10.30.2023 14:42:53</span>
+									<span class='badge badge-default'>0h 1m 17s+283ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">RLAP Mears_Edit Service User - Edit Email address</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">RLAP Mears_Edit Service User - Edit Email address</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearsthreedots" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Email Address" as "nehaH.sain@mearsgroup.co.uk"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="167"
+					author=""
+					tag="@TC_167052_167054_167059_RLAP_Mears_View_Service_User"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No</p>
+							<p class="duration text-sm">0h 2m 0s+143ms</p>
+							<span class="datetime">14:42:54 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No</h5>
+									<span class='badge badge-success'>10.30.2023 14:42:54</span>
+									<span class='badge badge-danger'>10.30.2023 14:44:54</span>
+									<span class='badge badge-default'>0h 2m 0s+143ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC_167052_167054_167059_RLAP_Mears_View_Service_User</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">RLAP Mears_Edit Service User - Edit Email address and Accomdation status</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">RLAP Mears_Edit Service User - Edit Email address and Accomdation status</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Property Search" from drop down List and navigate to "Property Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start when" title="com.sat.StepDefinitions.MCMloginStepDef.click_on_address_details(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>When user search "SSSA10 DA  , DA STREET,  Gloucester,  Gloucestershire,  England,  GL13NN" and click on the address details</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearsthreedots" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "View Service User" from drop down List and navigate to "Service User"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_validate_title_in_service_user(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user validate below field are displayed under Service User</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>AASC - Northern Ireland</td><td>SSSA10 DA , DA STREET, Gloucester, Gloucestershire, GL13NN, England</td><td>Service User (stuart reteststues)</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.click_expansion(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then Scroll down and click on expansion panel header button for "RLAPMearEditServiceUser" with ""</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Edit Service User" from drop down List and navigate to "Service User Details"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_validate_title_in_service_user(io.cucumber.datatable.DataTable)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user validate below field are displayed under Service User</span>
+									</div>
+				<div class="details"><table class='runtime-table table-striped table'><tr><td>AASC - Northern Ireland</td><td>SSSA10 DA , DA STREET, Gloucester, Gloucestershire, GL13NN, England</td><td>Service User ( stuart reteststues)</td><td>Edit Service User</td></tr></table></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_drop_down_List(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on "Accommodation Status" the Drop Down List</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_List(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Current" from dropdown for "Other"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.fill_details_for(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user fill details for "Telephone Number" as "0745626131"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.user_click_on_save_button()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on save button</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="190"
+					author=""
+					tag="@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">RLAP Mears_Address Page - Add keys marking 1 as default</p>
+							<p class="duration text-sm">0h 0m 0s+0ms</p>
+							<span class="datetime">14:44:54 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">RLAP Mears_Address Page - Add keys marking 1 as default</h5>
+									<span class='badge badge-success'>10.30.2023 14:44:54</span>
+									<span class='badge badge-danger'>10.30.2023 14:44:54</span>
+									<span class='badge badge-default'>0h 0m 0s+0ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="214"
+					author=""
+					tag="@167057_RLAP_Complete_a_service_user_search-Active/surname"
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">TC_167057:  RLAP Mears_Complete a service user search - Active/surname</p>
+							<p class="duration text-sm">0h 0m 42s+519ms</p>
+							<span class="datetime">14:46:44 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">TC_167057:  RLAP Mears_Complete a service user search - Active/surname</h5>
+									<span class='badge badge-success'>10.30.2023 14:46:44</span>
+									<span class='badge badge-danger'>10.30.2023 14:47:26</span>
+									<span class='badge badge-default'>0h 0m 42s+519ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @167057_RLAP_Complete_a_service_user_search-Active/surname</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">RLAP Mears_Complete a service user search - Active/surname</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse scenario_outline">
+						<div class="card-body l1">
+							<div class="card-header" role="tab">
+								<div class="card-title outline-child">
+									<div class="node">RLAP Mears_Complete a service user search - Active/surname</div>
+									<div class="status-avatar float-left pass-bg">
+										<i class="fa fa-check text-white"></i>
+									</div>
+								</div>
+							</div>
+							<div class="card-body collapse mt-3">
+									<div class="d-flex align-items-center justify-content-start given" title="com.sat.StepDefinitions.MCMloginStepDef.user_Naviagte_to_MCMView_App()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Given User Navigate to MCMView App</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_login_with_valid_username_and_password_(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user enter valid credential "RLAPMearsuser" and "RLAPMearspassword"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Login()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And click on LogIn</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.Click_on_Menu_expansion_btn()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And Click on the Menu expansion button in Home page</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.MCMloginStepDef.select_navapp(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then select navapp "Portal"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_from_drop_down_list(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select "Service User Search" from drop down List and navigate to "Service User Search"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.MCMloginStepDef.user_select_site_drop_down_list(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user select the site for "AASC - Northern Ireland"</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_enter_value_in_text_box(java.lang.String,java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user enter the "Wheeler" in "SurName" text box</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.click_on_Find()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user click on Find</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start then" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_select_service_user(java.lang.String)">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>Then user Select the service user "wheeler" from the list</span>
+									</div>
+				<div class="details"></div>
+									<div class="d-flex align-items-center justify-content-start and" title="com.sat.StepDefinitions.AASCHMRaiseanIncidentagainstOtherStepDef.user_click_OK_appointment_page()">
+										<span class="alert-icon pass-bg">
+											<i class="fa fa-check text-white"></i>
+										</span>
+										<span>And user click on Ok appointment page</span>
+									</div>
+				<div class="details"></div>
+							</div>
+						</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row tag-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tags</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">10</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today</p>
+							<p class="duration text-sm">3 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:29:10 pm</td>
+									<td class='linked' test-id='1'>
+										TC_150655:AASC HM_Create a AM appointment for today
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:29:10 pm</td>
+									<td class='linked' test-id='3'>
+										AASC HM_Create a PM appointment for today
+										<div class="">
+											<span class="badge badge-default">TC_150655:AASC HM_Create a AM appointment for today.AASC HM_Create a PM appointment for today</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:35:49 pm</td>
+									<td class='linked' test-id='70'>
+										AASC HM_Create a PM appointment for today
+										<div class="">
+											<span class="badge badge-default">TC_150655:AASC HM_Create a AM appointment for today.AASC HM_Create a PM appointment for today</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@150655_AASC_HM_Create_a_AM_appointment_for_today</p>
+							<p class="duration text-sm">3 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>3</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@150655_AASC_HM_Create_a_AM_appointment_for_today</h4>
+							<span status="pass" class='badge badge-success'>3 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:29:10 pm</td>
+									<td class='linked' test-id='2'>
+										AASC HM_Create a PM appointment for today
+										<div class="">
+											<span class="badge badge-default">TC_150655:AASC HM_Create a AM appointment for today.AASC HM_Create a PM appointment for today</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:29:10 pm</td>
+									<td class='linked' test-id='3'>
+										AASC HM_Create a PM appointment for today
+										<div class="">
+											<span class="badge badge-default">TC_150655:AASC HM_Create a AM appointment for today.AASC HM_Create a PM appointment for today</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:35:49 pm</td>
+									<td class='linked' test-id='70'>
+										AASC HM_Create a PM appointment for today
+										<div class="">
+											<span class="badge badge-default">TC_150655:AASC HM_Create a AM appointment for today.AASC HM_Create a PM appointment for today</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:30:53 pm</td>
+									<td class='linked' test-id='37'>
+										RLAP Mears_Address Page - Edit risk - Add incidents
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:30:53 pm</td>
+									<td class='linked' test-id='39'>
+										Make sure User is able to Login
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Address Page - Edit risk - Add incidents.Make sure User is able to Login</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC167368_Add_a_Risk-Mandatory_fields_only</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC167368_Add_a_Risk-Mandatory_fields_only</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:37:39 pm</td>
+									<td class='linked' test-id='106'>
+										Make sure User is able to Login
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Address Page - Edit risk - Add incidents.Make sure User is able to Login</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:37:38 pm</td>
+									<td class='linked' test-id='105'>
+										AASC HM & RLAP & Living-HO - Add a Risk - Mandatory fields only
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:39:00 pm</td>
+									<td class='linked' test-id='123'>
+										Make sure User is able to Login
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Address Page - Edit risk - Add incidents.Make sure User is able to Login</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:38:59 pm</td>
+									<td class='linked' test-id='122'>
+										RLAP Mears_Add risk assessment and risk and then Edit the Risk - Add mitigation
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:44:56 pm</td>
+									<td class='linked' test-id='191'>
+										Make sure User is able to Login
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Address Page - Edit risk - Add incidents.Make sure User is able to Login</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:44:54 pm</td>
+									<td class='linked' test-id='190'>
+										RLAP Mears_Address Page - Add keys marking 1 as default
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:41:35 pm</td>
+									<td class='linked' test-id='150'>
+										RLAP Mears_Edit Service User - Edit Email address
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:41:35 pm</td>
+									<td class='linked' test-id='152'>
+										RLAP Mears_Edit Service User - Edit Email address
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Edit Service User - Edit Email address.RLAP Mears_Edit Service User - Edit Email address</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC_167052_167054_167059_RLAP_Mears_View_Service_User</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC_167052_167054_167059_RLAP_Mears_View_Service_User</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:42:54 pm</td>
+									<td class='linked' test-id='167'>
+										RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:42:54 pm</td>
+									<td class='linked' test-id='169'>
+										RLAP Mears_Edit Service User - Edit Email address and Accomdation status
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No.RLAP Mears_Edit Service User - Edit Email address and Accomdation status</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@TC_167052_167054_167059_RLAP_Mears_Edit_Service_User-Edit_Email_address_Accomdation_status_Edit_Tel_No</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>2</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@TC_167052_167054_167059_RLAP_Mears_Edit_Service_User-Edit_Email_address_Accomdation_status_Edit_Tel_No</h4>
+							<span status="pass" class='badge badge-success'>2 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:42:54 pm</td>
+									<td class='linked' test-id='168'>
+										RLAP Mears_Edit Service User - Edit Email address and Accomdation status
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No.RLAP Mears_Edit Service User - Edit Email address and Accomdation status</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:42:54 pm</td>
+									<td class='linked' test-id='169'>
+										RLAP Mears_Edit Service User - Edit Email address and Accomdation status
+										<div class="">
+											<span class="badge badge-default">RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No.RLAP Mears_Edit Service User - Edit Email address and Accomdation status</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@167057_RLAP_Complete_a_service_user_search-Active/surname</p>
+							<p class="duration text-sm">2 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@167057_RLAP_Complete_a_service_user_search-Active/surname</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:46:44 pm</td>
+									<td class='linked' test-id='214'>
+										TC_167057:  RLAP Mears_Complete a service user search - Active/surname
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>14:46:44 pm</td>
+									<td class='linked' test-id='216'>
+										RLAP Mears_Complete a service user search - Active/surname
+										<div class="">
+											<span class="badge badge-default">TC_167057:  RLAP Mears_Complete a service user search - Active/surname.RLAP Mears_Complete a service user search - Active/surname</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div>                    <!-- dashboard -->
+<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='parent-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'>
+						<b>8</b> features passed
+						</small>
+					</div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> features failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='child-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>9</b> scenarios passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> scenarios failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='100%'><b>181</b> steps passed</small></div>
+					<div>
+						<small data-tooltip='0%'><b>0</b> steps failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">8</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100.00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">9</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>100.00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Start</h6>
+							<h4 class="font-weight-light mt-4">Oct 30, 2023 02:29:04 pm</h4>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Duration</h6>
+							<h4 class="font-weight-light mt-4">0h 18m 21s+975ms</h4>
+							<span class="text-semibold font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Timeline</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id="timeline" height="120"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>@150655_165905_RLAP_AASC_HM_Create_a_AM_appointment_for_today</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									66.667%
+								</td>
+							</tr>
+							<tr>
+								<td>@150655_AASC_HM_Create_a_AM_appointment_for_today</td>
+								<td>3</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC_167369_RLAP_Mears_Address_Page-Edit_risk-Add_incidents</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC167368_Add_a_Risk-Mandatory_fields_only</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC167371_RLAP_Mears_Add_risk_assessment_and_risk_and_then-Edit_the_Risk-Add_mitigation</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC_167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC_167051_RLAP_Mears_Edit_Service_User-Edit_Email_address</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC_167052_167054_167059_RLAP_Mears_View_Service_User</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+							<tr>
+								<td>@TC_167052_167054_167059_RLAP_Mears_Edit_Service_User-Edit_Email_address_Accomdation_status_Edit_Tel_No</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									100%
+								</td>
+							</tr>
+							<tr>
+								<td>@167057_RLAP_Complete_a_service_user_search-Active/surname</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>
+									50%
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var statusGroup = {
+	    parentCount: 8,
+		passParent: 8,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 9,
+		passChild: 9,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 181,
+		passGrandChild: 181,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+		eventsCount: 181,
+		passEvents: 181,
+		failEvents: 0,
+		fatalEvents: 0,
+		errorEvents: 0,
+		warningEvents: 0,
+		skipEvents: 0,
+		infoEvents: 0,
+		debugEvents: 0,
+		exceptionsEvents: 0
+	};
+</script>
+<script>
+	var timeline = {
+	        "TC_150655:AASC HM_Create a AM appointment for today":508.046,"RLAP Mears_Address Page - Edit risk - Add incidents":949.47,"AASC HM & RLAP & Living-HO - Add a Risk - Mandatory fields only":0,"RLAP Mears_Add risk assessment and risk and then Edit the Risk - Add mitigation":0,"RLAP Mears_Edit Service User - Edit Email address":77.283,"RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No":120.143,"RLAP Mears_Address Page - Add keys marking 1 as default":0,"TC_167057:  RLAP Mears_Complete a service user search - Active/surname":42.519
+	};
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ac7abbc71b4bb073da00153a5a3fdbcfe0c95e2a/spark/js/spark-script.js"></script>
+<script type="text/javascript">
+
+
+</script></body>
+</html>
