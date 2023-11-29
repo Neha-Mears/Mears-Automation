@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 30 14:29:04 GMT 2023</td>
+<td>Started on:</td><td>Wed Nov 29 14:40:22 GMT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>1103 seconds (1103016 ms)</td>
+<tr><td>Total time:</td><td>1287 seconds (1287113 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,74 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.sat.TestRunner.AASCHousingPack2.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.AASCHousingPack2<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "AASC HM_Address Page - Add first risk assessment"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;Risk associated tenancy&apos;) or contains(@title,&apos;Risk associated tenancy&apos;)]&quot;}
+  (Session info: chrome=114.0.5735.91)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;A45318&apos;, ip: &apos;192.168.1.138&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:53621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e890129f03752267d37b846fba94eaf0
+*** Element info: {Using=xpath, value=//*[contains(text(),&apos;Risk associated tenancy&apos;) or contains(@title,&apos;Risk associated tenancy&apos;)]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.sat.Pages.MCMviewAppLoginPage.validate_risk_ass_popuppage(MCMviewAppLoginPage.java:898)
+	at com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(MCMloginStepDef.java:309)
+	at ✽.verify all tabs appearing on the Add risk Assessment popup page(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/AASC_HM/@TC167367_AASC_HM_Address_Page-Add_first_risk_assessment.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace592048461", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace592048461'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;Risk associated tenancy&apos;) or contains(@title,&apos;Risk associated tenancy&apos;)]&quot;}
+  (Session info: chrome=114.0.5735.91)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;A45318&apos;, ip: &apos;192.168.1.138&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\NEHA~1.SAI\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:53621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e890129f03752267d37b846fba94eaf0
+*** Element info: {Using=xpath, value=//*[contains(text(),&apos;Risk associated tenancy&apos;) or contains(@title,&apos;Risk associated tenancy&apos;)]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.sat.Pages.MCMviewAppLoginPage.validate_risk_ass_popuppage(MCMviewAppLoginPage.java:898)
+	at com.sat.StepDefinitions.MCMloginStepDef.Validate_risk_ass_popup_page(MCMloginStepDef.java:309)
+	at ✽.verify all tabs appearing on the Add risk Assessment popup page(file:///C:/Neha/HM_Automation-master/HM_Automation-master/src/test/resources/com.sat.Features/AASC_HM/@TC167367_AASC_HM_Address_Page-Add_first_risk_assessment.feature:22)
+</pre></div></td>
+<td>387</td>
+<td>com.sat.TestRunner.AASCHousingPack2@2892d68</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,50 +143,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "RLAP Mears_Complete a service user search - Active/surname", "TC_167057:  RLAP Mears_Complete a service user search - Active/surname"</td>
+<td title='com.sat.TestRunner.AASCHousingPack2.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.AASCHousingPack2<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed", "TC_146367: AASC HM- Add risk assessment and risk and then Edit the Risk - Add person at risk"</td>
 <td></td>
-<td>43</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
+<td>304</td>
+<td>com.sat.TestRunner.AASCHousingPack2@2892d68</td></tr>
 <tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "RLAP Mears_Address Page - Add keys marking 1 as default"</td>
+<td title='com.sat.TestRunner.AASCHousingPack2.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.AASCHousingPack2<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "AASC HM_Address Page - Add keys showing keys held by"</td>
 <td></td>
 <td>107</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
+<td>com.sat.TestRunner.AASCHousingPack2@2892d68</td></tr>
 <tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "RLAP Mears_Address Page - Edit risk - Add incidents"</td>
-<td></td>
-<td>296</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
-<tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "AASC HM_Create a PM appointment for today", "TC_150655:AASC HM_Create a AM appointment for today"</td>
-<td></td>
-<td>105</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
-<tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "RLAP Mears_Add risk assessment and risk and then Edit the Risk - Add mitigation"</td>
+<td title='com.sat.TestRunner.AASCHousingPack2.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.AASCHousingPack2<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "AASC HM_Address Page - Add keys"</td>
 <td></td>
 <td>154</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
+<td>com.sat.TestRunner.AASCHousingPack2@2892d68</td></tr>
 <tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Make sure User is able to Login", "AASC HM & RLAP & Living-HO - Add a Risk - Mandatory fields only"</td>
+<td title='com.sat.TestRunner.AASCHousingPack2.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.AASCHousingPack2<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Living HO - Edit Tenant - Add Language_Google Chrome and Tick_support_needs and Add How employed", "TC_146367: AASC HM- Add risk assessment and risk and then Edit the Risk - Add person at risk"</td>
 <td></td>
-<td>81</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
-<tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "RLAP Mears_Edit Service User - Edit Email address and Accomdation status", "RLAP Mears_Edit Service User - Edit Email address_Accomdation status_ Edit Tel No"</td>
-<td></td>
-<td>121</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
-<tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "AASC HM_Create a PM appointment for today", "TC_150655:AASC HM_Create a AM appointment for today"</td>
-<td></td>
-<td>109</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
-<tr>
-<td title='com.sat.TestRunner.RLAPTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.sat.TestRunner.RLAPTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "RLAP Mears_Edit Service User - Edit Email address", "RLAP Mears_Edit Service User - Edit Email address"</td>
-<td></td>
-<td>78</td>
-<td>com.sat.TestRunner.RLAPTestRunner@2892d68</td></tr>
+<td>330</td>
+<td>com.sat.TestRunner.AASCHousingPack2@2892d68</td></tr>
 </table><p>
 </body>
 </html>

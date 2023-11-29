@@ -14,7 +14,7 @@ Feature: TC_166600:  AASC HM_Complete a service user search - Active/surname - D
     And Click on the Menu expansion button in Home page
     Then select navapp "<serviceName>"
     And user select "Service User Search" from drop down List and navigate to "Service User Search"
-    Then user enter the "Wheeler" in "SurName" text box
+    Then user enter the "Wheeler" in "value_1" text box
     Then user click on Find
     Then user Select the service user "wheeler" from the list
     And user click on Ok appointment page

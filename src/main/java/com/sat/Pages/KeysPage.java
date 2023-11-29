@@ -803,6 +803,34 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 	 			 }
 	 		 }
 	 	 }
+	 	 public void clickchkTask(String address) throws InterruptedException
+		    {
+		    	try {
+		    		Wait.untilPageLoadComplete(driver);
+		    		
+		    		WebElement Checkboxtask= driver.findElement(By.xpath("//*[contains(@class,'"+address+"')]//*[starts-with(@class,'mat-checkbox-inner-container')]"));
+		    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Checkboxtask);
+		    		util.actionMethodClick(driver, Checkboxtask);
+		    	}
+		    	catch (Exception e)
+		    	{
+		    	    e.printStackTrace();	
+		    	}
+		    }
+	 	 public void popupwindowOk(String Value) throws InterruptedException
+	 	    {
+	 	    
+	 	    		Wait.untilPageLoadComplete(driver);
+	 	    		WebElement Yespop= driver.findElement(By.xpath("//*[contains(@class,'dynamic-form')]//span[text()='"+Value+"']"));
+	 	    		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",Activebtn);
+	 	    		try {
+	 	    			util.actionMethodClick(driver, Yespop);
+	 	  	   	    	}
+	 	  	   	    	catch(Exception e)
+	 	  	   	    	{
+	 	  	   	    	util.actionMethodClick(driver, Yespop);
+	 	  	   	    	}
+	 	    		} 
 }
 
 

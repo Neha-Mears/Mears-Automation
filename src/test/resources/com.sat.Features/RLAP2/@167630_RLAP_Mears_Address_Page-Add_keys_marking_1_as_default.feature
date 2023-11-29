@@ -24,7 +24,7 @@ Feature: TC_167630: RLAP Mears_Address Page - Add keys marking 1 as default
     And user select "Garage" from dropdown for "Other"
     Then user fill details for "No. of Sets" as "4"
     And user select multiple option "1" for the "default" checkbox
-    Then user click on "save" button
+    Then user click on "Save" button
    # When I click on "property-keys__wrapper"
     #  And user select "50" from dropdown for "Other"
     When user click on the descending "Default" under tab "Keys"
