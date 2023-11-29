@@ -21,7 +21,7 @@ Feature: TC_149444:  AASC HM_View Service User - Done
     Then Scroll down and click on expansion panel header button for "<username>" with "Service User Support"
     And user select "Edit Service User" from drop down List and navigate to "Service User Details"
     Then user fill details for "Email Address" as "neha.sain@mearsgroup.co.uk"
-    Then user click on save button
+    Then user click on "Save" button
 
     Examples: 
       | username        | password        | serviceName | address                                                                  | availableslot | start_time | end_time | text                                 | updatedtext                              | message                                                |  |

@@ -22,7 +22,7 @@ Feature: TC_122403:Living HO_ Add alarm details
     Then user click on edit button under icon name "Keys"
     #Then user fill details for "Keys Held By" as "EditKeyTester"
      Then user fill random details for "Keys Held By" as "Generate Keys Held By"
-    Then user click on save button
+    Then user click on "Save" button
     When I capture the new updated value of "Keys Held By" under "Keys Held By"
  #   And validate the initial value of "Keys Held By" is not same as new value
 

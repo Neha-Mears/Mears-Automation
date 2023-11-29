@@ -697,7 +697,59 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 	    				break;
 	    	    		} 
 	    	    }
-		 	    	
+	    	 public void ClickCalenderUnderTab(String  val,String setMonth, String setYear,String setDate) throws InterruptedException
+	    	    {
+	    			WebElement dropdownserviceuser = driver.findElement(By.xpath("//*[contains(@formcontrolname,'"+val+"')]"));
+	    			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownserviceuser );
+	    			Wait.elementToBeClickable(driver, dropdownserviceuser, 2);
+	    			testutil.actionMethodClick(driver, dropdownserviceuser);
+	    			Wait.untilPageLoadComplete(driver);
+	    			
+	    			driver.findElement(By.xpath("//*[@aria-label='Choose month and year']")).click();
+	    			WebElement fromyear= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setYear+"']"));
+	    			Wait.elementToBeClickable(driver, fromyear, 3);
+	    			testutil.actionMethodClick(driver, fromyear);
+	    			//System.out.println("Select the year" +fromyear);
+	    			//System.out.println("Select the month");
+	    			WebElement frommonth= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setMonth+" "+setYear+"']"));
+	    			Wait.elementToBeClickable(driver, frommonth, 3);
+	    			//System.out.println("Select the month" +frommonth);
+	    			testutil.actionMethodClick(driver, frommonth);
+	    			WebElement fromDate= driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+setDate+" " +setMonth+" "+ setYear+"']"));
+	    			System.out.println("Select the date");
+	    			System.out.println("click on date "+fromDate.getText());
+	    			    int SelectedDate = Integer.parseInt(setDate);
+	    				Date currentdate = new Date();
+	    				SimpleDateFormat formatter= new SimpleDateFormat("d");
+	    				int currentday= Integer.parseInt(formatter.format(currentdate));
+	    				String datetoBook = formatter.format(currentdate);
+	    				System.out.println("The current date is "+currentday);
+	    				
+	    				if (SelectedDate > currentday)
+	    				{
+	    					boolean isdatedisabled=fromDate.getAttribute("class").contains("disabled");
+	    					if(isdatedisabled) {
+	    						System.out.println("The selected date ' "+SelectedDate+"' is disabled and not clickable. ");	
+	    						WebElement CurrentDate=driver.findElement(By.xpath("//*[starts-with(@class,'mat-calendar-body-cell-container ng-star-inserted')]//*[@aria-label='"+currentday+" " +setMonth+" "+ setYear+"']"));
+	    						System.out.println("The selecting the current date");
+	    					//	CurrentDate.click();
+	    						testutil.actionMethodClick(driver, CurrentDate);
+	    					}
+	    					else {
+	    						
+	    						System.out.println("The selected date ' "+SelectedDate+"' is not enable and clickable. ");	
+	    						fromDate.click();
+	    					}
+	    						
+	    					}
+	    					else {
+	    						System.out.println("The selected date fromDate' "+SelectedDate+"' is enable and clickable. ");	
+	    						fromDate.click();
+	    						//testutil.actionMethodClick(driver, fromDate);
+	    					}
+	    				
+	    	    }
+	    	    
 	 	 public void IsButtonEnabled()	
 	 	 {
 	 		WebElement IsbuttonEnable = driver.findElement(By.xpath("//*[contains(@class,'mat-save mat-button-disabled') or contains(@class,'mat-button-base mat-save')]"));
@@ -714,6 +766,42 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 		           
 		        }
 
+	 	 }
+	 	 public boolean isElementPresent(By by)
+	 	 {
+	 		 List<WebElement> ele = driver.findElements(by);
+	 		 if(ele.isEmpty())
+	 			 return false;
+	 		 else
+	 			 return true;
+	 	 }
+	 	 public void verifysearchresult(String searchtext)
+	 	 {
+	 		 By ele;
+	 		// WebElement ele;
+	 		 ele= By.xpath("//*[@class='ng-star-inserted']//*[contains(text(),'"+searchtext+"')]");
+	 		 //String fieldValue = ele.getAttribute("value");
+	 		// System.out.println(fieldValue);
+	 		 boolean present= isElementPresent(ele);
+	 		 if(present)
+	 		 {
+	 			 System.out.println("Search result contains " +searchtext );
+	 		 }
+	 		 else
+	 		 {
+	 			System.out.println("Search result not contains" +searchtext );
+	 		 }
+	 	 }
+	 	 public void localsearch(DataTable datatable)
+	 	 {
+	 		 int i,j;
+	 		 List<List<String>> data = datatable.cells();
+	 		 for(i=0;i<1;i++) {
+	 			 for(j=0;j<3;j++) {
+	 				 Wait.untilPageLoadComplete(driver);
+	 				 verifysearchresult(data.get(i).get(j));
+	 			 }
+	 		 }
 	 	 }
 }
 

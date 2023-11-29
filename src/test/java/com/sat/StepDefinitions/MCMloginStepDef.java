@@ -510,6 +510,18 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 			 System.out.println("Exception :"+ e + "has occured" );
 		 }
 	 }
+	 @And ("user click on {string} under {string}")
+	 public void click_under_tab(String val,String dropname)
+	 {
+		 try {
+			 Thread.sleep(1500);
+			 MCMviewAppLogin.clickUnderTab(val,dropname);
+			 System.out.println("user clicked on drop down" );
+		 }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 }
+	 }
 	 @And ("select the appointment screen is displaying")
 	 public void user_select_the_appointment_sreen()
 	 {
@@ -584,8 +596,20 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 			 */
 		 } 
 		 
-		
-	 }
+     @Then ("Validate the task outcome is false")
+    	 public void validate_taskOutcome_is_false() throws InterruptedException, AWTException
+    	 {
+    		 try {
+    				    Thread.sleep(1500);
+    					MCMviewAppLogin.TaskOutcomeFalse();
+    		 }catch(org.openqa.selenium.NoSuchElementException e)
+    		 {
+    			 System.out.println("Move to next stem in cucumber");
+    			 return;
+    		 }
+    	 }
+     }
+	 
 	
  
  

@@ -1350,7 +1350,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
 			{
 				System.out.println("Save button is not initially disable.");
 			}
-    	 WebElement portno = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+txtfeild+"')]"));
+    	 WebElement portno = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+txtfeild+"') or contains(@formcontrolname,'"+txtfeild+"')]"));
      	System.out.println("Trying to create unique port Number");
      	int number= ThreadLocalRandom.current().nextInt();
      	//util.actionMethodClick(driver, portno);
@@ -1377,6 +1377,7 @@ public void clickOnCalcelbtnAndOkbtnappointment() {
      	return actualref;
      	
      }
+     
      public void ValidateKeyAsDefalt(String Tab,String elementID) throws InterruptedException {
  		
      	boolean found=false;

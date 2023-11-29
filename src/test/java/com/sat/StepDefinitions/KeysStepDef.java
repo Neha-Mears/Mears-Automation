@@ -255,11 +255,39 @@ public class KeysStepDef {
 			 System.out.println("Exception :"+ e + "has occured" );
 		 } 
 			 }
+
+	  @And("user click the calender for {string} for slot available {string} {string} {string}")
+	  public void click_calender_under_tab(String field,String fmmonth, String fmyear,String fmdate) throws InterruptedException {
+			Thread.sleep(7000);
+			 try {
+				 key.ClickCalenderUnderTab(field,fmmonth,fmyear,fmdate);
+			 
+	  }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 } 
+			 }
+	
+		 
+
+	
+	  
 	  @Then ("user validate the Save button is enabled")
 	  public void IsButtonEnable() throws InterruptedException {
 			Thread.sleep(7000);
 			 try {
 				 key.IsButtonEnabled();
+			 
+	  }
+		 catch(Exception e) {
+			 System.out.println("Exception :"+ e + "has occured" );
+		 } 
+}
+	  @Then ("user verify view application details")
+	  public void user_click_view_application_and_verify_search(DataTable datatable) throws InterruptedException {
+			Thread.sleep(2000);
+			 try {
+				 key.localsearch(datatable);
 			 
 	  }
 		 catch(Exception e) {
