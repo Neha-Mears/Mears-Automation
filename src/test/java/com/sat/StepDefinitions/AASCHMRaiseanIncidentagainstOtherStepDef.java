@@ -663,7 +663,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 				 String falsepass="False Alarm Password";
 				 String generatefalsepass="Generate False Alarm Password";
 				 MCMviewAppLogin.generatePasswordValue(falsepass,generatefalsepass);
-				 String option="save";
+				 String option="Save";
 				 MCMviewAppLogin.clickOnSave(option);
 			 }
 			 else
@@ -688,7 +688,7 @@ public class AASCHMRaiseanIncidentagainstOtherStepDef {
 			 Falsepassword.sendKeys(Keys.chord(Keys.CONTROL, "a")); // Select all text
 			 Falsepassword.sendKeys(Keys.DELETE); // Delete selected text
 			 Thread.sleep(5000);
-			 String option="save";
+			 String option="Save";
 			 MCMviewAppLogin.clickOnSave(option);
 		 }
 		 

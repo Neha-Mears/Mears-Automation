@@ -24,15 +24,21 @@ import io.cucumber.testng.CucumberOptions;
 			//plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			//tags=("@AdminTool_And_Click&Meet"))
 			//tags ={"@ResalRegistration or @ResalForgotpassword or @RegisteringItem"})//@ResalForgotpassword //@RegisteringItem //@ResalRegistration
-	tags= {	"@148380_RLAP_Applications_Create_Service_User_Mandatory_fields_and_Email_only or \r\n" +
+	tags= {	
 			"@148427_148380_RLAP_Service_User_Create_a_request_Standard_due_date_RLAP_Mears or \r \n" +
 			"@148445_RLAP_Application_Add_a_request_Standard_No_due_date_RLAP_Mears or \r \n" +
 			"@167630_RLAP_Mears_Address_Page-Add_keys_marking_1_as_default or \r \n" +
 			"@168527_RLAP_Mears_End_an_Active_Tenancy or \r \n" +
+			"@168927_RLAP_Applications_Create_Service_User_Complete_all_fields or \r \n" +
+			"@168928_RLAP_Service_User_Complete_a_request_Standard_due_date_RLAP_Mears or \r \n" +
 	    	"@TC_149318_RLAP_Mears_Add_Address_with_5_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes or \r \n" + 
 			"@TC_168098_168099 or \r \n" +
 			"@TC_168109_168101_168111__Add_key_log_Update_booked_out_with_supplier_added or \r \n" +
-			"@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details"
+			"@TC_168108_168102_RLAP_Mears_Add-alarm_details_Edit_alarm-Code_access_details or \r \n" +
+			"@TC_168528_168530_RLAP_Mears_Update_Planned_and_Actual_Arrival_Update_Planned_Departure or \r \n" +
+			"@TC_168931_RLAP_Mears_Add_Address_with_3_contracts_and_existing_owner_New-home_DA_and_SSFA_selected,Mears_Approval_Yes or \r \n" +
+			"@TC_168933_168936_RLAP_Mears_Add_Address_with_4_contracts_and_existing_owner_DA_and_SSFA_selected,Mears_Approval_Yes or \r \n" +
+			"@TC_168934_168935-RLAP_Mears_Add_Address_with_2_contracts__&_1_contractsand_existing_owner_TDA_and_SSFA_selected"
 			})
 	
 	public class RLAPTestRunner2 extends AbstractTestNGCucumberTests{

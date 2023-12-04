@@ -21,10 +21,10 @@ Feature: RLAP Mears_Edit key log - Update booked out by
   @TC_168101_Living_HO_Edit_key_log-Update_booked_out_by
   Scenario: Living HO_Edit key log - Update booked out by
     Then user click on the plus icon under "Key Log"
-    Then user click the calender and select the slot available "October" "2023" "29"
+    Then user click the calender and select the slot available "December" "2023" "29"
     Then user fill random details for "Notes" as "Generate Random Notes"
     And user click on "Key" the Drop Down List
-    And user select "Garage | 190817236" from dropdown for "Other"
+    And user select "Garage | 1133154848" from dropdown for "Other"
     Then user fill details for "Who Has Key" as "Owner"
     And user click on "Supplier" the Drop Down List
     And user select "Esther, Uriz (J3087L4704-5AA910A7)" from dropdown for "Other"

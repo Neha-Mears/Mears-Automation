@@ -20,7 +20,7 @@ Feature: Testing of RLAP Mears keys tap
     And user select "AASC" from dropdown for "Other"
     Then I click on "4" checkbox for Contract Name
     Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property
-    Then user fill details for "Room / Building" as "1349"
+    Then user fill details for "Room / Building" as "1043"
     Then user fill details for "Postcode" as "ex1 3ut"
     Then user fill details for "Location" as "Exeter"
     Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property
@@ -45,7 +45,7 @@ Feature: Testing of RLAP Mears keys tap
     Then user click on "Submit" button
     #search
      And I click on Mear Logo home Page
-    When user search "1349,  Exeter" and "1349,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version
+    When user search "1043,  Exeter" and "1043,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version
    And I click on checkbox Include closed task under Task for this Address "mat-checkbox task"
     Then Validate the "" is added shows as "tasks-panel__wrapper" for "Open"
     Then user click on "Yes / No" button

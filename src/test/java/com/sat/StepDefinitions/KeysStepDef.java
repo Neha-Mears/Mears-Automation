@@ -108,6 +108,15 @@ public class KeysStepDef {
 					 System.out.println("Exception :"+ e + "has occured" );
 				 }
 					break;	
+			case "Communication Details":
+				 try {
+					 Thread.sleep(5000);
+					 System.out.println("Validate Checkbox in keys tab");
+					 key.Communication_Detail(Tab,elementID,val);
+				 }
+				 catch(Exception e) {
+					 System.out.println("Exception :"+ e + "has occured" );
+				 }
 	 }
 }
 	 @And ("user select the {string} group from Add Request page")
@@ -335,5 +344,49 @@ public class KeysStepDef {
 						 System.out.println("Exception :"+ e + "has occured" );
 					 } 
 		  }
+	  @Then ("user check the number of documents available next to the address")
+	  public void check_number_of_document_next_to_address()
+		 {
+			 try {
+				 Thread.sleep(3000);
+				 key.NoDocumentnextaddress();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @Then ("the user checks the number of documents in the folder Photos and Gas Flue")
+	  public void check_number_of_document_under_folders()
+		 {
+			 try {
+				 Thread.sleep(3000);
+				 key.NoDocumentunderFolders();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @And ("user validate the count displayed next to address is same as number of document in the folder")
+	  public void validate_count()
+		 {
+			 try {
+				 Thread.sleep(3000);
+				 key.ValidateCount();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
+	  @Then ("user click on one of the file and download the file")
+	  public void download_file()
+		 {
+			 try {
+				 Thread.sleep(3000);
+				 key.DownloadFile();
+			 }
+			 catch(Exception e) {
+				 System.out.println("Exception :"+ e + "has occured" );
+			 }
+		 }
 }
 

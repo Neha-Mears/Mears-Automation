@@ -502,7 +502,7 @@ public void user_Naviagte_to_MearsHomePage_App() throws InterruptedException {
 	 public void user_click_on_drop_down_List(String dropname)
 	 {
 		 try {
-			 Thread.sleep(1500);
+			 Thread.sleep(1000);
 			 MCMviewAppLogin.clickDropDownList(dropname);
 			 System.out.println("user clicked on drop down" );
 		 }

@@ -19,7 +19,7 @@ Feature: TC :RLAP_Applications_Create Service User_Mandatory fields and Email on
     And user select "Add Request" from drop down List and navigate to "Add Request"
     And user select the "Standard" group from Add Request page
     Then user fill details for "Description" as "Demo test for Add request"
-    Then user click the calender and select the slot available "October" "2023" "27"
+    Then user click the calender and select the slot available "December" "2023" "27"
     Then I select the Current Date from calender for Add Request
     And user click on "Category" the Drop Down List
     And user select "Appointment" from dropdown for "Other"

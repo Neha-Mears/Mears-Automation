@@ -65,7 +65,7 @@ public class AASCHmAddPage {
 	@FindBy(xpath = "//*[@class='mat-focus-indicator mat-button mat-button-base mat-save']")
 	private WebElement Submitbtn;
 	
-	@FindBy(xpath = "//span[text()='OK']")
+	@FindBy(xpath = "//span[contains(text(),'OK')]")
 	private WebElement OKbtn;
 	
 	@FindBy(xpath = "//span[normalize-space()='Save']") 

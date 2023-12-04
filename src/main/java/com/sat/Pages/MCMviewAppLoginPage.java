@@ -303,7 +303,12 @@ public class MCMviewAppLoginPage {
 			if(ele.size() != 0) {
 				for (int i = 0; i < ele.size(); i++){
 					if (isClickable(ele.get(i))) {
-						testutil.actionMethodClick(driver, ele.get(i));
+						 try {
+								
+							 testutil.actionMethodClick(driver, ele.get(i));
+							}catch(Exception e) {
+								testutil.actionMethodClick(driver, ele.get(i));
+							}
 						//testutil.jsclick(driver, ele.get(i));
 						flag = true;
 						i = ele.size();
@@ -1123,7 +1128,7 @@ public void ValidateKeyAsNotes(String Tab,String elementID) throws InterruptedEx
 								 saveval.get(i).click();
 									//util.actionMethodClick(driver, Savebtn);
 								}catch(Exception e) {
-									testutil.jsclick(driver,  saveval.get(i));
+									util.actionMethodClick(driver, Savebtn);
 									// Savebtn.click();
 								}
 							flag = true;
@@ -1513,12 +1518,20 @@ public void ValidateKeyAsNotes(String Tab,String elementID) throws InterruptedEx
 		}
 		public void clickDropDownList(String dropname) throws InterruptedException
 		{
-			WebElement dropdownserviceuser = driver.findElement(By.xpath("//*[contains(@data-placeholder,'"+dropname+"') or contains(@placeholder,'"+dropname+"')]"));
+			WebElement dropdownserviceuser = driver.findElement(By.xpath("(//*[contains(@data-placeholder,'"+dropname+"') or contains(@placeholder,'"+dropname+"')])[last()]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",dropdownserviceuser );
 			dropdownserviceuser.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 			// materialField.clear();
 			Wait.elementToBeClickable(driver, dropdownserviceuser, 2);
-			testutil.actionMethodClick(driver, dropdownserviceuser);
+			Actions actions = new Actions(driver);
+			
+					actions.moveToElement(dropdownserviceuser).perform();
+			 try {
+					
+				 testutil.actionMethodClick(driver, dropdownserviceuser);
+					}catch(Exception e) {
+						testutil.actionMethodClick(driver, dropdownserviceuser);
+					}
 		}
 		public void clickUnderTab(String val,String dropname) throws InterruptedException
 		{

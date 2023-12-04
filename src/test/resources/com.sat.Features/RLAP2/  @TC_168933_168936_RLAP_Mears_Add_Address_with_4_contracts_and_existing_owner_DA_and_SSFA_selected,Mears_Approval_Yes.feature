@@ -20,7 +20,7 @@ Feature: Testing of RLAP Mears keys tap
     And user select "AASC" from dropdown for "Other"
     Then I click on "4" checkbox for Contract Name
     Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property
-    Then user fill details for "Room / Building" as "6711"
+    Then user fill details for "Room / Building" as "608"
     Then user fill details for "Postcode" as "ex1 3ut"
     Then user fill details for "Location" as "Exeter"
    Then Click on "stepper-buttons__wrapper" the "Next" button in Add Property
@@ -45,7 +45,7 @@ Feature: Testing of RLAP Mears keys tap
     And Click on the Menu expansion button in Home page
    # Then select navapp "Portal"
     And user select "Property Search" from drop down List and navigate to "Property Search"
-    When user search "6711,  Exeter" and "6711,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version
+    When user search "608,  Exeter" and "608,  Exeter,  Devon,  England,  EX1 3UT" click on the address details for new version
     And I click on checkbox Include closed task under Task for this Address "tasks-panel__wrapper"
     Then Validate the "" is added shows as "tasks-panel__wrapper" for "Open"
     ###correction required compkleyted

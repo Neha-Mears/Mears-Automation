@@ -36,6 +36,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
@@ -66,6 +68,9 @@ public class KeysPage {
 	private WebElement gettingDate;
 	
 	WebElement Iconeditbtn;
+	int iconCount;
+	int documentCount;
+	WebElement docnum;
 	Testutil testutil = new Testutil();
 	Wait waits = new Wait();
 	Testutil util = new Testutil();
@@ -208,6 +213,48 @@ public void ValidatetenancyStatus(String Tab,String elementID, String val) throw
 	 		}
 	 		
 	 		}
+public void Communication_Detail(String Tab,String elementID, String val) throws InterruptedException {
+ 	
+ 	expectedval=val;
+ 	System.out.println("\u001B[32mExpected value: .\u001B[0m"+expectedval);
+ 		List<WebElement> cells = driver.findElements(By.xpath("//*[contains(@class,'communications-detail-list__wrapper ng-star-inserted')]//*[contains(@class,'mat-cell cdk-cell mears-table__cell communications-detail-list__table-cell cdk-column-information')]"));
+ 		System.out.println("\u001B[32mNumber of Row present in Table : .\u001B[0m"+cells.size());
+ 		for(int i=0;i<cells.size();i++)
+ 		{
+ 			Thread.sleep(7000);
+ 			String actualtext=cells.get(i).getText();
+ 			
+ 			System.out.println(actualtext);
+ 			//System.out.println("\u001B[32mActual value.\u001B[0m"+actualtext);
+ 			if(cells.get(i).getText().equals(expectedval))
+ 			{
+ 				System.out.println("\u001B[32mExpected value :.\u001B[0m"+expectedval+ "=="+"\u001B[32mActual Value.\u001B[0m" +actualtext);
+ 				//System.out.println("\u001B[32mBooked Out By user by.\u001B[0m"+expectedval);
+ 				List<WebElement> cellVal = driver.findElements(By.xpath("//*[contains(@class,'communications-detail-list__wrapper ng-star-inserted')]//*[ contains(@class,'mat-row cdk-row')]"));
+ 				String cell1value= cellVal.get(i).getText();
+				String[] substring = cell1value.split(" ");
+ 				String input = cell1value;
+ 			//	System.out.println(input);
+ 					
+ 					    System.out.println("Type: " + substring[0]);
+ 					    System.out.println("Details: " + substring[1]);
+ 					   // System.out.println("Description" + substring[2]);
+ 					   List<WebElement> checkboxes= driver.findElements(By.xpath("(//*[contains(@class,'mat-checkbox-checked')])[last()]"));
+        		    	if(!checkboxes.isEmpty())
+        		    	{
+        		    		System.out.println("\u001B[32mDefault Checkbox is checked.\u001B[0m");
+        		    		
+        		    	}
+        		    	else
+        		    	{
+        		    		System.out.println("\u001B[32mDefault Checkbox is not checked.\u001B[0m");
+        		    	}
+        		    	
+ 				
+ 			}
+ 		}
+ 		
+ 		}
 public void AddNewNotes(String Tab,String elementID, String val) throws InterruptedException {
  	
  	expectedval=val;
@@ -831,6 +878,98 @@ public void FilterByUser(String Tab,String elementID, String val) throws Interru
 	 	  	   	    	util.actionMethodClick(driver, Yespop);
 	 	  	   	    	}
 	 	    		} 
+
+		 public void NoDocumentnextaddress() throws InterruptedException
+	 	    {
+	 	    
+	 	    		Wait.untilPageLoadComplete(driver);
+	 	    		docnum= driver.findElement(By.xpath("//*[contains(@class,'mears-tab__count ng-star-inserted')]"));
+	 	    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",docnum);
+	 	    		System.out.println("The number of document present : " +docnum.getText());
+	 	    		documentCount = Integer.parseInt(docnum.getText());
+
+	 	    }
+
+		 public void NoDocumentunderFolders() throws InterruptedException
+	 	    {
+	 	    
+	 	    		Wait.untilPageLoadComplete(driver);
+	 	    		WebElement photoLink = driver.findElement(By.xpath("(//*[contains(@data-mat-icon-name,'minus_square')])[1]"));
+	 	    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",photoLink);
+	 	            photoLink.click();
+	 	           WebElement garFlueLink = driver.findElement(By.xpath("(//*[contains(@class,'mat-icon notranslate tree-view__expandable-icon mat-icon-no-color')])[2]"));
+	 	          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",garFlueLink);
+	 	          
+	 	          try {
+	 	    			util.actionMethodClick(driver, garFlueLink);
+	 	  	   	    	}
+	 	  	   	    	catch(Exception e)
+	 	  	   	    	{
+	 	  	   	    	util.actionMethodClick(driver, garFlueLink);
+	 	  	   	    	}
+	 	          	// Get the count of files 
+	 	            int FileCount = getFileCount();
+	 	            System.out.println("File count under Folders: " + FileCount);
+	 	    }
+		 private  int getFileCount() {
+		        // Replace with the appropriate locator for file count
+			    List<WebElement> icons =  driver.findElements(By.xpath("//*[@class='tree-view__leaf-icon']"));
+		        iconCount = icons.size();
+		        return iconCount;
+		    }
+		 
+		 public void ValidateCount() throws InterruptedException
+	 	    {
+			 System.out.println("Count next to Address is: "+documentCount);
+			 System.out.println("Count of file present is: "+iconCount);
+			 if (documentCount == iconCount) {
+	                System.out.println("\u001B[32mValidation successful. Counts are equal.\u001B[0m");
+	            } else {
+	                System.out.println("\u001B[31mValidation failed. Counts are not equal.\u001B[0m");
+	            }
+	 	    		
+
+	 	    } 
+		 public void DownloadFile() throws InterruptedException
+	 	    {
+			 
+
+			  WebElement icons =  driver.findElement(By.xpath("(//*[contains(@class,'mat-tree-node tree-view-link tree-view__node')])[1]"));		
+			  System.out.println("The name of document : " +icons.getText());
+			  String fileName = icons.getText();  // Replace with the actual file name
+		         
+			  try {
+	    			util.actionMethodClick(driver, icons);
+	  	   	    	}
+	  	   	    	catch(Exception e)
+	  	   	    	{
+	  	   	    	util.actionMethodClick(driver, icons);
+	  	   	    	}
+			  WebElement downloadicon= driver.findElement(By.xpath("//*[contains(@class,'fa fa-download')]"));		
+			  try {
+	    			util.actionMethodClick(driver, downloadicon);
+	  	   	    	}
+	  	   	    	catch(Exception e)
+	  	   	    	{
+	  	   	    	util.actionMethodClick(driver, downloadicon);
+	  	   	    	}
+			  HashMap<String, Object> chromePrefs = new HashMap<>();
+		        chromePrefs.put("download.default_directory", "C:/Users/neha.sain/Downloads");
+		        ChromeOptions options = new ChromeOptions();
+		        WebDriver driver = new ChromeDriver(options);
+		        options.setExperimentalOption("prefs", chromePrefs);
+		        File downloadedFile = new File("C:/Users/neha.sain/Downloads", fileName);
+		         System.out.println("Download File" +downloadedFile);
+		     // Create a new instance of the Chrome driver with the specified options
+		        
+			  if (downloadedFile.exists()) {
+	                System.out.println("File downloaded successfully.");
+	            } else {
+	                System.out.println("File not found. Download may have failed.");
+	            }
+
+	 	    } 
+		
 }
 
 
